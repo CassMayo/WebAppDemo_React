@@ -19,7 +19,7 @@ const Footer = () => {
           <address className="footer-contact">
             <p>Org. nr 933 058 042</p>
             <p><a href="https://www.google.com/maps/place/Herslebs+gate+25,+0561+Oslo/@59.9173199,10.7621423,17z/data=!3m1!4b1!4m6!3m5!1s0x46416e5de36207bf:0x6ff4fe82679a8d3a!8m2!3d59.9173199!4d10.7647172!16s%2Fg%2F11c5pgtf56?entry=ttu"> Herslebs gate 25, 0561 Oslo, Norge</a></p>
-            <a href="mailto:julia@clearkarbon.com">julia@clearkarbon.com</a>
+            <a href="mailto:post@clearkarbon.com">post@clearkarbon.com</a>
           </address>
         </div>
         <nav className="footer-links">
@@ -39,7 +39,7 @@ const Footer = () => {
         <div className="footer-social-media">
 
           <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a>
+          <a href="https://www.linkedin.com/company/clear-karbon-exchange/"><i className="fab fa-linkedin-in"></i></a>
 
         </div>
       </div>
