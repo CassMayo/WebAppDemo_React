@@ -24,7 +24,6 @@ const Footer = () => {
               
             </ul>
           </div>
-          {/* Repeat for other sections */}
         </div>
         <div className="footer-social-media">
           
