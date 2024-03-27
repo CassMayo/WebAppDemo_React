@@ -1,3 +1,13 @@
-export default function Home() {
-    return <h1>Home</h1>
-}
+import React from 'react';
+import HeroSection from '../components/Herosection/HeroSection';
+
+
+const Home = () => {
+  return (
+    <div>
+      <HeroSection />
+    </div>
+  );
+};
+
+export default Home;
