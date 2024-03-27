@@ -18,11 +18,11 @@
 .navbar-links {
     display: flex;
     align-items: center;
+    list-style: none;
 }
 
 .navbar-links a,
 .navbar-login {
-    text-decoration: none;
     margin: 0 10px;
     color: var(--text-color2); 
 }
