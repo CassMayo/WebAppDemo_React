@@ -1,38 +1,41 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px;
+    padding: 20px;
     background-color: var(--bg-color2); 
-    align-items: center; 
-    box-shadow: var(--box-shadow-reversed);
-  }
-  
-  .navbar-logo {
-    height: 50px; 
-  }
-  
-  .navbar-links {
+    align-items: center;
+    box-shadow: var(--box-shadow-reversed); 
+    font-weight: var(--font-weight-bold); 
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+.navbar-logo {
+    height: 50px;
+}
+
+.navbar-links {
     display: flex;
-    align-items: center; 
-  }
-  
-  .navbar-links a, .navbar-login {
+    align-items: center;
+}
+
+.navbar-links a,
+.navbar-login {
     text-decoration: none;
     margin: 0 10px;
     color: var(--text-color2); 
-    font-weight: bold;
-  }
-  
-  .navbar-login {
+}
+
+.navbar-login {
     padding: 8px 20px;
-    background-color: #4CAF50; 
+    background-color: var(--bg-color);
     border: none;
     border-radius: 50px;
     color: white;
     cursor: pointer;
-  }
-  
-  .navbar-login:hover {
-    background-color: #45a049; 
-  }
-  
+}
+
+.navbar-login:hover {
+    background-color: var(--hover-color); 
+}
