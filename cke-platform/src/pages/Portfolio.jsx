@@ -2,7 +2,7 @@ import ProductCard from "../components/Portfolio/ProductCard.jsx/ProductCard";
 
 export default function Portfolio() {
     return (
-            <div>
+            <div style={{ height: "500px"}}>
                 <ProductCard
                     image="./src/assets/imat-bagja-gumilar-jwTvCQQJXh0-unsplash.jpg"
                     imageAlt="Image of forrest"

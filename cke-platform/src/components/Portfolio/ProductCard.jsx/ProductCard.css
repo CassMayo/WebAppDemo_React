@@ -1,13 +1,34 @@
 html {
     --mainGreen: #2B5F29;
     --mainWhite: #FFFFFF;
+    --mainBlack: #1b1b1b;
+
 }
+
+.card{
+    border-radius: 23px;
+    overflow: hidden;
+    width: fit-content;
+    background-color: transparent;
+
+}
+
+.locationDiv{
+    font-family: sans-serif;
+    color: var(--mainWhite);
+    display: flex;
+}
+.locationSymbol{
+    height: 16px;
+    width: 16px;
+    fill: var(--mainWhite);
+}
+
 
 .cardBackground {
     width: 302px;
     height: 477px;
     background-size: cover;
-    border-radius: 23px;
 }
 
 .cardColorOverlay{
@@ -17,13 +38,23 @@ html {
 }
 
 
+.cardTitle{
+    margin-top: 25px;
+    color: var(--mainWhite);
+    text-align: center;
+}
+
+
+
 .availableAndPriceDiv{
+
+    margin-top: 75px;
+    font-family: sans-serif;
     display: flex;
     outline: red, 2px, solid;
 
-    font-family: var();
+    color: var(--mainWhite)
 }
-
 
 
 .numberBox{
@@ -31,4 +62,10 @@ html {
     width: 100px;
     text-align: center;
     border-radius: 23px;
+    color: var(--mainBlack);
+}
+
+.descriptionDiv{
+    color: var(--mainWhite);
+    font-family: sans-serif
 }

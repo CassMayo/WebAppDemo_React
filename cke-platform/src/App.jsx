@@ -3,8 +3,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
-import './index.css'
-
 import NavBar from './components/Navbar/navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 
