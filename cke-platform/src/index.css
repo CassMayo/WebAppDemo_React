@@ -3,8 +3,10 @@ body {
   background-color: var(--bg-color);
   margin: 0;
   padding: 0;
+  /*Common Font and font type*/
   font-family: var(--font-family-archivo-serif);
   font-weight: var(--font-weight-Bold);
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
