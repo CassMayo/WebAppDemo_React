@@ -1,59 +1,76 @@
 /*Global attributes*/
 body {
-    background-color: var(--bg-color);
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; /*Can be changed later with global variables*/
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-source-serif);
+  font-weight: var(--font-weight-bold);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  :root {
-    /*Background color*/
-    --bg-color: #092902;
-    --bg-color2: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /*Text - color*/
-    --text-color: white;
-    --text-color2: black; 
+:root {
+  /*Background color*/
+  --bg-color: #092902;
+  --bg-color2: #ffffff;
 
-    /*Hover-color*/
-    --hover-color: #ddda3e;
+  /*Font family*/
+  --font-family-source-serif: "Source Serif 4", serif;
+  --font-optical-sizing: auto;
+  --font-weight-normal: 400;   
+  --font-weight-bold: 550;   
 
-    /*Box shadow top*/
-    --box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
-    /*Box shadow bottom*/
-    --box-shadow-reversed: 0px 10px 10px rgba(0, 0, 0, 0.2);
-    
-    /*Footer variables*/
-    --footer-border-color: #444;
-    --footer-max-width: 1200px;
-    --footer-logo-size: 150px;
-    --footer-font: 'Arial', sans-serif; /*Can be changed to global variable later when all pages are up*/
- 
-    --footer-social-icon-size: 3em;
-  }
-  html, body, #root {
-    height: 100%;
-  }
+  /*Text - color*/
+  --text-color: white;
+  --text-color2: black;
+
+  /*Hover-color*/
+  --hover-color: #ddda3e;
+
+  /*Box shadow top*/
+  --box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
+  /*Box shadow bottom*/
+  --box-shadow-reversed: 0px 10px 10px rgba(0, 0, 0, 0.2);
+
+  /*Footer variables*/
+  --footer-border-color: #444;
+  --footer-max-width: 1200px;
+  --footer-logo-size: 150px;
+  --footer-social-icon-size: 3em;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
 
 /*Global color*/
-body, h1, h2, h3, h4, h5, h6, p, a {
-    color: #ddda3e; 
-  }
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  color: #ddda3e;
+}
 
 /*Global link color*/
 a {
-    color: #ddda3e;
-    text-decoration: none;
+  color: #ddda3e;
+  text-decoration: none;
 }
+
 /* Global hover */
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
