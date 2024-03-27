@@ -19,12 +19,20 @@ body {
   /*Background color*/
   --bg-color: #092902;
   --bg-color2: #ffffff;
+  --bg-color3: #2B5F29;
 
-  /*Font family*/
+  /*Title Font family*/
   --font-family-source-serif: "Source Serif 4", serif;
   --font-optical-sizing: auto;
   --font-weight-normal: 400;   
   --font-weight-bold: 550;   
+
+    /*Small text Font family*/
+  --font-family-archivo-serif: "Archivo", sans-serif;
+  --font-optical-sizing: auto;
+  --font-weight-normal: 400;   
+  --font-weight-bold: 550;   
+
 
   /*Text - color*/
   --text-color: white;

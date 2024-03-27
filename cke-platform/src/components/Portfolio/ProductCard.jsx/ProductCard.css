@@ -1,0 +1,34 @@
+html {
+    --mainGreen: #2B5F29;
+    --mainWhite: #FFFFFF;
+}
+
+.cardBackground {
+    width: 302px;
+    height: 477px;
+    background-size: cover;
+    border-radius: 23px;
+}
+
+.cardColorOverlay{
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, transparent 21%, var(--mainGreen) 35%);
+    height: 100%;
+}
+
+
+.availableAndPriceDiv{
+    display: flex;
+    outline: red, 2px, solid;
+
+    font-family: var();
+}
+
+
+
+.numberBox{
+    background-color: var(--mainWhite);
+    width: 100px;
+    text-align: center;
+    border-radius: 23px;
+}
