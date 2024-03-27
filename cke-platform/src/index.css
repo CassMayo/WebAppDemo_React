@@ -19,6 +19,7 @@ body {
   /*Background color*/
   --bg-color: #123d0a;
   --bg-color2: #ffffff;
+  --bg-color3: #f2e380;
 
   /*Font family*/
   --font-family-source-serif: "Source Serif 4", serif;  
@@ -33,7 +34,7 @@ body {
   --text-color2: black;
 
   /*Hover-color*/
-  --hover-color: #ddda3e;
+  --hover-color: #dbd835;
   --hover-color2: #ffffff;
 
   /*Hover transition*/
@@ -41,8 +42,6 @@ body {
 
   /*Box shadow top*/
   --box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
-  /*Box shadow bottom*/
-  --box-shadow-reversed: 0px 10px 10px rgba(0, 0, 0, 0.2);
 
   /*Footer variables*/
   --footer-border-color: #444;
@@ -65,7 +64,7 @@ a {
 }
 /* Global hover */
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline; 
   color: var(--hover-color);
 
 }

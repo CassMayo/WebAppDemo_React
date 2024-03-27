@@ -11,14 +11,14 @@ const Navbar = () => {
             <img src="/images/ClearKarbon.PNG" alt="Clear Karbon Exchange Logo" className="navbar-logo" />
           </Link>
         <div className="navbar-links">
-
           <CustomLink to="/about">About Us</CustomLink>
           <CustomLink to="/portfolio">Portfolio</CustomLink>
           <CustomLink to="/invest">Invest</CustomLink>
           <CustomLink to="/team">The Team</CustomLink>
-          
+        <div className="navbar-login">
           <button className="navbar-login">Login</button>
-        
+          </div>
+      
         </div>
       </nav>
     );

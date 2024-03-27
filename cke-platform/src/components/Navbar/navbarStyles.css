@@ -1,41 +1,58 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
     padding: 20px;
-    background-color: var(--bg-color2); 
+    justify-content: space-between;
+    background-color: transparent;
     align-items: center;
-    box-shadow: var(--box-shadow-reversed); 
     font-weight: var(--font-weight-bold); 
-    position: sticky;
+    position: fixed; 
     top: 0;
+    left: 0;
+    position: sticky;
     z-index: 1000; 
 }
 
 .navbar-logo {
-    height: 50px;
+    height: 50px; 
 }
 
 .navbar-links {
     display: flex;
+    justify-content: end;
+    margin-right: -20px;
     align-items: center;
     list-style: none;
+    background-color: var(--bg-color2);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    
 }
 
 .navbar-links a,
 .navbar-login {
     margin: 0 10px;
     color: var(--text-color2); 
+    padding: 5px 15px
 }
 
-.navbar-login {
-    padding: 8px 20px;
+.navbar-login button {
+    margin: 0 10px;
+    padding: 10px; /* Adjust this value as needed to maintain the button's text */
+    height: 2em; /* Example height */
+    width: 5em; /* Example width to make it square, and thus fully round with border-radius: 50% */
     background-color: var(--bg-color);
+    border-radius: 50px; /* This makes it round */
     border: none;
-    border-radius: 50px;
-    color: white;
+    color: var(--text-color);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.navbar-login:hover {
-    background-color: var(--hover-color); 
+.navbar-login button:hover {
+    background-color: var(--hover-color);
+    color: var(--text-color2);
 }
+

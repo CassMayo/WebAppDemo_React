@@ -6,14 +6,17 @@
       rgba(0, 0, 0, 0.8) 100%
     ),
   url('/images/Heroimg.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
   padding-left: 5em;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start; 
   text-align: left;
-  color: #ffffff; 
+  color: var(--text-color);
   z-index: -1;
 
 }
@@ -29,8 +32,8 @@
 
 .portfolio-btn {
   padding: 10px 20px;
-  background-color: #f0db4f;
-  color: #333;
+  background-color: var(--bg-color3);
+  color: var(text-color2);
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -41,5 +44,10 @@
 }
 
 .portfolio-btn:hover {
-  background-color: #e5c437; /*Use Variable*/
+  background-color: var(--hover-color);
+}
+
+.hero-container i {
+  font-size: 1.5em;
+  padding-left: 2em;
 }
