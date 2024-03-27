@@ -4,9 +4,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-family-source-serif);
-  font-weight: var(--font-weight-bold);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 * {
@@ -17,14 +17,16 @@ body {
 
 :root {
   /*Background color*/
-  --bg-color: #092902;
+  --bg-color: #123d0a;
   --bg-color2: #ffffff;
 
   /*Font family*/
-  --font-family-source-serif: "Source Serif 4", serif;
-  --font-optical-sizing: auto;
-  --font-weight-normal: 400;   
-  --font-weight-bold: 550;   
+  --font-family-source-serif: "Source Serif 4", serif;  
+
+  /*Font weight*/
+  --font-weight-normal: 400;
+  --font-weight-bold: 900;
+  
 
   /*Text - color*/
   --text-color: white;
@@ -32,6 +34,10 @@ body {
 
   /*Hover-color*/
   --hover-color: #ddda3e;
+  --hover-color2: #ffffff;
+
+  /*Hover transition*/
+  --hover-transition: 0.3s ease;
 
   /*Box shadow top*/
   --box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
@@ -51,26 +57,15 @@ body,
   height: 100%;
 }
 
-/*Global color*/
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a {
-  color: #ddda3e;
-}
-
 /*Global link color*/
 a {
-  color: #ddda3e;
+  color: var(--text-color);
   text-decoration: none;
+  transition: var(--hover-transition);
 }
-
 /* Global hover */
 a:hover {
   text-decoration: underline;
+  color: var(--hover-color);
+
 }
