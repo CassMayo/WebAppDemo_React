@@ -1,0 +1,71 @@
+html {
+    --mainGreen: #2B5F29;
+    --mainWhite: #FFFFFF;
+    --mainBlack: #1b1b1b;
+
+}
+
+.card{
+    border-radius: 23px;
+    overflow: hidden;
+    width: fit-content;
+    background-color: transparent;
+
+}
+
+.locationDiv{
+    font-family: sans-serif;
+    color: var(--mainWhite);
+    display: flex;
+}
+.locationSymbol{
+    height: 16px;
+    width: 16px;
+    fill: var(--mainWhite);
+}
+
+
+.cardBackground {
+    width: 302px;
+    height: 477px;
+    background-size: cover;
+}
+
+.cardColorOverlay{
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, transparent 21%, var(--mainGreen) 35%);
+    height: 100%;
+}
+
+
+.cardTitle{
+    margin-top: 25px;
+    color: var(--mainWhite);
+    text-align: center;
+}
+
+
+
+.availableAndPriceDiv{
+
+    margin-top: 75px;
+    font-family: sans-serif;
+    display: flex;
+    outline: red, 2px, solid;
+
+    color: var(--mainWhite)
+}
+
+
+.numberBox{
+    background-color: var(--mainWhite);
+    width: 100px;
+    text-align: center;
+    border-radius: 23px;
+    color: var(--mainBlack);
+}
+
+.descriptionDiv{
+    color: var(--mainWhite);
+    font-family: sans-serif
+}

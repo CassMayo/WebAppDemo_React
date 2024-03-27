@@ -19,14 +19,21 @@ body {
   /*Background color*/
   --bg-color: #123d0a;
   --bg-color2: #ffffff;
+  --bg-color3: #2B5F29;
 
-  /*Font family*/
-  --font-family-source-serif: "Source Serif 4", serif;  
 
-  /*Font weight*/
-  --font-weight-normal: 400;
-  --font-weight-bold: 900;
-  
+  /*Title Font family*/
+  --font-family-source-serif: "Source Serif 4", serif;
+  --font-optical-sizing: auto;
+  --font-weight-normal: 400;   
+  --font-weight-bold: 550;   
+
+    /*Small text Font family*/
+  --font-family-archivo-serif: "Archivo", sans-serif;
+  --font-optical-sizing: auto;
+  --font-weight-normal: 400;   
+  --font-weight-bold: 550;   
+
 
   /*Text - color*/
   --text-color: white;
