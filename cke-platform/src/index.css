@@ -20,6 +20,10 @@ body {
   --bg-color: #123d0a;
   --bg-color2: #ffffff;
   --bg-color3: #f2e380;
+  --bg-color4: #081b04;
+
+  /*Gradient color*/
+  --gradient-color-top: linear-gradient(to bottom, var(--bg-color4) 0%, var(--bg-color) 100%);
 
   /*Font family*/
   --font-family-source-serif: "Source Serif 4", serif;  

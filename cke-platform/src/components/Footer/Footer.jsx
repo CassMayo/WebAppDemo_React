@@ -24,11 +24,10 @@ const Footer = () => {
         </div>
         <nav className="footer-links">
           <div className="link-section">
-            <h5>Company</h5>
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/pricing">Pricing</Link></li>
+              <li><Link to="/portfolio">Portfolio</Link></li>
               <li><Link to="/invest">Invest</Link></li>
               <li><Link to="/team">The Team</Link></li>
               <li><Link to="/workinprogress">Work in progress</Link></li>

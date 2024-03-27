@@ -1,0 +1,55 @@
+.what-we-do-container {
+    background: var(--gradient-color-top);
+    color: var(--text-color);
+    padding: 50px;
+    text-align: center;
+    list-style: none;
+    height: 100vh;
+
+}
+
+.what-we-do-container h2 {
+    margin-bottom: 60px;
+    text-align: start;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.step {
+    width: 20%;
+    text-align: center;
+}
+
+.step h3 {
+    margin: 10px 0;
+}
+
+.step p {
+    font-size: 1.5em;
+}
+
+.cta-button {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cta-button button {
+    background-color: var(--bg-color3);
+    color: var(text-color2);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 4em;
+    width: 20em;
+}
+
+.cta-button button:hover {
+    background-color: var(--hover-color);
+}

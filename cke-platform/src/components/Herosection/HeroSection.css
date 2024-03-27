@@ -1,24 +1,29 @@
 .hero-container {
-  background:  
-    linear-gradient(
-      to bottom, 
-      rgba(0, 0, 0, 0) 0%, 
-      rgba(0, 0, 0, 0.8) 100%
-    ),
-  url('/images/Heroimg.jpg');
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center; 
+  background: url('/images/Heroimg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding-left: 5em;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; 
+  align-items: flex-start;
   text-align: left;
   color: var(--text-color);
-  z-index: -1;
-
+  position: relative; 
+  overflow: hidden; 
+  list-style: none;
+}
+.hero-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%; 
+  background: linear-gradient(to top, var(--bg-color4) 0%, transparent 100%);
+  z-index: 2; 
 }
 
 .hero-container h1 {
