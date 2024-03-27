@@ -3,7 +3,8 @@ body {
   background-color: var(--bg-color);
   margin: 0;
   padding: 0;
-  font-family: var(--font-family-source-serif);
+  font-family: var(--font-family-archivo-serif);
+  font-weight: var(--font-weight-Bold);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -32,7 +33,7 @@ body {
   --font-family-archivo-serif: "Archivo", sans-serif;
   --font-optical-sizing: auto;
   --font-weight-normal: 400;   
-  --font-weight-bold: 550;   
+  --font-weight-bold: 660;   
 
 
   /*Text - color*/
