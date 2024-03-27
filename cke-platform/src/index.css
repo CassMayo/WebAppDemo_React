@@ -14,6 +14,17 @@ body {
     padding: 0;
     box-sizing: border-box;
   }
+  :root {
+    --bg-color: #092902;
+    --text-color: white;
+    --hover-color: #ddda3e;
+    --footer-border-color: #444;
+    --footer-max-width: 1200px;
+    --footer-logo-size: 150px;
+    --footer-font: 'Arial', sans-serif;
+    --footer-box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
+    --footer-social-icon-size: 3em;
+  }
   html, body, #root {
     height: 100%;
   }
@@ -32,4 +43,3 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
