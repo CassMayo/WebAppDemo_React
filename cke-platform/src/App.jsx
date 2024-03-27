@@ -10,7 +10,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
-import Pricing from './pages/Pricing.jsx';
+import Portfolio from './pages/Portfolio.jsx';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </div>
       <Footer /> 
