@@ -3,7 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding-left: 5em;
+  padding: var(--padding);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
 
 .hero-container h1 {
   align-items: start;
-  font-size: 4em;
+  font-size: 3.5em;
   width: 60%;
   text-align: left;
   font-weight: var(--font-weight-bold);
@@ -39,7 +39,7 @@
 .portfolio-btn {
   padding: 10px 20px;
   background-color: var(--bg-color3);
-  color: var(text-color2);
+  color: var(--text-color2); 
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -47,6 +47,8 @@
   font-weight: var(--font-weight-bold);
   transition: background-color 0.3s ease;
   text-align: left;
+  position: relative;
+  z-index: 3;
 }
 
 .portfolio-btn:hover {

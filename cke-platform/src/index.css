@@ -30,15 +30,13 @@ body {
 
   /*Title Font family*/
   --font-family-source-serif: "Source Serif 4", serif;
-  --font-optical-sizing: auto;
-  --font-weight-normal: 400;   
-  --font-weight-bold: 550;   
+  --font-optical-sizing: auto; 
 
     /*Small text Font family*/
   --font-family-archivo-serif: "Archivo", sans-serif;
   --font-optical-sizing: auto;
   --font-weight-normal: 400;   
-  --font-weight-bold: 660;   
+  --font-weight-bold: 800;   
 
 
   /*Text - color*/
@@ -55,6 +53,8 @@ body {
   /*Box shadow top*/
   --box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
 
+  /*Index variables*/
+   --padding : 0 5em;
   /*Footer variables*/
   --footer-border-color: #444;
   --footer-max-width: 1200px;

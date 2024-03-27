@@ -5,12 +5,35 @@ Demoteamet:
 - Markus Evanger
 - Cassandra Averil Mayorga
 
-WIKI
-cd cke-platform
-npm run dev
 
+
+
+
+
+
+
+
+
+
+
+
+
+# WIKI
+- check node version
+    node -v   
+- sets Node invornment 
+    run npm
+- Install vite 
+    npm install -g vite
+- Install dependencies (package.json)
+    npm install
+- if all installed: 
+    cd cke-platform
+    npm run dev
+
+PACKAGES
 - Icon
-npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+    npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
 
 - Font head
-npm install react-helmet
+    pm install react-helmet
