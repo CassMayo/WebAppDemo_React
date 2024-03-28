@@ -1,0 +1,123 @@
+/*Right side*/
+.offers-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 20px;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: var(--padding);
+  background-color: var(--mainWhite);
+  height: 70vh;
+}
+
+.trusted-by {
+  background-color: var(--mainBlack);
+  color: var(--textWhite);
+  padding: 1rem;
+  width: 250px;
+  height: 500px;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--box-shadow-card);
+
+}
+
+.trusted-by h3 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgb(254, 251, 251);
+}
+
+.logos img {
+  margin-bottom: 2rem;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  width: 114px;
+}
+
+/*Left side*/
+.offers-section {
+  background-color: var(--mainWhite);
+  height: 500px;
+  border-radius: 20px;
+  padding: 2rem;
+  width: calc(100% - 270px - 20px);
+  box-shadow: var(--box-shadow-card);
+  ;
+}
+
+
+.offers-section h2 {
+  text-align: left;
+  margin-top: 0.5em;
+  margin-bottom: 0.8em;
+  font-family: var(--font-family-source-serif);
+  font-weight: var(--font-weight-bold);
+  color: var(--textBlack);
+  font-size: 3em;
+}
+
+.offer-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.offer-card {
+  background-color: var(--mainWhite);
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 400px;
+  height: 300px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-icon {
+  height: 80px;
+  margin-bottom: 1rem;
+  color: var(--mainBlack);
+  padding-right: 1em;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+}
+
+.offer-card p {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: var(--font-family-archivo-serif);
+  font-weight: var(--font-weight-normal);
+  font-size: 16px;
+}
+
+.learn-more {
+  background-color: var(--MainYellow);
+  color: var(--textBlack);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: center;
+  margin-top: auto;
+  font-family: var(--font-family-source-serif);
+  font-weight: var(--font-weight-bold);
+}
+
+.learn-more:hover {
+  background-color: var(--hover-color);
+}

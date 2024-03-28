@@ -14,7 +14,7 @@ const Navbar = () => {
           <CustomLink to="/about">About Us</CustomLink>
           <CustomLink to="/portfolio">Portfolio</CustomLink>
           <CustomLink to="/invest">Invest</CustomLink>
-          <CustomLink to="/team">The Team</CustomLink>
+          {/*<CustomLink to="/team">The Team</CustomLink> */}
         <div className="navbar-login">
           <button className="navbar-btn">Login</button>
           </div>

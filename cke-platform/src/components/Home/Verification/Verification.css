@@ -1,0 +1,47 @@
+
+.verification-section {
+    background-color: var(--mainGreen);
+    color: var(--textWhite);
+    text-align: center;
+    height: 50vh;
+  }
+
+  .verification-content {
+    margin: 5em;
+  }
+  
+  .verification-content h1 {
+    font-size: 3em; 
+    margin-bottom: 10px;
+    font-family: var(--font-family-source-serif);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .verification-content p {
+    font-size: 2em; 
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left: 40px ;
+    margin-right: 40px;
+    text-align: start;
+    font-family: var(--font-family-archivo-serif);
+    font-weight: var(--font-weight-normal);
+  }
+  
+  .verification-logos {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 150px; ;
+  }
+  .gold_standard_logo {
+    height: 60px;
+    width: auto;
+    vertical-align: middle;
+  }
+  .verified_carbon_logo {
+    height: 100px;
+    width: auto;
+    vertical-align: middle;
+  }
+  

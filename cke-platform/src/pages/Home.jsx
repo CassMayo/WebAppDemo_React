@@ -2,7 +2,9 @@ import React from 'react';
 import HeroSection from '../components/Home/Herosection/HeroSection';
 import WhatWeDoSection from '../components/Home/WhatWeDoSection/WhatWeDoSection';
 import HomeStatisticSection from '../components/Home/HomeStatistic/HomeStatisticSection';
-import Verificatation from '../components/Home/Verifcation/Verificatation';
+import Trusted from '../components/Home/Trusted/Trusted';
+import Verification from '../components/Home/Verification/Verification';
+import NewsletterSection from '../components/Home/Newsletter/Newsletter';
 
 
 const Home = () => {
@@ -11,7 +13,10 @@ const Home = () => {
       <HeroSection />
       <WhatWeDoSection />
       <HomeStatisticSection />
-      <Verificatation />
+      <Trusted />
+      <Verification />
+      <NewsletterSection />
+      
     </div>
   );
 };
