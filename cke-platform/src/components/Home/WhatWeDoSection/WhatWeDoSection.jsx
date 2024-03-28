@@ -2,7 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeaf, faSearch, faDollarSign, faAward } from '@fortawesome/free-solid-svg-icons';
 import './WhatWeDoSection.css';
-import CustomLink from '../Navbar/CustomLink';
+import CustomLink from '../../Navbar/CustomLink';
+
 
 const WhatWeDo = () => {
     return (

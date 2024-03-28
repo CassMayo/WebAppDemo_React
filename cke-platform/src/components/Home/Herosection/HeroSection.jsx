@@ -1,7 +1,6 @@
 import React from 'react';
 import './HeroSection.css';
-import CustomLink from '../Navbar/CustomLink';
-
+import CustomLink from '../../Navbar/CustomLink';
 const HeroSection = () => {
   return (
     <div className="hero-container" style={{ marginTop: '-90px', paddingTop: '70px' }}>

@@ -1,7 +1,7 @@
 import React from 'react';
-import HeroSection from '../components/Herosection/HeroSection';
-import WhatWeDoSection from '../components/WhatWeDoSection/WhatWeDoSection';
-import HomeStatisticSection from '../components/HomeStatistic/HomeStatisticSection';
+import HeroSection from '../components/Home/Herosection/HeroSection';
+import WhatWeDoSection from '../components/Home/WhatWeDoSection/WhatWeDoSection';
+import HomeStatisticSection from '../components/Home/HomeStatistic/HomeStatisticSection';
 
 
 const Home = () => {

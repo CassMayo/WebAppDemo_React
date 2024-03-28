@@ -19,58 +19,6 @@ body {
   box-sizing: border-box;
 }
 
-:root {
-  --margin-top: -90px;
-  --padding-top: 70px;
-
-  /*Background color*/
-  --bg-color: #2B5F29;
-  --bg-color2: #ffffff;
-  --bg-color3: #f2e380;
-  --bg-color5: #1b1b1b;
-
-  /*Background4 er brukt til gradient*/
-  --bg-color4: #2B5F29;
-
-
-  /*Gradient color*/
-  --gradient-color-top: linear-gradient(to bottom, var(--bg-color4) 0%, var(--bg-color) 100%);
-
-  /*Title Font family*/
-  --font-family-source-serif: "Source Serif 4", serif;
-  --font-optical-sizing: auto; 
-
-    /*Small text Font family*/
-  --font-family-archivo-serif: "Archivo", sans-serif;
-  --font-optical-sizing: auto;
-  --font-weight-normal: 400;   
-  --font-weight-bold: 800;   
-
-
-  /*Text - color*/
-  --text-color: white;
-  --text-color2: black;
-  --text-color3: var(--bg-color);
-
-  /*Hover-color*/
-  --hover-color: #dbd835;
-  --hover-color2: #ffffff;
-
-  /*Hover transition*/
-  --hover-transition: 0.3s ease;
-
-  /*Box shadow top*/
-  --box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
-
-  /*Index variables*/
-   --padding : 0 5em;
-   --box-shadow-card: 0 12px 16px rgba(0, 0, 0, 0.4);
-  /*Footer variables*/
-  --footer-border-color: #444;
-  --footer-max-width: 1200px;
-  --footer-logo-size: 150px;
-  --footer-social-icon-size: 3em;
-}
 
 html,
 body,
