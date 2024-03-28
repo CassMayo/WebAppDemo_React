@@ -3,7 +3,7 @@ import "./CardsContentSection.css"
 
 export default function CardsContentSection(){
     
-    const image = "./src/assets/imat-bagja-gumilar-jwTvCQQJXh0-unsplash.jpg"
+    const image = "./images/imat-bagja-gumilar-jwTvCQQJXh0-unsplash.jpg"
     const imageAlt = "Image of forrest"
     const title = "Keani Lestari"
     const type = "Tree Stored Carbon"
