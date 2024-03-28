@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSection from '../components/Home/Herosection/HeroSection';
 import WhatWeDoSection from '../components/Home/WhatWeDoSection/WhatWeDoSection';
 import HomeStatisticSection from '../components/Home/HomeStatistic/HomeStatisticSection';
-import Verificatation from '../components/Home/Verifcation/Verificatation';
+import Verificatation from '../components/Home/Trusted/Trusted';
 
 
 const Home = () => {
