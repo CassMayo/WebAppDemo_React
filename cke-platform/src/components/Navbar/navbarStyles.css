@@ -4,6 +4,7 @@
     justify-content: space-between;
     background-color: transparent;
     align-items: center;
+    font-family: var(--font-family-source-serif);
     font-weight: var(--font-weight-bold); 
     position: fixed; 
     top: 0;
@@ -22,7 +23,7 @@
     margin-right: -20px;
     align-items: center;
     list-style: none;
-    background-color: var(--bg-color2);
+    background-color: var(--mainWhite);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     
@@ -36,19 +37,19 @@
   .navbar-links a, .navbar-login {
     text-decoration: none;  
     margin: 0 10px;
-    color: var(--text-color2); 
+    color: var(--textBlack); 
     padding: 5px 15px
 }
 
 .navbar-login button {
     margin: 0 10px;
-    padding: 10px; /* Adjust this value as needed to maintain the button's text */
-    height: 2em; /* Example height */
-    width: 5em; /* Example width to make it square, and thus fully round with border-radius: 50% */
-    background-color: var(--bg-color);
-    border-radius: 50px; /* This makes it round */
+    padding: 10px; 
+    height: 2em;
+    width: 5em; 
+    background-color: var(--mainGreen);
+    border-radius: 50px; 
     border: none;
-    color: var(--text-color);
+    color: var(--textWhite);
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -58,6 +59,6 @@
 
 .navbar-login button:hover {
     background-color: var(--hover-color);
-    color: var(--text-color2);
+    color: var(--hover-color);
 }
 

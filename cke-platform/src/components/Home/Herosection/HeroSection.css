@@ -1,5 +1,6 @@
 .hero-container {
   background: url('/images/Heroimg.jpg');
+  font-family: var(--font-family-source-serif);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -10,7 +11,7 @@
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  color: var(--text-color);
+  color: var(--textWhite);
   position: relative;
   overflow: hidden;
   list-style: none;
@@ -23,7 +24,7 @@
   right: 0;
   bottom: 0;
   height: 30%;
-  background: linear-gradient(to top, var(--bg-color4) 0%, transparent 100%);
+  background: linear-gradient(to top, var(--Gradient-color) 0%, transparent 100%);
   z-index: 2;
 }
 
@@ -38,8 +39,8 @@
 
 .portfolio-btn {
   padding: 10px 20px;
-  background-color: var(--bg-color3);
-  color: var(--text-color2); 
+  background-color: var(--MainYellow);
+  color: var(--textBlack); 
   border: none;
   border-radius: 20px;
   cursor: pointer;

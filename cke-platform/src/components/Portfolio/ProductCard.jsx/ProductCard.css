@@ -1,9 +1,4 @@
-html {
-    --mainGreen: #2B5F29;
-    --mainWhite: #FFFFFF;
-    --mainBlack: #1b1b1b;
 
-}
 
 .card{
     margin-top: var(--margin-top);
