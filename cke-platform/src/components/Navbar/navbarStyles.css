@@ -26,6 +26,7 @@
     background-color: var(--mainWhite);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    box-shadow: var(--box-shadow-card);
     
 }
 
