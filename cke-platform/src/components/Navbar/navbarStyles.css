@@ -60,6 +60,6 @@
 
 .navbar-login button:hover {
     background-color: var(--hover-color);
-    color: var(--hover-color);
+    color: var(--textBlack);
 }
 

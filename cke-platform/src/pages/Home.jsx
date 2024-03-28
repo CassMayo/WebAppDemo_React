@@ -4,6 +4,7 @@ import WhatWeDoSection from '../components/Home/WhatWeDoSection/WhatWeDoSection'
 import HomeStatisticSection from '../components/Home/HomeStatistic/HomeStatisticSection';
 import Trusted from '../components/Home/Trusted/Trusted';
 import Verification from '../components/Home/Verification/Verification';
+import NewsletterSection from '../components/Home/Newsletter/Newsletter';
 
 
 const Home = () => {
@@ -14,6 +15,8 @@ const Home = () => {
       <HomeStatisticSection />
       <Trusted />
       <Verification />
+      <NewsletterSection />
+      
     </div>
   );
 };

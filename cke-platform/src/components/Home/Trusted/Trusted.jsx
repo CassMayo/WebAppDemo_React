@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCube } from '@fortawesome/free-solid-svg-icons'; 
-import './Trusted.css'; 
+import { faCube } from '@fortawesome/free-solid-svg-icons';
+import './Trusted.css';
 
 const HomeStatisticSection = () => (
   <div className="offers-wrapper">

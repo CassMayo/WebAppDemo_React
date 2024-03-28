@@ -1,0 +1,76 @@
+/* NewsletterSection.css */
+
+.newsletter-section {
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    padding: 50px;
+    background-color: var(--mainWhite);
+    color: var(--textBlack); 
+    
+  }
+  
+  .newsletter-box{
+    width: 45em;
+  }
+  .newsletter-section h2 {
+    font-size: 2.5em; 
+    margin-bottom: 0.5em; 
+    font-family: var(--font-family-source-serif);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .newsletter-section p {
+    font-size: 1.5em; 
+    padding-top: 1em;
+    padding-bottom: 1em;
+    
+    font-family: var(--font-family-archivo-serif);
+    font-weight: var(--font-weight-normal);
+  }
+  
+  .newsletter-form {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1em;
+    font-family: var(--font-family-archivo-serif);
+    font-weight: var(--font-weight-normal);
+  }
+  
+  .newsletter-form label {
+    font-size: 1rem;
+    margin-bottom: 0.25rem; 
+    font-family: var(--font-family-archivo-serif);
+    font-weight: var(--font-weight-medium);
+  }
+  
+  .newsletter-form input {
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 25px; 
+    box-shadow: var(--box-shadow-card);
+    width: 500px; 
+    height: 50px;
+    margin-bottom: 1em; 
+  }
+  
+  .subscribe-button {
+    background-color: var(--MainYellow);
+    color: var(--textBlack);
+    border: none;
+    border-radius: 25px; 
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: var(--font-family-source-serif);
+    font-weight: var(--font-weight-bold);
+    font-size: 1em;
+    width: 170px;
+  }
+  
+  .subscribe-button:hover {
+    background-color: var(--hover-color);
+  }
+  
