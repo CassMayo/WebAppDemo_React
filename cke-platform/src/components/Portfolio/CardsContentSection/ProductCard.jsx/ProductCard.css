@@ -1,18 +1,25 @@
 .card {
-    margin-top: var(--margin-top);
-    padding-top: var(--padding-top);
     border-radius: 23px;
     overflow: hidden;
-    width: fit-content;
+    width: 302px;
+    height: 477px;
     background-color: transparent;
+    box-shadow: var(--box-shadow-card);
+
 
 }
 
+.locationText{
+    margin: 0;
+}
+
 .locationDiv {
-    font-family: var(--font-family-source-serif);
-    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-archivo-serif);
+    font-weight: var(--font-weight-normal);
     color: var(--mainWhite);
     display: flex;
+    align-items: center;
+    margin: 0;
 }
 
 .locationSymbol {
@@ -25,18 +32,24 @@
 .cardBackground {
     width: 302px;
     height: 477px;
-    background-size: cover;
+    background-size:contain;
 }
+
+
 
 .cardColorOverlay {
     background: rgb(2, 0, 36);
-    background: linear-gradient(180deg, transparent 21%, var(--mainGreen) 35%);
+    background: linear-gradient(180deg, transparent 30%, var(--mainGreen) 40%);
     height: 100%;
+    padding: 15px;
+}
+.cardContentDiv{
+    padding: 20px;
 }
 
 
 .cardTitle {
-    margin-top: 25px;
+    margin-top: 80px;
     color: var(--mainWhite);
     text-align: center;
     font-family: var(--font-family-source-serif);
@@ -48,12 +61,16 @@
 
 .availableAndPriceDiv {
 
-    margin-top: 75px;
+    margin-top: 25px;
     font-family: var(--font-family-archivo-serif);
     display: flex;
-    outline: red, 2px, solid;
+    text-align: center;
 
     color: var(--mainWhite)
+}
+
+.numberBoxTitle{
+    font-size: 16px;
 }
 
 

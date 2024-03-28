@@ -1,0 +1,11 @@
+
+
+.statisticCard{
+    background-color: var(--mainWhite);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 23px;
+    box-shadow: var(--box-shadow-card);
+
+    width: 300px;
+}
