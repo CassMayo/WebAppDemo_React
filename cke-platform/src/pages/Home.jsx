@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '../components/Herosection/HeroSection';
 import WhatWeDoSection from '../components/WhatWeDoSection/WhatWeDoSection';
+import HomeStatisticSection from '../components/HomeStatistic/HomeStatisticSection';
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <div>
       <HeroSection />
       <WhatWeDoSection />
+      <HomeStatisticSection />
     </div>
   );
 };

@@ -3,6 +3,7 @@ body {
   background-color: var(--bg-color);
   margin: 0;
   padding: 0;
+
   /*Common Font and font type*/
   font-family: var(--font-family-archivo-serif);
   font-weight: var(--font-weight-Bold);
@@ -19,11 +20,18 @@ body {
 }
 
 :root {
+  --margin-top: -90px;
+  --padding-top: 70px;
+
   /*Background color*/
-  --bg-color: #123d0a;
+  --bg-color: #2B5F29;
   --bg-color2: #ffffff;
   --bg-color3: #f2e380;
-  --bg-color4: #081b04;
+  --bg-color5: #1b1b1b;
+
+  /*Background4 er brukt til gradient*/
+  --bg-color4: #2B5F29;
+
 
   /*Gradient color*/
   --gradient-color-top: linear-gradient(to bottom, var(--bg-color4) 0%, var(--bg-color) 100%);
@@ -42,6 +50,7 @@ body {
   /*Text - color*/
   --text-color: white;
   --text-color2: black;
+  --text-color3: var(--bg-color);
 
   /*Hover-color*/
   --hover-color: #dbd835;
@@ -55,6 +64,7 @@ body {
 
   /*Index variables*/
    --padding : 0 5em;
+   --box-shadow-card: 0 12px 16px rgba(0, 0, 0, 0.4);
   /*Footer variables*/
   --footer-border-color: #444;
   --footer-max-width: 1200px;

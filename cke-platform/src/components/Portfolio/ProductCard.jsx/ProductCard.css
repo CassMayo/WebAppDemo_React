@@ -6,6 +6,8 @@ html {
 }
 
 .card{
+    margin-top: var(--margin-top);
+    padding-top: var(--padding-top);
     border-radius: 23px;
     overflow: hidden;
     width: fit-content;
