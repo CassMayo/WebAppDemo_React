@@ -1,0 +1,13 @@
+.about-container {
+    padding-top: var(--padding-top);
+    margin-top: var(--margin-top);
+    background: url('/images/about-bg.jpg') center no-repeat;
+    background-size: cover;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  

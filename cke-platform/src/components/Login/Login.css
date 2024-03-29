@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    font-family: var(--font-family-source-serif);
   }
   
   .login-page:before {
@@ -31,6 +32,7 @@
     text-align: center;
     z-index: 2; 
     backdrop-filter: blur(2px); 
+    font-weight: var(--font-weight-bold);
   }
   
   .login-form input {
@@ -54,10 +56,11 @@
   
   .login-form button:hover {
     background-color: var(--hover-color);
+    color: var(--textBlack);
   }
   
   .login-links a {
-    color: white;
+    color: var(--mainWhite);
     text-decoration: none;
     display: block;
     margin: 10px 0;
