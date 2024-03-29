@@ -38,8 +38,9 @@
 
 
 .portfolio-btn {
-  padding: 10px 20px;
+
   background-color: var(--mainYellow);
+  padding: 0.625em 1.25em;
   color: var(--textBlack); 
   border: none;
   border-radius: 20px;
