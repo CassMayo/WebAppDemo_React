@@ -11,7 +11,7 @@
 .footer-content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   max-width: var(--footer-max-width);
   margin: auto;
 

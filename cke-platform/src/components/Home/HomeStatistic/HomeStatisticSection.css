@@ -17,19 +17,20 @@
 }
 
 .statistics-container {
-  padding-bottom: 3em;
+  padding-bottom: max(3em, 3vw);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: min(4.5vw, 20em);
 }
 
 .statistic-card {
-  margin-right: 50px;
+  margin-right: max(3.125em, 3vw);
   flex-grow: 0;
-  padding-right: 20px;
+  padding-right: max(1.25em, 1vw);
   text-align: start;
   color: var(--textBlack);
-  max-width: 300px;
+  max-width: 18.75em;
 }
 
 /*Left card*/
@@ -38,23 +39,23 @@
 }
 
 .statistic-number {
-  font-size: 2.5rem;
+  font-size: min(3.75em, 3vw);
   color: var(--textGreen);
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-source-serif);
-  margin-bottom: 10px;
+  margin-bottom: .3em;
 }
 
 .statistic-label {
   font-family: var(--font-family-source-serif);
   font-weight: var(--font-weight-bold);
-  font-size: 1.3em;
+  font-size: 1.5vw;
 }
 
 .statistic-heading {
   font-family: var(--font-family-source-serif);
   font-weight: var(--font-weight-bold);
-  font-size: 1.5rem;
+  font-size: 2vw;
   margin-bottom: 2em;
 }
 
@@ -67,23 +68,23 @@
 .statistic-description h1 {
   font-family: var(--font-family-source-serif);
   font-weight: var(--font-weight-bold);
-  font-size: 3em;
+  font-size: 2.5vw;
 }
 
 .statistic-description p {
   font-family: var(--font-family-archivo-serif);
   font-weight: var(--font-weight-normal);
-  font-size: 17px;
+  font-size: 1vw;
 }
 
 /*Card right side */
 .featured-in {
-  width: 250px;
-  height: 500px;
-  padding: 20px;
+  width: 20vw;
+  height: auto;
+  padding: max(1.25em, 1vw);
   background-color: var(--mainBlack);
   box-shadow: var(--box-shadow-card);
-  border-radius: 30px;
+  border-radius: max(30px, 2vw);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -95,23 +96,23 @@
 .featured-in h3 {
   font-family: var(--font-family-source-serif);
   font-weight: var(--font-weight-bold);
-  font-size: 2.2em;
+  font-size: 1.8vw;
   margin-bottom: 1em;
   border-bottom: 2px solid rgb(254, 251, 251);
 }
 
 .featured-logos {
-  padding-top: 40px;
+  padding-top: 2.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: max(2.5em, 1.5vw);
   width: 100%;
   filter: brightness(0) invert(1);
 }
 
 .featured-in img {
-  max-width: auto;
-  height: 25px;
+  width: 5vw;
+  height: 1.5625em; 
   margin: 0 auto;
 }
