@@ -12,6 +12,7 @@ import { Helmet } from 'react-helmet';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Portfolio from './pages/Portfolio.jsx';
+import Login from './pages/Login.jsx';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
       <Footer /> 
