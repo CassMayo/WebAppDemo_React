@@ -1,0 +1,10 @@
+
+
+.dropdownItemContainer{
+    background-color: var(--mainWhite);
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid black;
+}

@@ -1,0 +1,20 @@
+
+
+.filterItemContainer{
+    background-color: var(--mainWhite);
+    cursor: pointer;
+
+    width: max-content;
+
+    padding:10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 23px;
+}
+
+.filterItemText{
+    margin: 0;
+}

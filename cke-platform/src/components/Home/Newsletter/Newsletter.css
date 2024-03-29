@@ -51,11 +51,11 @@
     box-shadow: var(--box-shadow-card);
     width: 500px;
     height: 50px;
-    margin-bottom: 1em;
-}
-
-.subscribe-button {
-    background-color: var(--MainYellow);
+    margin-bottom: 1em; 
+  }
+  
+  .subscribe-button {
+    background-color: var(--mainYellow);
     color: var(--textBlack);
     border: none;
     border-radius: 25px;
