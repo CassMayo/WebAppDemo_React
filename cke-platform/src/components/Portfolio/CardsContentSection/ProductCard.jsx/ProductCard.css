@@ -13,19 +13,29 @@
     margin: 0;
 }
 
-.locationDiv {
+.topInfoDiv {
     font-family: var(--font-family-archivo-serif);
     font-weight: var(--font-weight-normal);
     color: var(--mainWhite);
     display: flex;
     align-items: center;
     margin: 0;
+    justify-content: space-between;
+}
+
+.locationDiv {
+    display: flex;
+    align-items: center;
 }
 
 .locationSymbol {
     height: 16px;
     width: 16px;
     fill: var(--mainWhite);
+}
+
+.category {
+    margin: 0;
 }
 
 
@@ -85,4 +95,25 @@
 .descriptionDiv {
     color: var(--mainWhite);
     font-family: var(--font-family-archivo-serif);
+    height: 140px;
+}
+
+.actionButtonsContainer{
+    display: flex;
+    width: 100%;
+    justify-content: right;
+}
+
+.button{
+    background-color: var(--mainYellow);
+    padding: 7.5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius:23px;
+    font-family: var(--font-family-archivo-serif);
+    border: none;
+}
+
+.button:hover{
+    background-color: var(--hover-color);
 }
