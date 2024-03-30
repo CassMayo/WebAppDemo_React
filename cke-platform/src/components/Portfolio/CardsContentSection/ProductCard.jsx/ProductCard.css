@@ -1,12 +1,11 @@
 .card {
     border-radius: 23px;
+    border-color: transparent;
     overflow: hidden;
     width: 302px;
     height: 477px;
     background-color: transparent;
     box-shadow: var(--box-shadow-card);
-
-
 }
 
 .locationText{

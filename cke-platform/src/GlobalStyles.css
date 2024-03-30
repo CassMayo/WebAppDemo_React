@@ -15,6 +15,8 @@
   --textBlack: black;
   --textGreen: var(--mainGreen);
 
+  /*Background color*/
+   --bar-color: rgb(214, 214, 214);
 
   /*Background4 er brukt til gradient*/
   --Gradient-color: #2B5F29;

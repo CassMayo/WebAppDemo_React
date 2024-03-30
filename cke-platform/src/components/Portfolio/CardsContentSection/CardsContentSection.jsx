@@ -1,64 +1,65 @@
+import { useState } from "react";
 
-import ProductCard from "./ProductCard.jsx/ProductCard"
-import DropdownItem from "./DropdownItem/DropdownItem"
-import FilterItem from "./FilterItem/FilterItem"
+import ProductCard from "./ProductCard.jsx/ProductCard";
+import DropdownItem from "./DropdownItem/DropdownItem";
+import FilterItem from "./FilterItem/FilterItem";
+import SearchComponent from "./SearchComponent/SearchComponent";
 
-
-import "./CardsContentSection.css"
-import data from "./CardsContent.json"
-import { useState } from "react"
+import "./CardsContentSection.css";
+import data from "./CardsContent.json";
 
 export default function CardsContentSection() {
+    const [filter, setFilter] = useState([]);
+    const [filterDropDownMenuOpened, setFilterDropDownMenuOpened] = useState(false);
 
-    const [filter, setFilter] = useState([])
-    const [filterDropDownMenuOpened, setFilterDropDownMenuOpened] = useState(false)
+    const [sortingDropDownOpened, setSortingDropDownOpened] = useState(false);
+    const [sortingMethod, setSortingMethod] = useState("Default Sorting");
 
-    const [sortingDropDownOpened, setSortingDropDownOpened] = useState(false)
-    const [sortingMethod, setSortingMethod] = useState("Default Sorting")
-    const allSortingMethods = ["Default Sorting", "Price Ascending", "Price Descending"]
+    const [searchQuery, setSearchQuery] = useState("");
 
-    const categories = data.cards.map((card) => card.type)
+    //Fikset her så at det ikke er duplicates av kategorier i filteret
+    const categories = [...new Set(data.cards.map(card => card.type.toUpperCase()))]; 
+
+    const allSortingMethods = ["Default Sorting", "Price Ascending", "Price Descending"];
 
     const toggleFromFilter = (filterItem) => {
-        if (!filter.includes(filterItem)) {
-            const newFilter = [...filter, filterItem]
-            setFilter(newFilter)
-        }
-        else {
-            const newFilter = filter.filter((category) => category != filterItem)
-            setFilter(newFilter)
-        }
-    }
+        //endret litt her, funker akkurat det samme bare syntax forskjell
+        const newFilter = filter.includes(filterItem) ? filter.filter((category) => category !== filterItem) : [...filter, filterItem];
+        setFilter(newFilter);
+    };
 
     const updateSortingMethod = (newMethod) => {
-        setSortingMethod(newMethod)
+        setSortingMethod(newMethod);
+    };
+
+    //basically bare putta inn search sammen med filter så at det begge blir returnert
+    function filterAndSearchCards() {
+        return data.cards
+            .filter(card => filter.length < 1 || filter.includes(card.type))
+            .filter(card => !searchQuery || card.title.toLowerCase().includes(searchQuery.toLowerCase()));
     }
-
-
-    function filterCards(filter, cards) {
-        if (filter.length < 1) {
-            return cards
-        }
-        else {
-            return cards.filter((card) => filter.includes(card.type))
-        }
-    }
-
 
     function sortByChosenSortingMethod(cardA, cardB) {
-
-        if (sortingMethod == "Price Ascending") return parseInt(cardA.price) - parseInt(cardB.price)
-        if (sortingMethod == "Price Descending") return parseInt(cardB.price) - parseInt(cardA.price)
-
-        return 0 // sort default if none are true. 
+        if (sortingMethod === "Price Ascending") return parseInt(cardA.price) - parseInt(cardB.price);
+        if (sortingMethod === "Price Descending") return parseInt(cardB.price) - parseInt(cardA.price);
+        return 0; // sort default if none are true.
     }
 
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+    };
 
 
     return (
 
         <div className="contentContainer">
             <div className="sortingAndFilterRow">
+
+
+                <SearchComponent className="search-container" onSearch={handleSearch} />
+
+
+
                 <div className="dropDownMenu filterDropDown" onClick={() => { setFilterDropDownMenuOpened(!filterDropDownMenuOpened) }}>
                     <div className="dropDownMenuBox">
                         <p>Filter</p>
@@ -98,23 +99,28 @@ export default function CardsContentSection() {
 
 
             <div className="cardsContainer">
+                {/*Ikke ideelt mens siden vi ikke har backend... >-< bør egentlig ha error og bruke erorr state*/ }
 
-                {filterCards(filter, data.cards).sort(sortByChosenSortingMethod).map((card, index) =>
-                    <ProductCard
-                        image={card.image}
-                        imageAlt={card.imageAlt}
-                        title={card.title}
-                        type={card.type}
-                        credits={card.credits}
-                        price={card.price}
-                        location={card.location}
-                        description={card.description}
-                        key={index}
-                    />
+                {filterAndSearchCards().sort(sortByChosenSortingMethod).length === 0 ? (
+                    <p className="no-cards-found">No credit found.</p> 
+                ) : (
+                    filterAndSearchCards()
+                        .sort(sortByChosenSortingMethod)
+                        .map((card, index) => (
+                            <ProductCard
+                                image={card.image}
+                                imageAlt={card.imageAlt}
+                                title={card.title}
+                                type={card.type}
+                                credits={card.credits}
+                                price={card.price}
+                                location={card.location}
+                                description={card.description}
+                                key={index}
+                            />
+                        ))
                 )}
             </div>
         </div>
     )
 }
-
-

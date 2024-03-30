@@ -9,7 +9,7 @@ const LoginPage = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     localStorage.setItem('username', credentials.username);
-    navigate('/');
+    navigate('/portfolio');
   };
 
   const handleChange = (e) => {

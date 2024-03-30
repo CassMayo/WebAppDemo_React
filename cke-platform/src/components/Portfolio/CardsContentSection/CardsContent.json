@@ -1,5 +1,7 @@
 {
     "cards" : [
+        
+
         {
             "title": "Keani Lestari",
             "type": "Tree Stored Carbon",
@@ -22,10 +24,44 @@
             "imageAlt": "skip også",
 
             "credits": "00",
+            "price": "500",
+
+            "location": "Sted, by",
+            "description": "beskrivelse av organisasjonen som selger / hva dette produktet tilbyr"
+        },
+            
+            {
+            "title": "TEST TITTEL",
+            "type": "TYPE STORAGE",
+
+            "image": "bilde her, kan evt bare skrive en beskrivelse dere ønsker så fikser jeg det senere",
+            "imageAlt": "skip også",
+
+            "credits": "00",
             "price": "00",
 
             "location": "Sted, by",
             "description": "beskrivelse av organisasjonen som selger / hva dette produktet tilbyr"
+        },
+
+        {
+            "title": "CLEAR BLUE SEA",
+            "type": "TYPE TEST",
+
+            "image": "bilde her, kan evt bare skrive en beskrivelse dere ønsker så fikser jeg det senere",
+            "imageAlt": "skip også",
+
+            "credits": "1",
+            "price": "1",
+
+            "location": "Sted, by",
+            "description": "beskrivelse av organisasjonen som selger / hva dette produktet tilbyr"
         }
+
+       
+        
+
+
+        
     ]
 }

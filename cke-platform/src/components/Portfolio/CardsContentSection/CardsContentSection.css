@@ -11,6 +11,9 @@
 
 
 .dropDownMenu {
+    position: relative; 
+    flex-shrink: 0; 
+    flex-grow: 0; 
     min-width: 200px;
     background-color: var(--mainWhite);
     margin: 0;
@@ -18,7 +21,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    overflow: hidden;
     padding: 10px;
 }
 
@@ -26,9 +28,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     cursor: pointer;
+    background-color: var(--bar-color);
+    border-radius: 30px;
+    height: 45px;
+    padding: 0 20px;
+}
 
+ .dropDownMenuBox p {
+    margin: 0;
+    font-size: 20px;
+    font-family: var(--font-family-archivo-serif);
+    font-weight: var(--font-weight-bold);
+    width: 100%;
 }
 
 .dropDownIcon {
@@ -39,11 +51,12 @@
 
 
 .sortingAndFilterRow {
+    height: 8vw;
     display: flex;
     gap: 30px;
     margin-bottom: 25px;
+    align-items: flex-start; 
 }
-
 p {
     margin: 0;
 }
@@ -55,9 +68,14 @@ ul {
 
 
 .dropDownMenuItems {
-    margin-top: 10px;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    z-index: 1000;
     background-color: white;
-    width: 100%;
+    width: 100%; 
+    max-height: 90px; 
+    overflow-y: auto;
 }
 
 .dropDownMenuItems.inactive {
@@ -69,4 +87,9 @@ ul {
     display: flex;
     gap: 10px;
     height: 50px;
+}
+.search-container {
+    background-color: white;
+    position: relative;
+    
 }
