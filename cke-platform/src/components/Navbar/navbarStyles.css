@@ -21,8 +21,8 @@
 .navbar-links {
     display: flex;
     height: 3em;
-    width: 37vw;
-    justify-content: end;
+    width: 500px;
+    justify-content: space-between;
     margin-right: -20px;
     align-items: center;
     list-style: none;
