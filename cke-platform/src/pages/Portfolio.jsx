@@ -3,17 +3,13 @@ import StatisticCardSection from "../components/Portfolio/StatisticCardSection/S
 import "../components/Portfolio/Portfolio.css";
 
 export default function Portfolio() {
-
-
+    
     return (
         <div className="portfolio-body">
             <div className="portfolio-content">
                 <StatisticCardSection />
                 <CardsContentSection />
             </div>
-
         </div>
     )
-
-
 }

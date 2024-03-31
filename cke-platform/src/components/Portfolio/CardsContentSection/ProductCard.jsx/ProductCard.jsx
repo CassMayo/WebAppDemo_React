@@ -33,7 +33,7 @@ export default function ProductCard(props) {
                             </div>
 
                             <div className="price ">
-                                <h4 className='numberBoxTitle'>Credits Available</h4>
+                                <h4 className='numberBoxTitle'>Price</h4>
                                 <div className="numberBox">
                                     <p>{props.price}</p>
                                 </div>

@@ -116,4 +116,5 @@
   width: 8vw;
   height: 2em; 
   margin: 0 auto;
+  object-fit:contain;
 }

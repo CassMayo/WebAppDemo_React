@@ -14,7 +14,7 @@
     position: relative; 
     flex-shrink: 0; 
     flex-grow: 0; 
-    min-width: 200px;
+    min-width: 300px;
     background-color: var(--mainWhite);
     margin: 0;
     border-radius: 23px;
@@ -30,16 +30,16 @@
     justify-content: space-between;
     cursor: pointer;
     background-color: var(--bar-color);
-    border-radius: 30px;
+    border-radius: 23px;
     height: 45px;
     padding: 0 20px;
 }
 
  .dropDownMenuBox p {
     margin: 0;
-    font-size: 20px;
+    font-size: 16px;
     font-family: var(--font-family-archivo-serif);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-normal);
     width: 100%;
 }
 
@@ -51,9 +51,9 @@
 
 
 .sortingAndFilterRow {
-    height: 8vw;
+    height: 45px;
     display: flex;
-    gap: 30px;
+    gap: 10px;
     margin-bottom: 25px;
     align-items: flex-start; 
 }
@@ -72,10 +72,12 @@ ul {
     top: 100%; 
     left: 0;
     z-index: 1000;
-    background-color: white;
+    background-color: var(--bar-color);
     width: 100%; 
     max-height: 90px; 
     overflow-y: auto;
+
+    border-radius: 23px;
 }
 
 .dropDownMenuItems.inactive {
