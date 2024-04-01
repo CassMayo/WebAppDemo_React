@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -11,7 +10,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
+import AboutPage from './pages/About.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Login from './pages/Login.jsx';
 
@@ -28,7 +27,7 @@ function App() {
       <div className="content"> 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/login" element={<Login />} />
         </Routes>

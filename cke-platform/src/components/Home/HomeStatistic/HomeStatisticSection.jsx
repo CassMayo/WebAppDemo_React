@@ -21,7 +21,7 @@ const HomeStatisticSection = () => (
     </div>
     <aside className="featured-in">
       <h3>Featured In</h3>
-        <div className="featured-logos">
+      <div className="featured-logos">
         <img src="/assets/Finansavisenlogo.png" alt="Finansavisen" />
         <img src="/assets/2560px-Business_Insider_Logo.svg.png" alt="Business Insider" />
         <img src="/assets/forbes-logo-white.png" alt="Forbes" />

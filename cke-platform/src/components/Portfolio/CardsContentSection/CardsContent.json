@@ -10,7 +10,7 @@
             "imageAlt": "Image of forrest",
 
             "credits": "234 744",
-            "price": "200",
+            "price": "100",
 
             "location": "Jakarta",
             "description": "Keani Lestari is a plant operator in Jakarta, Indonesia since 2013. They own and develop land with mixed forests. The company utilizes locally sourced ...."
@@ -20,10 +20,10 @@
             "title": "ANNEN TITTEL",
             "type": "TYPE STORAGE",
 
-            "image": "bilde her, kan evt bare skrive en beskrivelse dere ønsker så fikser jeg det senere",
+            "image": "https://picsum.photos/302/477",
             "imageAlt": "skip også",
 
-            "credits": "00",
+            "credits": "0",
             "price": "500",
 
             "location": "Sted, by",
@@ -34,11 +34,11 @@
             "title": "TEST TITTEL",
             "type": "TYPE STORAGE",
 
-            "image": "bilde her, kan evt bare skrive en beskrivelse dere ønsker så fikser jeg det senere",
+            "image": "https://picsum.photos/302/477",
             "imageAlt": "skip også",
 
-            "credits": "00",
-            "price": "00",
+            "credits": "0",
+            "price": "200",
 
             "location": "Sted, by",
             "description": "beskrivelse av organisasjonen som selger / hva dette produktet tilbyr"
@@ -48,11 +48,11 @@
             "title": "CLEAR BLUE SEA",
             "type": "TYPE TEST",
 
-            "image": "bilde her, kan evt bare skrive en beskrivelse dere ønsker så fikser jeg det senere",
+            "image": "https://picsum.photos/302/477",
             "imageAlt": "skip også",
 
             "credits": "1",
-            "price": "1",
+            "price": "300",
 
             "location": "Sted, by",
             "description": "beskrivelse av organisasjonen som selger / hva dette produktet tilbyr"
