@@ -24,6 +24,7 @@
 
 .cardBackground{
     height: 100%;
+    background-size: contain;    
 }
 .cardColorOverlay{
     height: 100%;
