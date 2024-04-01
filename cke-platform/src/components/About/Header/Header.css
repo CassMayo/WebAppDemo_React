@@ -1,7 +1,6 @@
 .header {
     text-align: start;
     background-color: transparent;
-    padding: 2rem;
     color: var(--mainWhite);
     height: 200px;
     padding: 15vw 0;
@@ -10,13 +9,13 @@
   }
   
   .header h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     font-family: var(--font-family-archivo-serif);
   } 
   
   .header p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1.5;   
     font-family: var(--font-family-source-serif);
   }
