@@ -20,7 +20,7 @@ export default function CardsContentSection() {
     //Fikset her så at det ikke er duplicates av kategorier i filteret
     const categories = [...new Set(data.cards.map(card => card.type.toUpperCase()))]; 
 
-    const allSortingMethods = ["Default Sorting", "Price Ascending", "Price Descending"];
+    const allSortingMethods = ["Default Sorting", "Price Ascending", "Price Descending", "Available Credits Ascending", "Available Credits Descending"];
 
     const toggleFromFilter = (filterItem) => {
         //endret litt her, funker akkurat det samme bare syntax forskjell
@@ -42,6 +42,9 @@ export default function CardsContentSection() {
     function sortByChosenSortingMethod(cardA, cardB) {
         if (sortingMethod === "Price Ascending") return parseInt(cardA.price) - parseInt(cardB.price);
         if (sortingMethod === "Price Descending") return parseInt(cardB.price) - parseInt(cardA.price);
+        if (sortingMethod === "Available Credits Ascending") return parseInt(cardA.credits) - parseInt(cardB.credits)
+        if (sortingMethod === "Available Credits Descending") return parseInt(cardB.credits) - parseInt(cardA.credits)
+        
         return 0; // sort default if none are true.
     }
 
