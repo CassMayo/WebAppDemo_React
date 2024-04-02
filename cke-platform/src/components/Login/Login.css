@@ -1,6 +1,6 @@
 .login-page {
     padding-top: var(--padding-top);
-    margin-top: var(--margin-top);
+    margin-top: -100px;
     background: url('/images/valley.jpg') center no-repeat;
     background-size: cover;
     height: 100vh;

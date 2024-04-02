@@ -3,7 +3,7 @@
     background-color: transparent;
     color: var(--mainWhite);
     height: 200px;
-    padding: 15vw 0;
+    padding-top: 8em;
     margin-right: 40vw;
     z-index: 2;
   }
