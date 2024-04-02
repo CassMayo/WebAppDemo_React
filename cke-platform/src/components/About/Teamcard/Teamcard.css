@@ -1,0 +1,79 @@
+.teamMemberCard {
+  background-color: rgba(255, 255, 255, 0.123);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: start;
+  width: 16vw;
+  height: 50vh;
+  transition: transform 0.3s ease;
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(4px);
+  margin: 1rem;
+  position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.memberImageContainer {
+  margin-bottom: 1rem;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.memberImage {
+  border-radius: 50%;
+  width: 100%; 
+  height: auto;   
+}
+
+.memberName {
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--textWhite);
+  font-family: var(--font-family-source-serif);
+  font-weight: var(--font-weight-bold);
+}
+
+.memberTitle {
+  font-size: 1rem;
+  color: var(--textWhite);
+  font-family: var(--font-family-source-serif);
+  font-weight: var(--font-weight-bold);
+  padding-bottom: 0.5rem;
+}
+
+.memberDescription {
+  font-size: 1rem;
+  color: var(--textWhite);
+  font-family: var(--font-family-archivo-serif);
+  font-weight: var(--font-weight-normal);
+  padding: 0.8em 0;
+  flex-grow: 1;
+}
+
+.socialLinks {
+  display: flex;
+  position: absolute;
+  bottom: 1rem; 
+  left: 50%; 
+  transform: translateX(-50%); 
+}
+
+.socialLink {
+  margin: 0 0.5rem;
+  color: var(--textWhite); 
+}
+
+.socialLink:hover {
+  color: var(--hove); 
+}
+
+.socialLink svg {
+  width: 24px;
+  height: 24px;
+}

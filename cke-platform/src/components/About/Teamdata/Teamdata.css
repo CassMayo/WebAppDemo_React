@@ -1,0 +1,16 @@
+.leadershipTeam {
+  background-color: transparent;
+  text-align: start;
+}
+
+.leadershipTeam h2 {
+  font-size: 1.75rem;
+  color: var(--textWhite);
+  margin-bottom: 1rem;
+}
+
+.teamMembers {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
