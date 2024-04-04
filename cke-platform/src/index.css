@@ -1,5 +1,6 @@
 /*Global attributes*/
 body {
+
   background-color: var(--mainGreen);
   margin: 0;
   margin-top: -10px;
@@ -9,6 +10,7 @@ body {
   font-family: var(--font-family-archivo-serif);
   font-weight: var(--font-weight-Bold);
   
+  /*Common text color*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
