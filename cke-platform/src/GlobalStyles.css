@@ -17,6 +17,7 @@
 
   /*Background color*/
    --bar-color: rgb(214, 214, 214);
+   --bar-color-hover: rgb(171, 171, 171);
 
   /*Background4 er brukt til gradient*/
   --Gradient-color: var(--mainGreen);

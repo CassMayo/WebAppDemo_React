@@ -17,50 +17,109 @@
         },
 
         {
-            "title": "ANNEN TITTEL",
-            "type": "TYPE STORAGE",
-
-            "image": "https://picsum.photos/302/477",
-            "imageAlt": "skip også",
-
-            "credits": "0",
-            "price": "500",
-
-            "location": "Sted, by",
-            "description": "beskrivelse av organisasjonen som selger / hva dette produktet tilbyr"
-        },
-            
-            {
-            "title": "TEST TITTEL",
-            "type": "TYPE STORAGE",
-
-            "image": "https://picsum.photos/302/477",
-            "imageAlt": "skip også",
-
-            "credits": "0",
-            "price": "200",
-
-            "location": "Sted, by",
-            "description": "beskrivelse av organisasjonen som selger / hva dette produktet tilbyr"
+            "title": "GreenCanopy Co.",
+            "type": "Renewable Energy Credits",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image of wind turbines",
+            "credits": "150 000",
+            "price": "250",
+            "location": "Amsterdam",
+            "description": "GreenCanopy Co. specializes in renewable energy projects and sells energy credits. They have been successfully reducing carbon footprint since 2008, with investments in wind and solar technology."
         },
 
         {
-            "title": "CLEAR BLUE SEA",
-            "type": "TYPE TEST",
-
-            "image": "https://picsum.photos/302/477",
-            "imageAlt": "skip også",
-
-            "credits": "1",
+            "title": "AquaPurify Solutions",
+            "type": "Water Purification Offset",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image of water purification system",
+            "credits": "580 500",
             "price": "300",
+            "location": "San Francisco",
+            "description": "AquaPurify Solutions focuses on water purification projects that enhance local ecosystems. They provide offsets through habitat restoration and water treatment innovations."
+        },
 
-            "location": "Sted, by",
-            "description": "beskrivelse av organisasjonen som selger / hva dette produktet tilbyr"
+        {
+            "title": "BreezeN Energy",
+            "type": "Wind Energy",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image of wind farm",
+            "credits": "650 000",
+            "price": "350",
+            "location": "Berlin",
+            "description": "BreezeN Energy is a global leader in wind energy. The company owns numerous wind farms across the globe, generating renewable energy and selling wind energy credits."
+        },
+
+        {
+            "title": "SunnyScape",
+            "type": "Solar Energy",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image of solar panels",
+            "credits": "860 000",
+            "price": "400",
+            "location": "Seoul",
+            "description": "SunnyScape is a solar energy company based in Seoul, South Korea. They have implemented advanced solar technology to harness the power of the sun and sell solar energy credits."
+        },
+
+        {
+            "title": "DeepOceans United",
+            "type": "Ocean Conservation Efforts",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image of the ocean",
+            "credits": "940 000",
+            "price": "425",
+            "location": "Oslo",
+            "description": "DeepOceans United is dedicated to ocean conservation. Their efforts include habitat restoration, marine species protection, and cleaning plastic from the ocean."
+        },
+        {
+            "title": "Wildlands Conservation Co.",
+            "type": "Nature Reserve Projects",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image of nature reserve",
+            "credits": "760 000",
+            "price": "380",
+            "location": "Cape Town",
+            "description": "Wildlands Conservation Co. operates numerous nature reserve projects around the world. Their efforts focus on biodiversity conservation and habitat protection."
+        },
+        {
+            "title": "EcoEarth Institute",
+            "type": "Soil Sequestration",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image of a field",
+            "credits": "300 000",
+            "price": "220",
+            "location": "Milan, Italy",
+            "description": "EcoEarth Institute is an environmental non-profit dedicated to implementing soil sequestration techniques in the farming industry. They've effectively reduced carbon dioxide levels through these projects."
+        },
+        {
+            "title": "Phoenix Renewable Technologies",
+            "type": "Geothermal Energy",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image showing geothermal energy usage",
+            "credits": "500 000",
+            "price": "275",
+            "location": "Reykjavík, Iceland",
+            "description": "Phoenix Renewable Technologies is a pioneer in harnessing geothermal energy. They have several geothermal power plants in operation, helping to reduce dependency on fossil fuels and CO2 emissions."
+        },
+        {
+            "title": "PureAir Solutions",
+            "type": "Air Purification Projects",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image of an air purifier",
+            "credits": "400 000",
+            "price": "200",
+            "location": "San Jose, USA",
+            "description": "PureAir Solutions are leaders in air purification technology. They build and maintain air purifiers throughout cities, leading to improved air quality and offsetting carbon emissions."
+        },
+        {
+            "title": "Recycle Pro",
+            "type": "Waste Management",
+            "image": "https://picsum.photos/301/475",
+            "imageAlt": "Image of recycling",
+            "credits": "350 000",
+            "price": "150",
+            "location": "London, UK",
+            "description": "Recycle Pro focuses on improving waste management and recycling programs. Their efforts in upcycling waste materials directly contribute to reducing carbon footprint."
         }
-
-       
-        
-
 
         
     ]

@@ -18,7 +18,7 @@ export default function CardsContentSection() {
     const [searchQuery, setSearchQuery] = useState("");
 
     //Fikset her så at det ikke er duplicates av kategorier i filteret
-    const categories = [...new Set(data.cards.map(card => card.type.toUpperCase()))]; 
+    const categories = [...new Set(data.cards.map(card => card.type))];
 
     const allSortingMethods = ["Default Sorting", "Price Ascending", "Price Descending", "Available Credits Ascending", "Available Credits Descending"];
 
@@ -44,7 +44,7 @@ export default function CardsContentSection() {
         if (sortingMethod === "Price Descending") return parseInt(cardB.price) - parseInt(cardA.price);
         if (sortingMethod === "Available Credits Ascending") return parseInt(cardA.credits) - parseInt(cardB.credits)
         if (sortingMethod === "Available Credits Descending") return parseInt(cardB.credits) - parseInt(cardA.credits)
-        
+
         return 0; // sort default if none are true.
     }
 
@@ -86,7 +86,7 @@ export default function CardsContentSection() {
                     </div>
                     <div className={`dropDownMenuItems ${sortingDropDownOpened ? 'active' : 'inactive'}`}>
                         <ul>
-                            {allSortingMethods.filter((method) => method != sortingMethod).map((method, index) => <DropdownItem name={method} doOnClick={updateSortingMethod} key={index} />)}
+                            {allSortingMethods.map((method, index) => <DropdownItem name={method} doOnClick={updateSortingMethod} key={index} className={`${sortingMethod == method ? 'chosenSortingMethod' : "notChosenSortingMethod"} activeSortingMethod`} />)}
                         </ul>
                     </div>
                 </div>
@@ -102,10 +102,15 @@ export default function CardsContentSection() {
 
 
             <div className="cardsContainer">
-                {/*Ikke ideelt mens siden vi ikke har backend... >-< bør egentlig ha error og bruke erorr state*/ }
+                {/*Ikke ideelt mens siden vi ikke har backend... >-< bør egentlig ha error og bruke error state*/}
 
                 {filterAndSearchCards().sort(sortByChosenSortingMethod).length === 0 ? (
-                    <p className="no-cards-found">No credit found.</p> 
+                    <p className="no-cards-found">No credit found with given parameters <br /><br />
+                    filters: [{filter}]<br/>
+                    search query: {searchQuery ? searchQuery : "No search made" } <br />
+                    sorting: {sortingMethod}
+                    
+                    </p>
                 ) : (
                     filterAndSearchCards()
                         .sort(sortByChosenSortingMethod)

@@ -1,9 +1,8 @@
 .dropdownItemContainer{
     display: flex;
-    margin-top: 10px;
+    gap: 10px;
     justify-content: space-between;
     width: 100%;
-    border-bottom: 1px solid black;
     cursor: pointer;
 
     
@@ -13,5 +12,5 @@
 }
 
 .dropdownItemContainer:hover{
-    background: linear-gradient(0deg, rgba(66, 66, 66, 0.5) 0%, rgba(252, 252, 252, 0.716) 80%);
+    background: var(--bar-color-hover)
 }

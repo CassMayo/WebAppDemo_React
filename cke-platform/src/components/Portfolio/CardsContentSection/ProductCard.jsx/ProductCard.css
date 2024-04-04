@@ -15,10 +15,23 @@
 }
 .locationDiv{
     display: flex;
+    align-items: center;
     
 }
+
+.locationText{
+    margin-bottom: 0;
+    padding: 0;
+    height: fit-content;
+}
+
 .locationSymbol{
     fill: white;
+}
+
+.category{
+    width: 125px;
+    text-align: right;
 }
 
 
@@ -48,7 +61,7 @@
 .cardContentDiv{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:space-around;
 
     color: var(--mainWhite);
 
@@ -57,6 +70,9 @@
 }
 
 .availableAndPriceDiv{
+
+    margin-top: 20px;
+
     display: flex;
     justify-content: space-between
 }
@@ -76,4 +92,9 @@
     width: 100px;
     text-align: center;
     border-radius: 23px;
+}
+
+
+.descriptionDiv{
+    margin-top: 10px;
 }
