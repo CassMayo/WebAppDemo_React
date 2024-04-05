@@ -1,9 +1,9 @@
 .about-container {
     padding-top: var(--padding-top);
-    margin-top: var(--margin-top);
+    margin-top: -100px;
     background: url('/images/about-bg.jpg') center no-repeat;
     background-size: cover;
-    height: 150vh;
+    height: 220vh;
     padding: var(--padding);
     z-index: -1000;
     
@@ -17,6 +17,9 @@
     left: 0;
     background: radial-gradient(circle, transparent, #c7969683 100%);
     z-index: 0; 
-    height: 150vh;
+    height: 250vh;
   }
   
+.section {
+   padding-bottom: 9vw;
+  }
