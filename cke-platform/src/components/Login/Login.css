@@ -9,6 +9,7 @@
     align-items: center;
     position: relative;
     font-family: var(--font-family-source-serif);
+    list-style: none;
   }
   
   .login-page:before {

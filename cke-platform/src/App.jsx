@@ -13,6 +13,9 @@ import Home from './pages/Home.jsx';
 import AboutPage from './pages/About.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Login from './pages/Login.jsx';
+import Company from './pages/CompanyPage.jsx';
+import Register from './pages/Register.jsx';
+import User from './pages/User.jsx';
 
 function App() {
   return (
@@ -30,6 +33,10 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/company" element={<Company />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/user" element={<User />} />
+        
         </Routes>
       </div>
       <Footer /> 
