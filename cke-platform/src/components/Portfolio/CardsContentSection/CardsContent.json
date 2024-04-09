@@ -1,7 +1,6 @@
 {
     "cards" : [
         
-
         {
             "title": "Keani Lestari",
             "type": "Tree Stored Carbon",
@@ -120,7 +119,5 @@
             "location": "London, UK",
             "description": "Recycle Pro focuses on improving waste management and recycling programs. Their efforts in upcycling waste materials directly contribute to reducing carbon footprint."
         }
-
-        
     ]
 }

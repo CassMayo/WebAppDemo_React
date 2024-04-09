@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ProductCard from "./ProductCard.jsx/ProductCard";
 import DropdownItem from "./DropdownItem/DropdownItem";
@@ -8,7 +8,29 @@ import SearchComponent from "./SearchComponent/SearchComponent";
 import "./CardsContentSection.css";
 import data from "./CardsContent.json";
 
+import axios from 'axios'
+
 export default function CardsContentSection() {
+
+    const [listings, setListings] = useState([])
+
+    useEffect(() => {
+        console.log("getting content......")
+        axios
+            .get('http://localhost:5050/listings/')
+            .then(response => {
+                console.log("response: ", response)
+                setListings(response.data);
+            })
+            .catch(error => {
+                console.log("mic check mic check")
+                console.error('Error!:', error)
+            })
+    }, [])
+
+
+
+
     const [filter, setFilter] = useState([]);
     const [filterDropDownMenuOpened, setFilterDropDownMenuOpened] = useState(false);
 
@@ -62,7 +84,6 @@ export default function CardsContentSection() {
                 <SearchComponent className="search-container" onSearch={handleSearch} />
 
 
-
                 <div className="dropDownMenu filterDropDown" onClick={() => { setFilterDropDownMenuOpened(!filterDropDownMenuOpened) }}>
                     <div className="dropDownMenuBox">
                         <p>Filter</p>
@@ -92,8 +113,6 @@ export default function CardsContentSection() {
                 </div>
 
 
-
-
                 <div className="activeFiltersDiv">
                     {filter.map((filterName, index) => <FilterItem name={filterName} key={index} removeFilter={toggleFromFilter} />)}
                 </div>
@@ -104,12 +123,13 @@ export default function CardsContentSection() {
             <div className="cardsContainer">
                 {/*Ikke ideelt mens siden vi ikke har backend... >-< bør egentlig ha error og bruke error state*/}
 
+
                 {filterAndSearchCards().sort(sortByChosenSortingMethod).length === 0 ? (
                     <p className="no-cards-found">No credit found with given parameters <br /><br />
-                    filters: [{filter}]<br/>
-                    search query: {searchQuery ? searchQuery : "No search made" } <br />
-                    sorting: {sortingMethod}
-                    
+                        filters: [{filter}]<br />
+                        search query: {searchQuery ? searchQuery : "No search made"} <br />
+                        sorting: {sortingMethod}
+
                     </p>
                 ) : (
                     filterAndSearchCards()
@@ -128,6 +148,8 @@ export default function CardsContentSection() {
                             />
                         ))
                 )}
+
+
             </div>
         </div>
     )
