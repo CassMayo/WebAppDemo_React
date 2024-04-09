@@ -4,10 +4,10 @@
 
 import './Listing.css'
 import data from '../CardsContentSection/CardsContent.json'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useEffect, useState, useContext } from 'react'
+import { useParams, useNavigate } from 'react-router-dom';
 import CustomLink from '../../Navbar/CustomLink';
-
+import { PurchaseContext } from '../../logic/PurchaseContext';
 
 
 
@@ -16,11 +16,26 @@ export default function Listing() {
 
     const { id } = useParams()
     const [listing, setListing] = useState([])
+    const [amount, setAmount] = useState(10)
+
+    const handleAmountChange = (event) => {
+        setAmount(Number(event.target.value))
+    }
 
     useEffect(() => {
         setListing(data.cards[id])
         console.log(listing)
     })
+
+    /* allows us to navigate to other page using code */
+    const navigate = useNavigate(); 
+    /* Context handling for remembering bought items. Used to tell certificate what data to show */
+    const { addPurchasedItem} = useContext(PurchaseContext)
+    const handlePurchase = () => {
+        const purchasedItem = {id, listing: listing, amount }
+        addPurchasedItem(purchasedItem)
+        navigate('/certificate')
+    } 
 
     return (
         <div className='listingBody'>
@@ -39,6 +54,7 @@ export default function Listing() {
 
             <div className='bodyDiv'>
 
+                {/*TODO: swap with images carousel component? */}
                 <div className='Images' style={{ backgroundImage: `url( ${listing.image} )` }}></div>
 
                 <div className='listingInfo'>
@@ -55,10 +71,10 @@ export default function Listing() {
                         </div>
                         <div className='interactions'>
                             <div className='chooseAmount'>
-                                <input type="number" defaultValue="10" className='chooseAmountInputBox interaction' />
+                                <input type="number" onChange={handleAmountChange} defaultValue={amount} className='chooseAmountInputBox interaction' />
                             </div>
                             <div className='buy'>
-                                <button className='buyButton interaction'>Buy</button>
+                                <button onClick={handlePurchase} className='buyButton interaction'>Buy</button>
                             </div>
                         </div>
                     </div>
