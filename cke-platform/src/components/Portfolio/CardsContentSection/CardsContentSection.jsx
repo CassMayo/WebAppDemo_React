@@ -125,6 +125,7 @@ export default function CardsContentSection() {
                                 location={card.location}
                                 description={card.description}
                                 key={index}
+                                id={index}
                             />
                         ))
                 )}

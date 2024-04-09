@@ -1,4 +1,6 @@
 import './ProductCard.css'
+import { Link, useLocation } from "react-router-dom";
+
 
 export default function ProductCard(props) {
 
@@ -49,7 +51,7 @@ export default function ProductCard(props) {
 
 
                         <div className='actionButtonsContainer'>
-                            <button className='button mainAction'>Read more <i className="fa-solid fa-arrow-right"></i></button>
+                            <Link to={`/portfolio/${props.id}`}>Read Moore</Link>
                         </div>
 
                     </div>

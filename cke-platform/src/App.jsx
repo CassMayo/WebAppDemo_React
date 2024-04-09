@@ -16,6 +16,8 @@ import Login from './pages/Login.jsx';
 import Company from './pages/CompanyPage.jsx';
 import Register from './pages/Register.jsx';
 import User from './pages/User.jsx';
+import Listing from './components/Portfolio/Listing/Listing.jsx'
+
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
           <Route path="/company" element={<Company />} />
           <Route path="/register" element={<Register />} />
           <Route path="/user" element={<User />} />
+          <Route path="/portfolio/:id" element={<Listing />} />
         
         </Routes>
       </div>
