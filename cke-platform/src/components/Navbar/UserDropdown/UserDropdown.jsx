@@ -9,7 +9,7 @@ const UserDropdown = () => {
 
   const handleLogout = () => {
     if (window.confirm('Are you sure you want to log out? We will miss you!')) {
-      localStorage.clear();  
+      LocalStorage.clear();
       navigate('/login');
     }
   };

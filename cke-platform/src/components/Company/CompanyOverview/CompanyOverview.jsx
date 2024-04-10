@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import useRoleBasedRedirect from '../Hooks/useRoleBasedRedirect';
+import CompanyStatistics from '../CompanyStatistics/CompanyStatistics';
+import useRoleBasedRedirect from '../../Hooks/useRoleBasedRedirect';
 import './CompanyOverview.css';
 
 const CompanyOverview = () => {
@@ -8,7 +9,6 @@ const CompanyOverview = () => {
     companyLocation: '',
     companyAbout: ''
   });
-
 
   useRoleBasedRedirect(['provider']);
 
@@ -21,6 +21,7 @@ const CompanyOverview = () => {
 
   return (
     <div className="company-overview-container">
+      <h1>Company Overview</h1>
       <div className="company-overview-header">
         <div className="company-logo-placeholder">
           [Company Logo]
@@ -28,8 +29,12 @@ const CompanyOverview = () => {
         <div className="company-overview-info">
           <h1>{companyInfo.companyName}</h1>
           <p>{companyInfo.companyLocation}</p>
-          <p>{companyInfo.companyAbout}</p>
         </div>
+        <CompanyStatistics />
+      </div>
+      <div className="company-about">
+        <h2>About</h2>
+        <p>{companyInfo.companyAbout}</p>
       </div>
     </div>
   );

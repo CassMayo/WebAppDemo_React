@@ -1,0 +1,30 @@
+.tab-buttons {
+  display: flex;
+  padding: 20px;
+}
+
+.tab-button {
+    background-color: var(--mainGreen); 
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    height: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 10px; 
+    outline: none; 
+    transition: background-color 0.3s ease;
+    font-family: var(--font-family-source-serif);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .tab-button:hover {
+    background-color: var(--mainYellow); 
+    color: var(--textBlack);
+  }
+  
+  .tab-button.active {
+    background-color: var(--mainYellow); 
+    color: var(--textBlack);
+  }
+  

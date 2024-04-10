@@ -1,0 +1,25 @@
+.statistics-card {
+    background: var(--mainWhite);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; 
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .statistics-card-value {
+    color: var(--mainGreen); 
+    font-family: var(--font-family-archivo-serif);
+    font-weight: var(--font-weight-bold);
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  .statistics-card-title {
+    color: var(--mainBlack);
+    font-family: var(--font-family-source-serif);
+    font-weight: var(--font-weight-bold);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  

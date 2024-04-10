@@ -1,0 +1,71 @@
+
+.register-credits-form {
+  background-color: var(--mainGreen);
+  color: var(--mainWhite);
+  font-family: var(--font-family-source-serif);
+  font-weight: var(--font-weight-bold);
+  border-radius: 8px;
+  height: auto;
+  padding: 30px;
+  height: 75vh;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px; 
+}
+
+.input-group input,
+.input-group select {
+  width: 57%; 
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc; 
+  font-size: 16px; 
+  box-sizing: border-box; 
+}
+
+
+.input-group input[type="file"] {
+  background-color: var(--mainWhite);
+  border: none;
+}
+
+.input-group input[type="file"]::-webkit-file-upload-button {
+  background-color: var(--mainGreen);
+  color: var(--mainBlack);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.input-group input[type="file"] {
+  color: var(--mainBlack);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: var(--mainGreen);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px; 
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  width: 57%;
+}
+
+.submit-button:hover {
+  background-color: var(--mainGreen);
+
+}
