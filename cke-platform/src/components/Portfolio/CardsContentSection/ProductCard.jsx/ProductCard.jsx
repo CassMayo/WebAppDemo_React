@@ -51,7 +51,10 @@ export default function ProductCard(props) {
 
 
                         <div className='actionButtonsContainer'>
-                            <Link to={`/portfolio/${props.id}`}>Read Moore</Link>
+                            <div className='actionButton'>
+                                <Link className='actionButtonLink' to={`/portfolio/${props.id}`}>Read More</Link>
+                            </div>
+
                         </div>
 
                     </div>
