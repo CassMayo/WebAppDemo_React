@@ -1,43 +1,38 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import StatisticsCard from '../StatisticsCard/StatisticsCard';
 import './FinancialOverview.css';
 
-const FinancialOverview = () => {
-  // Sample data for the graph
-  const data = [
-    { name: 'May', revenue: 4000, credits: 2400 },
-    { name: 'June', revenue: 3000, credits: 1398 },
-    // ...other months
-  ];
+const FinancialOverview = ({ listings }) => {
+  const totalCredits = listings.reduce((acc, credit) => acc + Number(credit.numberOfCredits), 0);
+  const totalValue = listings.reduce((acc, credit) => acc + credit.remainingValue, 0);
 
-  // You would get these stats from your state or props instead
-  const stats = {
-    totalCredits: 1000,
-    totalValue: 50000,
-    totalRevenueYear: 10000,
-    totalRevenueMonth: 2000,
-    averageRevenue: 1500,
-  };
+  const creditsPerMonth = listings.reduce((acc, credit) => {
+    const date = new Date(credit.date);
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const yearMonth = `${date.getFullYear()}-${month}`;
+    acc[yearMonth] = (acc[yearMonth] || 0) + credit.numberOfCredits;
+    return acc;
+  }, {});
+  const dataForChart = Object.entries(creditsPerMonth).map(([yearMonth, credits]) => ({
+    name: yearMonth,
+    Credits: credits,
+  })).sort((a, b) => a.name.localeCompare(b.name));  
 
   return (
     <div className="financial-overview-container">
-      <div className="stats-container">
-        <div className="stat-item">Total Credits in Portfolio: {stats.totalCredits}</div>
-        <div className="stat-item">Total Value of Portfolio: ${stats.totalValue}</div>
-        <div className="stat-item">Total Revenue this Year: ${stats.totalRevenueYear}</div>
-        <div className="stat-item">Total Revenue this Month: ${stats.totalRevenueMonth}</div>
-        <div className="stat-item">Average per Month: ${stats.averageRevenue}</div>
+      <div className="statistics-cards-container">
+        <StatisticsCard title="Total Credits in Portfolio" value={totalCredits} />
+        <StatisticsCard title="Total Value of Portfolio" value={`$${totalValue.toFixed(2)}`} />
       </div>
       <div className="chart-container">
-        <h2>Finans - Graf</h2>
-        <BarChart width={600} height={300} data={data}>
+        <BarChart width={600} height={300} data={dataForChart}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="revenue" fill="#8884d8" />
-          <Bar dataKey="credits" fill="#82ca9d" />
+          <Bar dataKey="Credits" fill="#82ca9d" />
         </BarChart>
       </div>
     </div>

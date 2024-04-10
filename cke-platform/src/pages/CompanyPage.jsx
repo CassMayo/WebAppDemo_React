@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CompanyOverview from '../components/Company/CompanyOverview/CompanyOverview';
 import CurrentListing from '../components/Company/CurrentListing/CurrentListing';
 import RegisterNewCredits from '../components/Company/RegisterCredit/RegisterCredit';
@@ -8,11 +8,44 @@ import '../components/Company/CompanyPage.css';
 
 const CompanyPage = () => {
     const [activeTab, setActiveTab] = useState('currentListings');
-    const [listings, setListings] = useState([]);
+    const [listings, setListings] = useState(() => {
+        const savedListings = localStorage.getItem('listings');
+        return savedListings ? JSON.parse(savedListings) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem('listings', JSON.stringify(listings));
+    }, [listings]);
 
     const addCredit = (newCredit) => {
-        setListings(prevListings => [...prevListings, newCredit]);
+        const creditWithDate = {
+            ...newCredit,
+            date: new Date()
+          };
+          const updatedListings = [...listings, creditWithDate];
+        setListings(updatedListings);
     };
+
+    const handleEditListing = (index, updatedCredit) => {
+        const newRemainingValue = updatedCredit.numberOfCredits * updatedCredit.pricePerCredit;
+        const newListings = listings.map((item, i) => i === index ? {
+            ...item,
+            numberOfCredits: updatedCredit.numberOfCredits,
+            pricePerCredit: updatedCredit.pricePerCredit,
+            remainingValue: newRemainingValue
+        } : item);
+        setListings(newListings);
+    };
+
+    const handleDeleteCredit = (index) => {
+        const updatedListings = listings.filter((_, i) => i !== index);
+        setListings(updatedListings);
+    };
+
+
+
+
+        
 
     return (
         <div className='company-page-container'>
@@ -29,9 +62,9 @@ const CompanyPage = () => {
                 </TabButton>
             </div>
             <div className="page-content">
-                {activeTab === 'currentListings' && <CurrentListing listings={listings} />}
-                {activeTab === 'registerCredits' && <RegisterNewCredits onAddCredit={addCredit} />}
-                {activeTab === 'financialOverview' && <FinancialOverview />}
+                {activeTab === 'currentListings' && <CurrentListing listings={listings} onEdit={handleEditListing} onDelete={handleDeleteCredit} />}
+                {activeTab === 'registerCredits' && <RegisterNewCredits onAddCredit={addCredit} setActiveTab={setActiveTab} />}
+                {activeTab === 'financialOverview' && <FinancialOverview listings={listings} />}
             </div>
         </div>
     );
