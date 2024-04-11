@@ -2,6 +2,8 @@ import './ProductCard.css'
 import { Link, useLocation } from "react-router-dom";
 
 
+
+
 export default function ProductCard(props) {
 
     return (

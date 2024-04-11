@@ -18,34 +18,37 @@ const CompanyPage = () => {
     }, [listings]);
 
     const addCredit = (newCredit) => {
-        const creditWithDate = {
+        const currentCredits = JSON.parse(localStorage.getItem('listings')) || [];
+        const lastId = currentCredits.length ? currentCredits[currentCredits.length - 1].id + 1 : 11; // Start IDs from 11
+    
+        const newListing = {
             ...newCredit,
-            date: new Date()
-          };
-          const updatedListings = [...listings, creditWithDate];
+            id: lastId,
+            date: new Date().toISOString()
+        };
+    
+        const updatedListings = [...currentCredits, newListing];
+        localStorage.setItem('listings', JSON.stringify(updatedListings));
         setListings(updatedListings);
     };
-
+    
     const handleEditListing = (index, updatedCredit) => {
-        const newRemainingValue = updatedCredit.numberOfCredits * updatedCredit.pricePerCredit;
-        const newListings = listings.map((item, i) => i === index ? {
-            ...item,
-            numberOfCredits: updatedCredit.numberOfCredits,
-            pricePerCredit: updatedCredit.pricePerCredit,
-            remainingValue: newRemainingValue
-        } : item);
+        const newListings = listings.map((item, i) =>
+            i === index ? {
+                ...item,
+                numberOfCredits: updatedCredit.numberOfCredits,
+                pricePerCredit: updatedCredit.pricePerCredit,
+                remainingValue: updatedCredit.numberOfCredits * updatedCredit.pricePerCredit
+            } : item
+        );
         setListings(newListings);
     };
+    
 
     const handleDeleteCredit = (index) => {
         const updatedListings = listings.filter((_, i) => i !== index);
         setListings(updatedListings);
     };
-
-
-
-
-        
 
     return (
         <div className='company-page-container'>

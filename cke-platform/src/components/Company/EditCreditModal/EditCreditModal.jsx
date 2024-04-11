@@ -3,39 +3,40 @@ import './EditCreditModal.css';
 
 const EditCreditModal = ({ isOpen, onClose, credit, onSave }) => {
     const [editedCredit, setEditedCredit] = useState({
-        ...credit,
-        changeInCredits: 0, 
-        newPrice: credit.pricePerCredit || 0
+        numberOfCredits: credit.numberOfCredits || 0, 
+        newPrice: credit.pricePerCredit || 0          
     });
 
     useEffect(() => {
         setEditedCredit({
-            ...credit,
-            changeInCredits: 0, 
+            numberOfCredits: credit.numberOfCredits || 0,
             newPrice: credit.pricePerCredit || 0
         });
     }, [credit]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setEditedCredit({ ...editedCredit, [name]: value });
+        setEditedCredit(prevState => ({ ...prevState, [name]: value }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const updatedNumberOfCredits = parseInt(editedCredit.numberOfCredits, 10);
+        const updatedPricePerCredit = parseFloat(editedCredit.newPrice);
+    
         onSave({
-            ...credit,
-            numberOfCredits: parseInt(editedCredit.numberOfCredits),
-            pricePerCredit: parseFloat(editedCredit.pricePerCredit)
+            ...credit,  
+            numberOfCredits: updatedNumberOfCredits,
+            pricePerCredit: updatedPricePerCredit
         });
+        onClose();  
     };
 
-
-    if (!isOpen) return null;
+    if (!isOpen) return null; 
 
     return (
         <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label htmlFor="numberOfCredits">Number of credits:</label>
@@ -49,12 +50,12 @@ const EditCreditModal = ({ isOpen, onClose, credit, onSave }) => {
                         />
                     </div>
                     <div className="input-group">
-                        <label htmlFor="pricePerCredit">New price per credit:</label>
+                        <label htmlFor="newPrice">New price per credit:</label>
                         <input
                             type="number"
-                            id="pricePerCredit"
-                            name="pricePerCredit"
-                            value={editedCredit.pricePerCredit}
+                            id="newPrice"
+                            name="newPrice"
+                            value={editedCredit.newPrice}
                             onChange={handleChange}
                             required
                         />
