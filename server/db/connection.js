@@ -1,6 +1,6 @@
 import {MongoClient, ServerApiVersion} from "mongodb"
 
-const uri = process.env.ATLAS_URI || "none";
+const uri = process.env.ATLAS_URI || "";
 const client = new MongoClient(uri, {
     serverApi: {
         version: ServerApiVersion.v1,
@@ -11,11 +11,9 @@ const client = new MongoClient(uri, {
 
 try {
 
-    console.log("🎇 Trying to connect to atlas DB with URI:", uri)
-
     await client.connect();
 
-    await client.db("admin").command({ping:1});
+    await client.db("admin").command({ ping:1 });
     console.log(
         "✨ Pinged deployment. Successfully connected to MongoDB"
     );  
@@ -25,4 +23,4 @@ try {
 
 let db = client.db("listings")
 
-export default db;
+export default db;  
