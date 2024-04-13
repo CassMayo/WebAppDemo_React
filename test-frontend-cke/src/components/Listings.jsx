@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 const Listing = (props) => (
 
     <div>
-        <ul>
-            <li>{props.listing.title}</li>
-            <li>{props.listing.price}</li>
-            <li>{props.listing.credits}</li>
+        <ul style={{border: "blue 1px solid"}}>
+            <li>id: {props.listing._id}</li>
+            <li>title: {props.listing.title}</li>
+            <li>price: {props.listing.price}</li>
+            <li>credits: {props.listing.credits}</li>
         </ul>
 
         <div>

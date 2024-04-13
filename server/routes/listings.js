@@ -28,7 +28,12 @@ router.post("/", async (req, res) => {
         let newListing = {
             title: req.body.title,
             price: req.body.price,
-            credits: req.body.credits
+            credits: req.body.credits,
+            type: req.body.type,
+            imageUrl: req.body.imageUrl,
+            imageAlt: req.body.imageAlt,
+            location: req.body.location,
+            description: req.body.description,
 
         }
         let collection = await db.collection("listings")
@@ -40,6 +45,7 @@ router.post("/", async (req, res) => {
     }
 })
 
+
 // Update listing by id
 router.patch("/:id", async (req, res) => {
     try{
@@ -48,7 +54,12 @@ router.patch("/:id", async (req, res) => {
             $set: {
                 title: req.body.title,
                 price: req.body.price,
-                credits: req.body.credits
+                credits: req.body.credits,
+                type: req.body.type,
+                imageUrl: req.body.imageUrl,
+                imageAlt: req.body.imageAlt,
+                location: req.body.location,
+                description: req.body.description,
             }
         }
 
@@ -59,6 +70,7 @@ router.patch("/:id", async (req, res) => {
         res.status(500).send("Error updating listing")
     }
 })
+
 
 // Delete listing by id
 router.delete("/:id", async (req, res) => {

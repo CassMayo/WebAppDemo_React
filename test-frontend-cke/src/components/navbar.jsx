@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
     return (
 
-        <>
+        <div style={{display: "flex", gap: "10px"}}>
 
-            <div style={{ width: "100px", height: "100px" }}>
+            <div style={{ backgroundColor:"white", padding:"20px ", borderRadius: "23px"}}>
                 <nav>
                     <NavLink to="/">
                         Home
@@ -13,14 +13,14 @@ export default function Navbar() {
                 </nav>
             </div>
 
-            <div style={{ width: "100px", height: "100px" }}>
+            <div style={{ backgroundColor:"white", padding:"20px ", borderRadius: "23px"}}>
                 <nav>
                     <NavLink to="/create">
                         Create
                     </NavLink>
                 </nav>
             </div>
-        </>
+        </div>
 
     )
 }
