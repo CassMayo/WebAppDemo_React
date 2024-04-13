@@ -11,37 +11,32 @@ export default function Listing() {
     const [amount, setAmount] = useState(10);
     const navigate = useNavigate();
     const { addPurchasedItem } = useContext(PurchaseContext);
+    const params = useParams()
 
     useEffect(() => {
-        const storedListings = JSON.parse(localStorage.getItem('listings')) || [];
-        const companyData = JSON.parse(localStorage.getItem('companyInfo')) || {};
-
-        const listingData = storedListings.find(item => item.id.toString() === id);
-
-        if (listingData) {
-            setListing({
-                title: companyData.companyName || 'Default Company Name',
-                type: listingData.typeOfCredits,
-                image: listingData.image || 'https://picsum.photos/301/475',
-                credits: listingData.numberOfCredits,
-                price: listingData.pricePerCredit,
-                location: companyData.companyLocation || 'Default Location',
-                description: companyData.companyAbout || 'No description available.',
-                id: listingData.id
-            });
-        } else {
-            if (data && data.cards && Array.isArray(data.cards)) { 
-                const index = parseInt(id, 10) - 1; 
-                const staticListing = data.cards[index]; 
-                
-                if (staticListing) {
-                    setListing(staticListing);
-                }
-            } else {
-                console.error('Static data is not in the expected format.'); 
+        async function fetchData() {
+            const id = params.id?.toString() || undefined
+            if (!id) return
+            const response = await fetch(
+                `http://localhost:5050/portfolio/${id}`
+            )
+            if (!response.ok) {
+                const msg = `An error has occured: ${response.statusText}`
+                console.error(msg)
+                return
             }
+
+            const listing = await response.json()
+            if (!listing) {
+                console.warn(`Listing with id: ${id} not found`)
+                navigate("/")
+                return
+            }
+            setListing(listing)
         }
-    }, [id]);
+        fetchData()
+        return
+    }, [params.id, navigate])
 
     const handleAmountChange = (event) => {
         setAmount(Number(event.target.value));

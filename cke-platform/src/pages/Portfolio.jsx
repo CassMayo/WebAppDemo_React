@@ -10,7 +10,7 @@ export default function Portfolio() {
             <div className="portfolio-content">
                 <StatisticCardSection />
                 <CardsContentSection />
-                <AddedProduct />
+                {/* <AddedProduct />*/}
 
             </div>
         </div>
