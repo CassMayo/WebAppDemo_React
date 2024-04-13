@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import CustomLink from '../Navbar/CustomLink';
 
 const LoginPage = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
@@ -9,7 +10,10 @@ const LoginPage = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     localStorage.setItem('username', credentials.username);
-    navigate('/portfolio');
+    //satt userRole til user så at det er default for alle som logger inn
+    localStorage.setItem('userRole', 'user');  
+    //navigate kan byttes utfra use-case scenario
+    navigate('/portfolio');  
   };
 
   const handleChange = (e) => {
@@ -39,7 +43,7 @@ const LoginPage = () => {
           <button type="submit">Login</button>
           <div className="login-links">
             <a href="/forgot-password">Forgot Password?</a>
-            <a href="/register">Register</a>
+            <CustomLink to="/register">Register as provider</CustomLink>
           </div>
         </form>
       </div>

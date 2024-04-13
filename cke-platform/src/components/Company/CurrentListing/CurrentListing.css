@@ -1,0 +1,97 @@
+.current-listings {
+    border-radius: 8px;
+}
+
+.current-listings h1 {
+    font-size: 1.5rem;
+    color: var(--mainBlack);
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.listing-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--mainWhite);
+  align-items: center; 
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  font-family: var(--font-family-source-serif);
+  margin-bottom: 10px; 
+}
+
+
+.listing-details {
+  display: flex;
+  gap: 20px; 
+}
+
+.listing-details p {
+  font-size: 1rem;
+  color: var(--mainBlack);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-source-serif);
+}
+
+.detail-value {
+  color: var(--mainGreen); 
+  font-weight: bold;
+  font-family: var(--font-family-archivo-serif);
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; 
+}
+
+button {
+  background-color: var(--mainYellow);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: var(--mainBlack);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.4;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+.button-container .delete-btn {
+  background-color: red; 
+  color: white; 
+}
+
+.button-container .delete-btn:hover {
+  opacity: 0.4;
+}
+
+.button-container .delete-btn:active {
+  transform: scale(0.95); 
+}
+
+.load-more-btn {
+  background-color: var(--mainYellow);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: var(--mainWhite);
+  cursor: pointer;
+  display: block;
+  width: max-content;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+  opacity: 0.9;
+}
+
+.load-more-btn:active {
+  transform: scale(0.98); 
+}

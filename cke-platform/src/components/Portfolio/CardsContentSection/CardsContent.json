@@ -5,7 +5,7 @@
             "title": "Keani Lestari",
             "type": "Tree Stored Carbon",
 
-            "image": "./assets/lloyd-dirks-NsdonSwJ4NU-unsplash.jpg",
+            "image": "/assets/lloyd-dirks-NsdonSwJ4NU-unsplash.jpg",
             "imageAlt": "Image of forrest",
 
             "credits": "234 744",
@@ -13,6 +13,7 @@
 
             "location": "Jakarta",
             "description": "Keani Lestari is a plant operator in Jakarta, Indonesia since 2013. They own and develop land with mixed forests. The company utilizes locally sourced ...."
+
         },
 
         {
