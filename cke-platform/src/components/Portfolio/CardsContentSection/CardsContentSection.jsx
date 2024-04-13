@@ -6,27 +6,29 @@ import FilterItem from "./FilterItem/FilterItem";
 import SearchComponent from "./SearchComponent/SearchComponent";
 
 import "./CardsContentSection.css";
-import data from "./CardsContent.json";
+// import data from "./CardsContent.json";
 
 import axios from 'axios'
 
 export default function CardsContentSection() {
 
-    const [listings, setListings] = useState([])
+    const [data, setData] = useState([])
 
     useEffect(() => {
-        console.log("getting content......")
-        axios
-            .get('http://localhost:5050/listings/')
-            .then(response => {
-                console.log("response: ", response)
-                setListings(response.data);
-            })
-            .catch(error => {
-                console.log("mic check mic check")
-                console.error('Error!:', error)
-            })
-    }, [])
+        async function getListings() {
+            const response = await fetch(`http://localhost:5050/portfolio/`)
+            if (!response.ok) {
+                const msg = `An error occured: ${response.statusText}`
+                console.error(msg)
+                return
+            }
+            const listings = await response.json()
+            setData(listings)
+        }
+        getListings()
+        return
+    }, [data.length])
+
 
 
 
@@ -40,7 +42,7 @@ export default function CardsContentSection() {
     const [searchQuery, setSearchQuery] = useState("");
 
     //Fikset her så at det ikke er duplicates av kategorier i filteret
-    const categories = [...new Set(data.cards.map(card => card.type))];
+    const categories = [...new Set(data.map(card => card.type))];
 
     const allSortingMethods = ["Default Sorting", "Price Ascending", "Price Descending", "Available Credits Ascending", "Available Credits Descending"];
 
@@ -56,7 +58,7 @@ export default function CardsContentSection() {
 
     //basically bare putta inn search sammen med filter så at det begge blir returnert
     function filterAndSearchCards() {
-        return data.cards
+        return data
             .filter(card => filter.length < 1 || filter.includes(card.type))
             .filter(card => !searchQuery || card.title.toLowerCase().includes(searchQuery.toLowerCase()));
     }

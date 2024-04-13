@@ -18,9 +18,8 @@ export default function Listing() {
             const id = params.id?.toString() || undefined
             if (!id) return
             setIsNew(false)
-            console.log("Fetching from http://localhost:5050/listings/" + params.id.toString())
             const response = await fetch(
-                `http://localhost:5050/listings/${id}`
+                `http://localhost:5050/portfolio/${id}`
             )
             if (!response.ok) {
                 const msg = `An error has occured: ${response.statusText}`
@@ -55,7 +54,7 @@ export default function Listing() {
             let response
 
             if (isNew) {
-                response = await fetch("http://localhost:5050/listings", {
+                response = await fetch("http://localhost:5050/portfolio", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -63,7 +62,7 @@ export default function Listing() {
                     body: JSON.stringify(listing)
                 })
             } else {
-                response = await fetch(`http://localhost:5050/listings/${params.id}`,
+                response = await fetch(`http://localhost:5050/portfolio/${params.id}`,
                     {
                         method: "PATCH",
                         headers: {

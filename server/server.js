@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/listings', listings);
+app.use('/portfolio', listings);
 
 
 app.listen(PORT, () => {

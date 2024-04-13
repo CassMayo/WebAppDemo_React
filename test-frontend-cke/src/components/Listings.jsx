@@ -29,7 +29,7 @@ export default function Listings() {
 
     useEffect(() => {
         async function getListings() {
-            const response = await fetch(`http://localhost:5050/listings/`)
+            const response = await fetch(`http://localhost:5050/portfolio/`)
             if (!response.ok) {
                 const msg = `An error occured: ${response.statusText}`
                 console.error(msg)
@@ -43,7 +43,7 @@ export default function Listings() {
     }, [listings.length])
 
     async function deleteListing(id) {
-        await fetch(`http://localhost:5050/listings/${id}`, {
+        await fetch(`http://localhost:5050/portfolio/${id}`, {
             method: "DELETE"
         })
         const newListings = listings.filter((el) => el._id != id)
