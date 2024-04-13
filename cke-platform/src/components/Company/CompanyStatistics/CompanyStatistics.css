@@ -1,0 +1,36 @@
+.company-statistics-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+
+  }
+  
+  .statistic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 20px;
+    box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.329);
+    border-color: transparent;
+    height: 80px;
+    width: 160px;
+    margin: 0 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center; 
+  }
+  .statistic p {
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-archivo-serif);
+}
+
+
+  .statistic h3 {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-source-serif);
+  }
+
+
+  

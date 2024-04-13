@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Navn Navnesen",
+    "title": "CO-FOUNDER & CEO",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "imageSrc": "/images/no-profilew.png", 
+    "linkedin": "https://linkedin.com", 
+    "instagram": "https://instagram.com"
+  },
+
+  {
+    "id": 2,
+    "name": "Navn Navnesen",
+    "title": "CO-FOUNDER & CEO",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "imageSrc": "/images/no-profilew.png", 
+    "linkedin": "https://linkedin.com", 
+    "instagram": "https://instagram.com"
+  },
+
+  {
+    "id": 3,
+    "name": "Navn Navnesen",
+    "title": "CO-FOUNDER & CEO",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "imageSrc": "/images/no-profilew.png", 
+    "linkedin": "https://linkedin.com", 
+    "instagram": "https://instagram.com"
+  },
+
+  {
+    "id": 4,
+    "name": "Navn Navnesen",
+    "title": "CO-FOUNDER & CEO",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "imageSrc": "/images/no-profilew.png", 
+    "linkedin": "https://linkedin.com", 
+    "instagram": "https://instagram.com"
+  }
+]
+  

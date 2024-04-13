@@ -14,9 +14,7 @@
     justify-content: space-between;
 }
 .locationDiv{
-    display: flex;
-    align-items: center;
-    
+    display: flex;   
 }
 
 .locationText{
@@ -27,6 +25,7 @@
 
 .locationSymbol{
     fill: white;
+    transform: translateY(-2px);
 }
 
 .category{
@@ -97,4 +96,22 @@
 
 .descriptionDiv{
     margin-top: 10px;
+}
+
+.actionButtonsContainer{
+    display: flex;
+    justify-content:right;
+}
+
+.actionButton{
+    background-color: var(--mainYellow);
+    border-radius: 23px;
+    padding: 5px 10px 5px 10px;
+    color: var(--mainBlack);
+    cursor: pointer;
+}
+
+.actionButtonLink{
+    height: 100%;
+    width: 100%;
 }
