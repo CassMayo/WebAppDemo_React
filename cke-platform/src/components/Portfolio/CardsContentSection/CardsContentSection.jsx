@@ -138,7 +138,7 @@ export default function CardsContentSection() {
                         .sort(sortByChosenSortingMethod)
                         .map((card, index) => (
                             <ProductCard
-                                image={card.image}
+                                imageUrl={card.imageUrl}
                                 imageAlt={card.imageAlt}
                                 title={card.title}
                                 type={card.type}

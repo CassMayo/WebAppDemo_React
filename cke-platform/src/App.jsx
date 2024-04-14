@@ -13,7 +13,7 @@ import Home from './pages/Home.jsx';
 import AboutPage from './pages/About.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Login from './pages/Login.jsx';
-import Company from './pages/CompanyPage.jsx';
+import CompanyPage from './pages/CompanyPage.jsx';
 import Register from './pages/Register.jsx';
 import User from './pages/User.jsx';
 import Listing from './components/Portfolio/Listing/Listing.jsx'
@@ -39,7 +39,7 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/company" element={<Company />} />
+              <Route path="/company" element={<CompanyPage />} />
               <Route path="/register" element={<Register />} />
               <Route path="/user" element={<User />} />
               <Route path="/portfolio/:id" element={<Listing />} />

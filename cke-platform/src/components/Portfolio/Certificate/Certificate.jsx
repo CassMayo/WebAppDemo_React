@@ -8,7 +8,7 @@ import CustomLink from '../../Navbar/CustomLink';
 
 
 
-export default function Certificate(props) {
+export default function Certificate() {
 
     const { purchasedItem } = useContext(PurchaseContext)
 
@@ -55,7 +55,7 @@ export default function Certificate(props) {
                     </div>
                 </div>
 
-                <p><b>Certificate ID: M49-KU5-X-C455I</b></p>
+                <p><b>Certificate ID: M49-KU5-&-C455I</b></p>
 
                 <div className="certBody">
 
@@ -71,7 +71,7 @@ export default function Certificate(props) {
                                 </ul>
 
                                 <ul className="sellerInfo">
-                                    <li>Credits issued by <b>{item.listing.title}</b></li>
+                                    <li>Credits issued by <b>{item.listing.ownerName}</b></li>
                                     <li>[Adress]</li>
                                     <li>{item.listing.location}</li>
                                     <li>[Country]</li>

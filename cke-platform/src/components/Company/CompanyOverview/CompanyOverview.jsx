@@ -3,21 +3,8 @@ import CompanyStatistics from '../CompanyStatistics/CompanyStatistics';
 import useRoleBasedRedirect from '../../Hooks/useRoleBasedRedirect';
 import './CompanyOverview.css';
 
-const CompanyOverview = () => {
-  const [companyInfo, setCompanyInfo] = useState({
-    companyName: '',
-    companyLocation: '',
-    companyAbout: ''
-  });
+const CompanyOverview = (props) => {
 
-  useRoleBasedRedirect(['provider']);
-
-  useEffect(() => {
-    const storedCompanyInfo = localStorage.getItem('companyInfo');
-    if (storedCompanyInfo) {
-      setCompanyInfo(JSON.parse(storedCompanyInfo));
-    }
-  }, []);
 
   return (
     <div className="company-overview-container">
@@ -26,15 +13,17 @@ const CompanyOverview = () => {
         <div className="company-logo-placeholder">
           [Company Logo]
         </div>
+
         <div className="company-overview-info">
-          <h1>{companyInfo.companyName}</h1>
-          <p>{companyInfo.companyLocation}</p>
+          <h1>{props.userInfo.userName}</h1>
+          <p>{props.userInfo.location}</p>
         </div>
+
         <CompanyStatistics />
       </div>
       <div className="company-about">
         <h2>About</h2>
-        <p>{companyInfo.companyAbout}</p>
+        <p>{props.userInfo.companyAbout}</p>
       </div>
     </div>
   );

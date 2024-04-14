@@ -3,81 +3,101 @@ import { useNavigate } from 'react-router-dom';
 import './CompanyRegister.css';
 
 const RegisterPage = () => {
-  const [companyInfo, setCompanyInfo] = useState({
-      companyName: '',
-      companyLocation: '',
-      companyAbout: '',
-      username: '',
-      password: ''
-  });
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
+    const [userInfo, setUserInfo] = useState({
+        userName: '',
+        isSeller: false, // Seller OR Buyer
+        logo: '',
+        about: '',
+        location: ''
+    });
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
-  const handleRegister = (e) => {
-      e.preventDefault();
+    async function handleRegister(e) {
+        e.preventDefault();
 
-      if (!companyInfo.username || !companyInfo.password || !companyInfo.companyName) {
-          setError('All fields are required.'); 
-          return;
-      }
+        if (!userInfo.userName) {
+            setError('All fields are required.');
+            return;
+        }
+        try {
+            const response = await fetch("http://localhost:5050/users/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userInfo)
+            })
 
-      localStorage.setItem('companyInfo', JSON.stringify(companyInfo));
-      localStorage.setItem('username', companyInfo.username);
-      localStorage.setItem('userRole', 'provider');
-      navigate('/Company');
-  };
+            const data = await response.json()
+            localStorage.setItem('userId', data._id) // store just ID in local storage. Use this to fetch more info about company from DB
 
-  const handleChange = (e) => {
-      const { name, value } = e.target;
-      setCompanyInfo(prevCompanyInfo => ({ ...prevCompanyInfo, [name]: value }));
-      setError(''); 
-  };
+        } catch {
+            console.error("couldnt ")
+        }
 
-  return (
-      <div className="register-page">
-          <div className="register-container">
-              <h2>Register Your Company</h2>
-              {error && <p className="error">{error}</p>}
-              <form className="register-form" onSubmit={handleRegister}>
-                  <input
-                      type="text"
-                      name="companyName"
-                      placeholder="Company Name "
-                      value={companyInfo.companyName}
-                      onChange={handleChange}
-                  />
-                  <input
-                      type="text"
-                      name="companyLocation"
-                      placeholder="Company Location "
-                      value={companyInfo.companyLocation}
-                      onChange={handleChange}
-                  />
-                  <textarea
-                      name="companyAbout"
-                      placeholder="About the Company "
-                      value={companyInfo.companyAbout}
-                      onChange={handleChange}
-                  />
-                  <input
-                      type="text"
-                      name="username"
-                      placeholder="Username "
-                      value={companyInfo.username}
-                      onChange={handleChange}
-                  />
-                  <input
-                      type="password"
-                      name="password"
-                      placeholder="Password "
-                      value={companyInfo.password}
-                      onChange={handleChange}
-                  />
-                  <button type="submit">Register</button>
-              </form>
-          </div>
-      </div>
-  );
+        if (userInfo.isSeller){
+            navigate("/company")
+        } else{
+            navigate("/user");
+        }
+        
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setUserInfo(prevUserInfo => ({ ...prevUserInfo, [name]: value }));
+        setError('');
+    };
+
+    const handleCheckboxChange = (e) => {
+        const { name, checked } = e.target;
+        setUserInfo(prevUserInfo => ({ ...prevUserInfo, isSeller: checked }));
+        setError('');
+
+    };
+
+
+
+    return (
+        <div className="register-page">
+            <div className="register-container">
+                <h2>Register Your Company</h2>
+                {error && <p className="error">{error}</p>}
+
+                <div>
+                    <input type="checkbox" name="isSeller" id="1" checked={userInfo.isSeller} onChange={handleCheckboxChange} />
+                    <label htmlFor=""> I am a seller </label>
+                </div>
+
+
+                <form className="register-form" onSubmit={handleRegister}>
+                    <input
+                        type="text"
+                        name="userName"
+                        placeholder="Company Name "
+                        value={userInfo.userName}
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="text"
+                        name="location"
+                        placeholder="Company Location "
+                        value={userInfo.location}
+                        onChange={handleChange}
+                    />
+                    <textarea
+                        name="about"
+                        placeholder="About the Company "
+                        value={userInfo.description}
+                        onChange={handleChange}
+                    />
+
+                    <button type="submit" onClick={handleRegister}>Register</button>
+                </form>
+            </div>
+        </div>
+    );
 };
 
 export default RegisterPage;

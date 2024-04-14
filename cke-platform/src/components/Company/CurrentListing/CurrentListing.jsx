@@ -7,55 +7,57 @@ const CurrentListing = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentEditId, setCurrentEditId] = useState(null);
 
+    // get listings linked to .
     useEffect(() => {
-        const fetchListings = () => {
-            const storedListings = JSON.parse(localStorage.getItem('listings'));
-            setListings(storedListings || []);
-        };
+        const fetchData = async (userId) => {
 
-        fetchListings();
+            console.log("Fetching company listings")
+            const response = await fetch(`http://localhost:5050/portfolio/filter/${userId}`)
+
+            if (!response.ok) {
+                const msg = `An error has occured: ${response.statusText}`
+                console.error(msg)
+                return
+            }
+            const listings = await response.json()
+
+            if (!listings) {
+                console.warn(`User with id: ${userId} not found`)
+                navigate("/")
+                return
+            }
+            setListings(listings)
+            console.log("Found", listings.length, "listings with id:", userId)
+        }
+
+        const userId = localStorage.getItem('userId')
+        if (userId) {
+            fetchData(userId)
+        }
+
+
+        return
     }, []);
-    const handleSaveChanges = (updatedCredit) => {
-      const updatedListings = listings.map(credit => {
-          if (credit.id === updatedCredit.id) {
-              const remainingValue = updatedCredit.numberOfCredits * updatedCredit.pricePerCredit;
-              return {...updatedCredit, remainingValue}; 
-          }
-          return credit;
-      });
-      setListings(updatedListings);
-      localStorage.setItem('listings', JSON.stringify(updatedListings));
-  };
-  
-    const openModal = (id) => {
-        setCurrentEditId(id);
-        setIsModalOpen(true);
-    };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
 
-    const handleDelete = (id) => {
-        const updatedListings = listings.filter(item => item.id !== id);
-        setListings(updatedListings);
-        localStorage.setItem('listings', JSON.stringify(updatedListings));
-    }
+
 
 
     return (
         <div className="current-listings">
             <h1>Current Listings</h1>
-            {listings.map(item => (
-                <div key={item.id} className="listing-item">
+            {listings.map(listing => (
+                <div key={listing._id} className="listing-item">
                     <div className="listing-details">
-                        <p>Type of Credit: <span className="detail-value">{item.typeOfCredits}</span></p>
-                        <p>Remaining Credits: <span className="detail-value">{item.numberOfCredits}</span></p>
-                        <p>Remaining Value: <span className="detail-value">${item.remainingValue.toFixed(2)}</span></p>
+                        <p>Type of Credit: <span className="detail-value">{listing.type}</span></p>
+                        <p>Remaining Credits: <span className="detail-value">{listing.credits}</span></p>
+                        <p>Remaining Value: <span className="detail-value">${listing.price}</span></p>
                     </div>
                     <div className="listing-actions">
+                        
                     <button onClick={() => openModal(item.id)}>Edit</button>
                     <button onClick={() => handleDelete(item.id)}>Delete</button>
+
                     </div>
                 </div>
             ))}

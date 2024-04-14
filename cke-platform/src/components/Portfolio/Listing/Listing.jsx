@@ -3,11 +3,23 @@ import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import CustomLink from '../../Navbar/CustomLink';
 import { PurchaseContext } from '../../logic/PurchaseContext';
-import data from '../CardsContentSection/CardsContent.json'; 
+// import data from '../CardsContentSection/CardsContent.json'; 
 
 export default function Listing() {
-    const { id } = useParams();
-    const [listing, setListing] = useState(null);
+    const [listing, setListing] = useState({
+        title: '',
+        price: '',
+        credits: '',
+        type: '',
+        imageUrl: '',
+        imageAlt: '',
+        location: '',
+        description: '',
+
+        ownerId: '', // same id as logged in user so we can link up who owns what..
+        ownerName: '',
+    }
+    );
     const [amount, setAmount] = useState(10);
     const navigate = useNavigate();
     const { addPurchasedItem } = useContext(PurchaseContext);
@@ -16,12 +28,14 @@ export default function Listing() {
     useEffect(() => {
         async function fetchData() {
             const id = params.id?.toString() || undefined
+            console.log("fetching from: ", `http://localhost:5050/portfolio/${id}`)
             if (!id) return
+
             const response = await fetch(
                 `http://localhost:5050/portfolio/${id}`
             )
             if (!response.ok) {
-                const msg = `An error has occured: ${response.statusText}`
+                const msg = `⚠️ An error has occured: ${response.statusText}`
                 console.error(msg)
                 return
             }
@@ -36,21 +50,19 @@ export default function Listing() {
         }
         fetchData()
         return
-    }, [params.id, navigate])
+    }, [])
 
     const handleAmountChange = (event) => {
         setAmount(Number(event.target.value));
     };
 
     const handlePurchase = () => {
+        const id = params.id?.toString() || undefined
         const purchasedItem = { id, listing, amount };
         addPurchasedItem(purchasedItem);
         navigate('/certificate');
     };
 
-    if (!listing) {
-        return <div className='loading'> Loading or no listing found...</div>;
-    }
 
     return (
         <div className='listingBody'>
@@ -62,11 +74,11 @@ export default function Listing() {
 
             <div className='titleRow'>
                 <h1 className='companyTitle'>{listing.title}</h1>
-                <div className='subheading'>{listing.title + " | " + listing.location}</div>
+                <div className='subheading'>{listing.ownerName + " | " + listing.location}</div>
             </div>
 
             <div className='bodyDiv'>
-                <div className='Images' style={{ backgroundImage: `url( ${listing.image} )` }}></div>
+                <div className='Images' style={{ backgroundImage: `url( ${listing.imageUrl} )` }}></div>
                 <div className='listingInfo'>
                     <div className='buyBox'>
                         <div className='listingMainInfo'>

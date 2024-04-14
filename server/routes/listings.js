@@ -22,6 +22,25 @@ router.get("/:id", async (req, res) => {
     else res.send(result).status(200)
 })
 
+
+// get all listings that have given owner_id
+router.get("/filter/:ownerId", async (req, res) => {
+    try {
+        let collection = await db.collection("listings")
+        let query = { ownerId: req.params.ownerId };
+        let results = await collection.find(query).toArray();
+
+        if (!results) { res.status(404).send("Listings not found for owner id: ", req.params.ownerId) }
+        else { res.status(200).json(results) }
+    }
+    catch (err) {
+        console.error(err)
+        res.status(500).send("Error retrieving listings by owner id")
+    }
+}
+)
+
+
 // Add new listing
 router.post("/", async (req, res) => {
     try {
@@ -35,6 +54,8 @@ router.post("/", async (req, res) => {
             location: req.body.location,
             description: req.body.description,
 
+            ownerId: req.body.ownerId, // same id as logged in user so we can link up who owns what..
+            ownerName: req.body.ownerName
         }
         let collection = await db.collection("listings")
         let result = await collection.insertOne(newListing)
@@ -48,8 +69,8 @@ router.post("/", async (req, res) => {
 
 // Update listing by id
 router.patch("/:id", async (req, res) => {
-    try{
-        const query = {_id: new ObjectId(req.params.id)}
+    try {
+        const query = { _id: new ObjectId(req.params.id) }
         const updates = {
             $set: {
                 title: req.body.title,
@@ -66,7 +87,7 @@ router.patch("/:id", async (req, res) => {
         let collection = await db.collection("listings")
         let result = await collection.updateOne(query, updates)
         res.send(result).status(200)
-    } catch(err){
+    } catch (err) {
         res.status(500).send("Error updating listing")
     }
 })
@@ -74,12 +95,12 @@ router.patch("/:id", async (req, res) => {
 
 // Delete listing by id
 router.delete("/:id", async (req, res) => {
-    try{
-        const query = {_id: new ObjectId(req.params.id)}
+    try {
+        const query = { _id: new ObjectId(req.params.id) }
         const collection = db.collection("listings")
         let result = await collection.deleteOne(query)
         res.send(result).status(200)
-    } catch (err){
+    } catch (err) {
         console.error(err)
         res.status(500).send("Error deleting listing")
     }

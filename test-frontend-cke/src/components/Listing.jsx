@@ -3,9 +3,11 @@ import { useParams, useNavigate } from "react-router-dom"
 
 export default function Listing() {
     const [form, setForm] = useState({
-        title: "",
-        price: "",
-        credits: "",
+        name: req.body.user,
+        userRole: req.body.userRole, // Seller OR Buyer
+        logo: req.body.logo,
+        about: req.body.description, 
+        location: req.body.location
     })
 
     const [isNew, setIsNew] = useState(true)
