@@ -2,21 +2,10 @@ import React, { useState } from 'react';
 import './RegisterCredit.css';
 import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 
-const RegisterNewCredits = (props) => {
+const RegisterNewCredits = ({listingStartState, setActiveTab}) => {
 
 
-  const [newListing, setNewListing] = useState({
-    title: '',
-    price: '',
-    credits: '',
-    type: '',
-    imageUrl: 'https://cataas.com/cat',
-    imageAlt: '',
-    location: '',
-    description: '',
-    ownerId: props.userInfo._id, // same id as logged in user so we can link up who owns what..
-    ownerName: props.userInfo.userName
-  });
+  const [newListing, setNewListing] = useState(listingStartState);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -34,10 +23,6 @@ const RegisterNewCredits = (props) => {
     "Waste Management"
   ];
 
-  const verificationAgencies = [
-    "Verified Carbon Standard",
-    "Gold Standard"
-  ];
 
   async function handleSubmit(event) {
     event.preventDefault();

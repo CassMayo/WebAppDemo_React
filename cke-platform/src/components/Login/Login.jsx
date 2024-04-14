@@ -1,19 +1,39 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import CustomLink from '../Navbar/CustomLink';
+import { LoginContext } from '../logic/LoginContext';
 
 const LoginPage = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const navigate = useNavigate();
+  const [wrongCredentials, setWrongCredtials] = useState(false)
 
-  const handleLogin = (e) => {
+  const { logIn } = useContext(LoginContext)
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    localStorage.setItem('username', credentials.username);
-    //satt userRole til user så at det er default for alle som logger inn
-    localStorage.setItem('userRole', 'user');  
-    //navigate kan byttes utfra use-case scenario
-    navigate('/portfolio');  
+
+    try {
+      const response = await fetch(`http://localhost:5050/users/getUser/${credentials.username}`)
+      if (response.ok) {
+        const userData = await response.json()
+        
+        logIn(userData._id)
+        setWrongCredtials(false)
+
+        if (userData.isSeller) {
+          navigate("/company")
+        }
+        else { navigate("/portfolio") }
+
+      }
+    } catch (error) {
+      setWrongCredtials(true)
+      console.error("Error:", error)
+    }
+
+
   };
 
   const handleChange = (e) => {
@@ -40,7 +60,10 @@ const LoginPage = () => {
             value={credentials.password}
             onChange={handleChange}
           />
-          <button type="submit">Login</button>
+
+          {wrongCredentials && <p> Wrong Credentials!</p>}
+
+          <button type="submit" onClick={handleLogin}>Login</button>
           <div className="login-links">
             <a href="/forgot-password">Forgot Password?</a>
             <CustomLink to="/register">Register as provider</CustomLink>

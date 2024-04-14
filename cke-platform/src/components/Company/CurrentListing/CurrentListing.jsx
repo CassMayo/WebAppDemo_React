@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import EditCreditModal from '../EditCreditModal/EditCreditModal';
 import './CurrentListing.css';
+import RegisterNewCredits from '../RegisterCredit/RegisterCredit';
 
-const CurrentListing = () => {
+
+const CurrentListing = ({ setActiveTab }) => {
     const [listings, setListings] = useState([]);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [currentEditId, setCurrentEditId] = useState(null);
+    const [isEditActive, setIsEditActive] = useState(false);
+    const [currentEditId, setCurrentEditId] = useState('');
 
-    // get listings linked to .
+
+    const startEditing = (id) => {
+        setCurrentEditId(id)
+        setIsEditActive(true)
+    }
+
+    // Get all listings owned by user. 
     useEffect(() => {
         const fetchData = async (userId) => {
 
@@ -27,7 +35,6 @@ const CurrentListing = () => {
                 return
             }
             setListings(listings)
-            console.log("Found", listings.length, "listings with id:", userId)
         }
 
         const userId = localStorage.getItem('userId')
@@ -35,42 +42,76 @@ const CurrentListing = () => {
             fetchData(userId)
         }
 
-
-        return
     }, []);
 
 
+    async function handleDelete(id) {
 
+        try {
+            const response = await fetch(`http://localhost:5050/portfolio/${id}`, {
+                method: 'DELETE',
+            });
 
+            if (response.ok) {
+                setListings(prevListings => prevListings.filter(listing => listing._id !== id)); // remove locally so component re-renders without the removed listing.
+            } else {
+                console.error('Failed to delete item.');
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     return (
-        <div className="current-listings">
-            <h1>Current Listings</h1>
-            {listings.map(listing => (
-                <div key={listing._id} className="listing-item">
-                    <div className="listing-details">
-                        <p>Type of Credit: <span className="detail-value">{listing.type}</span></p>
-                        <p>Remaining Credits: <span className="detail-value">{listing.credits}</span></p>
-                        <p>Remaining Value: <span className="detail-value">${listing.price}</span></p>
-                    </div>
-                    <div className="listing-actions">
-                        
-                    <button onClick={() => openModal(item.id)}>Edit</button>
-                    <button onClick={() => handleDelete(item.id)}>Delete</button>
+        <div className="current-listings-div">
 
-                    </div>
+            {isEditActive ?
+
+                <div className='current-listings'>
+                    <h1>Editing listing</h1>
+                    <RegisterNewCredits listingStartState={listings.find(listing => listing._id == currentEditId)} />
                 </div>
-            ))}
-            {isModalOpen && currentEditId !== null && (
-                <EditCreditModal
-                    isOpen={isModalOpen}
-                    onClose={closeModal}
-                    credit={listings.find(item => item.id === currentEditId)}
-                    onSave={handleSaveChanges}
-                />
-            )}
+
+                :
+
+                <div className='current-listings'>
+
+                    <h1>Your Listings</h1>
+                    {
+                        (listings.length == 0)
+
+                            ?
+
+                            <div className='no-listings-div'>
+                                <p> No listings to show</p>
+                            </div>
+
+                            :
+
+                            listings.map(listing => (
+                                <div key={listing._id} className="listing-item">
+                                    <div className="listing-details">
+                                        <p>Type of Credit: <span className="detail-value">{listing.type}</span></p>
+                                        <p>Remaining Credits: <span className="detail-value">{listing.credits}</span></p>
+                                        <p>Current price: <span className="detail-value">${listing.price}</span></p>
+                                    </div>
+                                    <div className="listing-actions">
+
+                                        <button onClick={() => startEditing(listing._id)}>Edit</button>
+                                        <button onClick={() => handleDelete(listing._id)}>Delete</button>
+
+                                    </div>
+                                </div>
+                            ))
+                    }
+
+
+
+                    <button onClick={() => setActiveTab("registerCredits")}>  Add listing <i class="fa-solid fa-plus"></i> </button>
+                </div>
+
+            }
         </div>
     );
 };
-
 export default CurrentListing;

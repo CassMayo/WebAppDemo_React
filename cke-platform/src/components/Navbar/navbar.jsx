@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +6,7 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import UserDropdown from './UserDropdown/UserDropdown';
 import CustomLink from './CustomLink';
 import './navbarStyles.css';
+import { LoginContext } from '../logic/LoginContext';
 
 const Navbar = () => {
   const [username, setUsername] = useState('');
@@ -13,12 +14,13 @@ const Navbar = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { userId } = useContext(LoginContext)
 
   // get user data based on id stored in local storage
   useEffect(() => {
     const fetchData = async () => {
 
-      const response = await fetch(`http://localhost:5050/users/${localStorage.getItem('userId')}`)
+      const response = await fetch(`http://localhost:5050/users/${localStorage.getItem("userId")}`)
 
       if (!response.ok) {
         const msg = `An error has occured: ${response.statusText}`
@@ -27,7 +29,7 @@ const Navbar = () => {
       }
       const userInfo = await response.json()
       if (!userInfo) {
-        console.warn(`User with id: ${id} not found`)
+        console.warn(`User with id: ${userId} not found`)
         navigate("/")
         return
       }
@@ -35,11 +37,12 @@ const Navbar = () => {
       setIsSeller(userInfo.isSeller)
     }
 
-    const userId = localStorage.getItem('userId')
-    if (userId){
-        fetchData()
-    }    
-  }, [location]);
+    if (userId) {
+      fetchData()
+    } else {
+      setUsername('')
+    }
+  }, [userId]);
 
 
   const toggleDropdown = () => setIsDropdownVisible(!isDropdownVisible);

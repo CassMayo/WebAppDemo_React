@@ -16,7 +16,6 @@ const CompanyPage = () => {
         location: ''
     });
 
-
     // get user info from DB using userId stored in browser.
     useEffect(() => {
         const fetchUserInfo = async () => {
@@ -40,9 +39,18 @@ const CompanyPage = () => {
         fetchUserInfo()
     }, []);
 
-
-
-
+    const defaultListing = {
+        title: '',
+        price: '',
+        credits: '',
+        type: '',
+        imageUrl: 'https://cataas.com/cat',
+        imageAlt: '',
+        location: '',
+        description: '',
+        ownerId: userInfo._id, // same id as logged in user so we can link up who owns what..
+        ownerName: userInfo.userName
+    }
 
 
     return (
@@ -62,9 +70,10 @@ const CompanyPage = () => {
                 </TabButton>
             </div>
             <div className="page-content">
-                {activeTab === 'currentListings' && <CurrentListing />}
-                {activeTab === 'registerCredits' && <RegisterNewCredits userInfo={userInfo} />}
-                {activeTab === 'financialOverview' && <FinancialOverview userInfo={userInfo} />}
+                
+                {activeTab === 'currentListings' && <CurrentListing setActiveTab={setActiveTab} />}
+                {activeTab === 'registerCredits' && <RegisterNewCredits listingStartState={defaultListing} setActiveTab={setActiveTab} />}
+                {activeTab === 'financialOverview' && <FinancialOverview userInfo={userInfo}  />}
             </div>
         </div>
     );

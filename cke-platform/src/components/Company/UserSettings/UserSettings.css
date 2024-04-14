@@ -1,0 +1,59 @@
+
+
+.settings-body {
+    background-color: var(--mainWhite);
+    height: 400px;
+    padding-top: var(--padding-top);
+    margin-top: var(--margin-top);
+
+    padding-left: 200px;
+    padding-right: 200px;
+
+    min-height: 750px;
+}
+
+
+
+.settings-card{
+    box-shadow: var(--box-shadow-card);
+    border-radius: 23px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-div {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+.logo{
+    width: 100px;
+}
+
+.logo-form{
+}
+
+
+.user-info-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+}
+
+.info-field{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.checkboxDiv{
+    display: flex;
+    justify-content: center;
+}
