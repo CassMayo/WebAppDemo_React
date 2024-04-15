@@ -7,6 +7,7 @@ import UserDropdown from './UserDropdown/UserDropdown';
 import CustomLink from './CustomLink';
 import './navbarStyles.css';
 import { LoginContext } from '../logic/LoginContext';
+import { BASE_API_URL } from '../../config';
 
 const Navbar = () => {
   const [username, setUsername] = useState('');
@@ -20,7 +21,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchData = async () => {
 
-      const response = await fetch(`http://localhost:5050/users/${localStorage.getItem("userId")}`)
+      const response = await fetch(`${BASE_API_URL}/users/${localStorage.getItem("userId")}`)
 
       if (!response.ok) {
         const msg = `An error has occured: ${response.statusText}`
@@ -55,7 +56,7 @@ const Navbar = () => {
       <div className="navbar-links">
         <CustomLink to="/about">About Us</CustomLink>
         <CustomLink to="/portfolio">Portfolio</CustomLink>
-        <CustomLink to="/invest">Invest</CustomLink>
+        {/*<CustomLink to="/invest">Invest</CustomLink>*/}
         {username ? (
           <div className="navbar-user-section" onClick={toggleDropdown}>
             <FontAwesomeIcon className='user-icon' icon={faUserCircle} />

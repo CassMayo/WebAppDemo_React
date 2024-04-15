@@ -47,7 +47,7 @@ export default function Certificate() {
             <div className="certificateCard">
 
                 <div className="topRow">
-                    <img className="logo" src="./images/ClearKarbon.PNG" alt="Clear Karbon Exchange Logo" />
+                    <img className="certLogo" src="./images/ClearKarbon.PNG" alt="Clear Karbon Exchange Logo" />
                     <h1 className="certTitle">Certificate of Purchase</h1>
                     <div className="totalOffsetBadge">
                         <p>Tons of CO2 offset:</p>

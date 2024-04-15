@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import CustomLink from '../../Navbar/CustomLink';
 import { PurchaseContext } from '../../logic/PurchaseContext';
 // import data from '../CardsContentSection/CardsContent.json'; 
+import { BASE_API_URL } from '../../../config';
 
 export default function Listing() {
     const [listing, setListing] = useState({
@@ -28,11 +29,11 @@ export default function Listing() {
     useEffect(() => {
         async function fetchData() {
             const id = params.id?.toString() || undefined
-            console.log("fetching from: ", `http://localhost:5050/portfolio/${id}`)
+            console.log("fetching from: ", `${BASE_API_URL}/portfolio/${id}`)
             if (!id) return
 
             const response = await fetch(
-                `http://localhost:5050/portfolio/${id}`
+                `${BASE_API_URL}/portfolio/${id}`
             )
             if (!response.ok) {
                 const msg = `⚠️ An error has occured: ${response.statusText}`

@@ -5,8 +5,12 @@ import RegisterNewCredits from '../components/Company/RegisterCredit/RegisterCre
 import FinancialOverview from '../components/Company/FinancialOverview/FinancialOverview';
 import TabButton from '../components/Company/Common/TabButton';
 import '../components/Company/CompanyPage.css';
+import { BASE_API_URL } from '../config';
 
 const CompanyPage = () => {
+
+
+    const [isEditingListing, setIsEditingListing] = useState(true)
     const [activeTab, setActiveTab] = useState('currentListings');
     const [userInfo, setUserInfo] = useState({
         userName: '',
@@ -21,7 +25,7 @@ const CompanyPage = () => {
         const fetchUserInfo = async () => {
 
 
-            const userInfoResponse = await fetch(`http://localhost:5050/users/${localStorage.getItem('userId')}`)
+            const userInfoResponse = await fetch(`${BASE_API_URL}/users/${localStorage.getItem('userId')}`)
 
             if (!userInfoResponse.ok) {
                 const msg = `An error has occured: ${userInfoResponse.statusText}`
@@ -70,10 +74,10 @@ const CompanyPage = () => {
                 </TabButton>
             </div>
             <div className="page-content">
-                
-                {activeTab === 'currentListings' && <CurrentListing setActiveTab={setActiveTab} />}
-                {activeTab === 'registerCredits' && <RegisterNewCredits listingStartState={defaultListing} setActiveTab={setActiveTab} />}
-                {activeTab === 'financialOverview' && <FinancialOverview userInfo={userInfo}  />}
+
+                {activeTab === 'currentListings' && <CurrentListing setActiveTab={setActiveTab} setIsEditingListing={setIsEditingListing} isEditListing={isEditingListing} />}
+                {activeTab === 'registerCredits' && <RegisterNewCredits listingStartState={defaultListing} setActiveTab={setActiveTab} isEditingListing={isEditingListing}/>}
+                {activeTab === 'financialOverview' && <FinancialOverview userInfo={userInfo} />}
             </div>
         </div>
     );

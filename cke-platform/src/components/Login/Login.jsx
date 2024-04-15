@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import CustomLink from '../Navbar/CustomLink';
 import { LoginContext } from '../logic/LoginContext';
+import { BASE_API_URL} from '../../config/'
 
 const LoginPage = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
@@ -15,7 +16,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:5050/users/getUser/${credentials.username}`)
+      const response = await fetch(`${BASE_API_URL}/users/getUser/${credentials.username}`)
       if (response.ok) {
         const userData = await response.json()
         

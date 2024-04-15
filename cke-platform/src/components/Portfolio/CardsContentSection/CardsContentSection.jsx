@@ -4,9 +4,10 @@ import ProductCard from "./ProductCard.jsx/ProductCard";
 import DropdownItem from "./DropdownItem/DropdownItem";
 import FilterItem from "./FilterItem/FilterItem";
 import SearchComponent from "./SearchComponent/SearchComponent";
+import { BASE_API_URL } from '../../../config';
 
 import "./CardsContentSection.css";
-// import data from "./CardsContent.json";
+
 
 import axios from 'axios'
 
@@ -16,7 +17,7 @@ export default function CardsContentSection() {
 
     useEffect(() => {
         async function getListings() {
-            const response = await fetch(`http://localhost:5050/portfolio/`)
+            const response = await fetch(`${BASE_API_URL}/portfolio/`)
             if (!response.ok) {
                 const msg = `An error occured: ${response.statusText}`
                 console.error(msg)

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import StatisticsCard from '../StatisticsCard/StatisticsCard';
 import './FinancialOverview.css';
+import { BASE_API_URL } from '../../../config';
 
 const FinancialOverview = ({ userInfo }) => {
     const [totalCredits, setTotalCredits] = useState(0);
@@ -16,7 +17,7 @@ const FinancialOverview = ({ userInfo }) => {
         const fetchData = async (userId) => {
 
             console.log("Fetching company listings")
-            const response = await fetch(`http://localhost:5050/portfolio/filter/${userId}`)
+            const response = await fetch(`${BASE_API_URL}/portfolio/filter/${userId}`)
 
             if (!response.ok) {
                 const msg = `An error has occured: ${response.statusText}`

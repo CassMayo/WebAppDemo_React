@@ -24,6 +24,10 @@
   display: flex;
 }
 
+.logoDiv{
+  margin-bottom: 40px;
+}
+
 .company-logo-placeholder {
   width: 100px; 
   height: 100px; 

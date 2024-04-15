@@ -14,7 +14,7 @@
 .statistic-content {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 4;
 }
 
 .statistics-container {
@@ -80,7 +80,8 @@
 
 /*Card right side */
 .featured-in {
-  width: 18vw;
+
+  flex: 1;
   height: auto;
   padding: max(1.25em, 1vw);
   background-color: var(--mainBlack);

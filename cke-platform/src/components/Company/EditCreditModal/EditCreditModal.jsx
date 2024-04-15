@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './EditCreditModal.css';
+import { BASE_API_URL } from '../../../config';
 
 const EditCreditModal = ({ isOpen, onClose, listing }) => {
     const [newListing, setNewListing] = useState({
@@ -18,7 +18,7 @@ const EditCreditModal = ({ isOpen, onClose, listing }) => {
 
     async function handleSaveChanges() {
         try{
-            const response = await fetch(`http://localhost:5050/portfolio/${listing._id}`, {
+            const response = await fetch(`${BASE_API_URL}/portfolio/${listing._id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

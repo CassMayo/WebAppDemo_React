@@ -57,8 +57,10 @@ router.post("/", async (req, res) => {
             ownerId: req.body.ownerId, // same id as logged in user so we can link up who owns what..
             ownerName: req.body.ownerName
         }
+
         let collection = await db.collection("listings")
         let result = await collection.insertOne(newListing)
+
         res.send(result).status(204);
     } catch (err) {
         console.error(err)

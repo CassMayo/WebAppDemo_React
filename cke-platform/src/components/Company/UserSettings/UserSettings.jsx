@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import './UserSettings.css'
 import { useNavigate } from 'react-router-dom';
+import { BASE_API_URL } from '../../../config';
+import CustomLink from '../../Navbar/CustomLink'
 
 export default function UserSettings() {
 
@@ -14,7 +16,7 @@ export default function UserSettings() {
     useEffect(() => {
         const fetchUserInfo = async () => {
 
-            const userInfoResponse = await fetch(`http://localhost:5050/users/${localStorage.getItem('userId')}`)
+            const userInfoResponse = await fetch(`${BASE_API_URL}/users/${localStorage.getItem('userId')}`)
 
             if (!userInfoResponse.ok) {
                 const msg = `An error has occured: ${userInfoResponse.statusText}`
@@ -27,7 +29,6 @@ export default function UserSettings() {
                 navigate("/")
                 return
             }
-            console.log(userInfo)
             setUserInfo(userInfo)
         }
         fetchUserInfo()
@@ -38,7 +39,7 @@ export default function UserSettings() {
         e.preventDefault(); // Prevents the default form submission.
 
         try {
-            const response = await fetch(`http://localhost:5050/users/${userInfo._id}`, {
+            const response = await fetch(`${BASE_API_URL}/users/${userInfo._id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -63,6 +64,15 @@ export default function UserSettings() {
     return (
         <div className="settings-body">
 
+
+            <div aria-label='button' className='goBack '>
+                <CustomLink to={"/company/"}>
+                    <button>
+                        <i class="fa-solid fa-arrow-left"></i> Go back
+                    </button>
+                </CustomLink>
+            </div>
+
             <h1> User Settings</h1>
 
             <div className='settings-card'>
@@ -85,8 +95,8 @@ export default function UserSettings() {
 
                     <div className='info-field'>
 
-                    <label htmlFor="">Logo URL</label>
-                    <input name='logo' type="text" onChange={handleChange} value={userInfo.logo} />
+                        <label htmlFor="">Logo URL</label>
+                        <input name='logo' type="text" onChange={handleChange} value={userInfo.logo} />
                     </div>
 
 

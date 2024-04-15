@@ -35,7 +35,7 @@ router.get("/getUser/:userName", async (req, res) => {
 
 
 
-// Add new user
+// Add new user if
 router.post("/", async (req, res) => {
     try {
         let newUser = {

@@ -2,25 +2,24 @@ import React, { useState, useEffect } from 'react';
 import EditCreditModal from '../EditCreditModal/EditCreditModal';
 import './CurrentListing.css';
 import RegisterNewCredits from '../RegisterCredit/RegisterCredit';
+import { BASE_API_URL } from '../../../config';
 
 
-const CurrentListing = ({ setActiveTab }) => {
+const CurrentListing = ({ setActiveTab, isEditListing, setIsEditingListing }) => {
     const [listings, setListings] = useState([]);
-    const [isEditActive, setIsEditActive] = useState(false);
     const [currentEditId, setCurrentEditId] = useState('');
 
 
     const startEditing = (id) => {
         setCurrentEditId(id)
-        setIsEditActive(true)
+        setIsEditingListing(true)
     }
 
     // Get all listings owned by user. 
     useEffect(() => {
         const fetchData = async (userId) => {
 
-            console.log("Fetching company listings")
-            const response = await fetch(`http://localhost:5050/portfolio/filter/${userId}`)
+            const response = await fetch(`${BASE_API_URL}/portfolio/filter/${userId}`)
 
             if (!response.ok) {
                 const msg = `An error has occured: ${response.statusText}`
@@ -48,7 +47,7 @@ const CurrentListing = ({ setActiveTab }) => {
     async function handleDelete(id) {
 
         try {
-            const response = await fetch(`http://localhost:5050/portfolio/${id}`, {
+            const response = await fetch(`${BASE_API_URL}/portfolio/${id}`, {
                 method: 'DELETE',
             });
 
@@ -65,7 +64,7 @@ const CurrentListing = ({ setActiveTab }) => {
     return (
         <div className="current-listings-div">
 
-            {isEditActive ?
+            {isEditListing ?
 
                 <div className='current-listings'>
                     <h1>Editing listing</h1>

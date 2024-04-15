@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CompanyRegister.css';
+import { BASE_API_URL } from '../../config';
+
 
 const RegisterPage = () => {
     const [userInfo, setUserInfo] = useState({
@@ -21,7 +23,7 @@ const RegisterPage = () => {
             return;
         }
         try {
-            const response = await fetch("http://localhost:5050/users/", {
+            const response = await fetch(`${BASE_API_URL}/users/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

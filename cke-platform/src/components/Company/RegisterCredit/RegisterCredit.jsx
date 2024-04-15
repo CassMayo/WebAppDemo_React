@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import './RegisterCredit.css';
 import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
-
-const RegisterNewCredits = ({listingStartState, setActiveTab}) => {
+import { BASE_API_URL } from '../../../config';
+const RegisterNewCredits = ({listingStartState, setActiveTab, isEditingListing}) => {
 
 
   const [newListing, setNewListing] = useState(listingStartState);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const creditTypes = [
@@ -27,9 +26,13 @@ const RegisterNewCredits = ({listingStartState, setActiveTab}) => {
   async function handleSubmit(event) {
     event.preventDefault();
 
+
+    let method
+    isEditingListing ? method = "PATCH" : method = "POST"  
+
     try {
-      const response = await fetch("http://localhost:5050/portfolio/", {
-        method: "POST",
+      const response = await fetch(`${BASE_API_URL}/portfolio/`, {
+        method: method,
         headers: {
           "Content-Type": "application/json",
         },
