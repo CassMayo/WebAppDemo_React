@@ -10,7 +10,7 @@ export default function ProductCard(props) {
 
 
         <div className='card'>
-            <div className="cardBackground" style={{ backgroundImage: `url( ${props.image} )` }}>
+            <div className="cardBackground" style={{ backgroundImage: `url( ${props.imageUrl} )` }}>
                 <div className="cardColorOverlay" >
                     <div className='cardContentDiv'>
 

@@ -2,25 +2,55 @@ import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import StatisticsCard from '../StatisticsCard/StatisticsCard';
 import './FinancialOverview.css';
+import { BASE_API_URL } from '../../../config';
 
-const FinancialOverview = ({ listings }) => {
+const FinancialOverview = ({ userInfo }) => {
     const [totalCredits, setTotalCredits] = useState(0);
     const [totalValue, setTotalValue] = useState(0);
     const [dataForChart, setDataForChart] = useState([]);
 
+    const [listings, setListings] = useState([])
+
+
+    // Get all listings owned by user. 
     useEffect(() => {
-        const totalCreditsCalculated = listings.reduce((acc, credit) => acc + Number(credit.numberOfCredits), 0);
-        const totalValueCalculated = listings.reduce((acc, credit) => acc + (credit.numberOfCredits * credit.pricePerCredit), 0);
+        const fetchData = async (userId) => {
+
+            console.log("Fetching company listings")
+            const response = await fetch(`${BASE_API_URL}/portfolio/filter/${userId}`)
+
+            if (!response.ok) {
+                const msg = `An error has occured: ${response.statusText}`
+                console.error(msg)
+                return
+            }
+            const listings = await response.json()
+
+            if (!listings) {
+                console.warn(`User with id: ${userId} not found`)
+                return
+            }
+            setListings(listings)
+        }
+        fetchData(userInfo._id)
+
+
+    }, []);
+
+
+    useEffect(() => {
+        const totalCreditsCalculated = listings.reduce((acc, listing) => acc + Number(listing.credits), 0);
+        const totalValueCalculated = listings.reduce((acc, listing) => acc + (Number(listing.credits) * Number(listing.price)), 0);
 
         setTotalCredits(totalCreditsCalculated);
         setTotalValue(totalValueCalculated);
 
-        const creditsPerMonth = listings.reduce((acc, credit) => {
-            const date = new Date(credit.date);
+        const creditsPerMonth = listings.reduce((acc, listing) => {
+            const date = new Date(listing.date);
             if (!isNaN(date.getTime())) {
                 const month = (date.getMonth() + 1).toString().padStart(2, '0');
                 const yearMonth = `${date.getFullYear()}-${month}`;
-                acc[yearMonth] = (acc[yearMonth] || 0) + Number(credit.numberOfCredits);
+                acc[yearMonth] = (acc[yearMonth] || 0) + Number(listing.credits);
             }
             return acc;
         }, {});
@@ -32,6 +62,7 @@ const FinancialOverview = ({ listings }) => {
 
         setDataForChart(chartData);
     }, [listings]);
+
 
     return (
         <div className="financial-overview-container">

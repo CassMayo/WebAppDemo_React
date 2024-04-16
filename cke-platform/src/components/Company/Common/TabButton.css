@@ -1,17 +1,12 @@
-.tab-buttons {
-  display: flex;
-  padding: 20px;
-}
 
 .tab-button {
     background-color: var(--mainGreen); 
     border: none;
-    border-radius: 20px;
+    border-radius: 23px;
     padding: 10px 20px;
     height: 50px;
     color: #ffffff;
     cursor: pointer;
-    margin-right: 10px; 
     outline: none; 
     transition: background-color 0.3s ease;
     font-family: var(--font-family-source-serif);

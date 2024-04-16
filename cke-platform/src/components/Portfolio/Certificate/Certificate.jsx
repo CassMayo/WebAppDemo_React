@@ -8,7 +8,7 @@ import CustomLink from '../../Navbar/CustomLink';
 
 
 
-export default function Certificate(props) {
+export default function Certificate() {
 
     const { purchasedItem } = useContext(PurchaseContext)
 
@@ -47,7 +47,7 @@ export default function Certificate(props) {
             <div className="certificateCard">
 
                 <div className="topRow">
-                    <img className="logo" src="./images/ClearKarbon.PNG" alt="Clear Karbon Exchange Logo" />
+                    <img className="certLogo" src="./images/ClearKarbon.PNG" alt="Clear Karbon Exchange Logo" />
                     <h1 className="certTitle">Certificate of Purchase</h1>
                     <div className="totalOffsetBadge">
                         <p>Tons of CO2 offset:</p>
@@ -55,7 +55,7 @@ export default function Certificate(props) {
                     </div>
                 </div>
 
-                <p><b>Certificate ID: M49-KU5-X-C455I</b></p>
+                <p><b>Certificate ID: M49-KU5-&-C455I</b></p>
 
                 <div className="certBody">
 
@@ -71,7 +71,7 @@ export default function Certificate(props) {
                                 </ul>
 
                                 <ul className="sellerInfo">
-                                    <li>Credits issued by <b>{item.listing.title}</b></li>
+                                    <li>Credits issued by <b>{item.listing.ownerName}</b></li>
                                     <li>[Adress]</li>
                                     <li>{item.listing.location}</li>
                                     <li>[Country]</li>
