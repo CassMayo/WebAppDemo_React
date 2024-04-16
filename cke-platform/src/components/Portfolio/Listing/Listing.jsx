@@ -29,7 +29,7 @@ export default function Listing() {
     useEffect(() => {
         async function fetchData() {
             const id = params.id?.toString() || undefined
-            console.log("fetching from: ", `${BASE_API_URL}/portfolio/${id}`)
+
             if (!id) return
 
             const response = await fetch(
@@ -57,12 +57,38 @@ export default function Listing() {
         setAmount(Number(event.target.value));
     };
 
+    
+
     const handlePurchase = () => {
         const id = params.id?.toString() || undefined
+
         const purchasedItem = { id, listing, amount };
         addPurchasedItem(purchasedItem);
+
+        subtractCreditsFromListing(id, amount)
+
         navigate('/certificate');
     };
+
+    const subtractCreditsFromListing = async (id, amount) => {
+
+        try {
+
+            const updatedListing = listing
+            updatedListing.credits = updatedListing.credits - amount
+
+            const response = await fetch(`${BASE_API_URL}/portfolio/${id}`, {
+                method: "PATCH",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updatedListing)
+              })
+        } catch (err){
+            console.error(err)
+        }
+
+    }
 
 
     return (
@@ -94,7 +120,7 @@ export default function Listing() {
                         </div>
                         <div className='interactions'>
                             <div className='chooseAmount'>
-                                <input type="number" onChange={handleAmountChange} defaultValue={amount} className='chooseAmountInputBox interaction' />
+                                <input type="number" onChange={handleAmountChange} defaultValue={amount} max={listing.credits} className='chooseAmountInputBox interaction' />
                             </div>
                             <div className='buy'>
                                 <button onClick={handlePurchase} className='buyButton interaction'>Buy</button>

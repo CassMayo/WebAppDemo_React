@@ -60,8 +60,9 @@ export default function CardsContentSection() {
     //basically bare putta inn search sammen med filter så at det begge blir returnert
     function filterAndSearchCards() {
         return data
-            .filter(card => filter.length < 1 || filter.includes(card.type))
-            .filter(card => !searchQuery || card.title.toLowerCase().includes(searchQuery.toLowerCase()));
+            .filter(card => filter.length < 1 || filter.includes(card.type)) // filter based on "filter type" 
+            .filter(card => !searchQuery || card.title.toLowerCase().includes(searchQuery.toLowerCase())) // hide card that doesnt match search term
+            .filter(card => card.credits > 0) // hide card that has 0 credits left in stock
     }
 
     function sortByChosenSortingMethod(cardA, cardB) {
