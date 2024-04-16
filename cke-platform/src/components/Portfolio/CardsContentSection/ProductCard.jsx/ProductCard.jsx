@@ -2,13 +2,15 @@ import './ProductCard.css'
 import { Link, useLocation } from "react-router-dom";
 
 
+
+
 export default function ProductCard(props) {
 
     return (
 
 
         <div className='card'>
-            <div className="cardBackground" style={{ backgroundImage: `url( ${props.image} )` }}>
+            <div className="cardBackground" style={{ backgroundImage: `url( ${props.imageUrl} )` }}>
                 <div className="cardColorOverlay" >
                     <div className='cardContentDiv'>
 

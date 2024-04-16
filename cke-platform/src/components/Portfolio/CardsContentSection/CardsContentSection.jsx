@@ -1,14 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ProductCard from "./ProductCard.jsx/ProductCard";
 import DropdownItem from "./DropdownItem/DropdownItem";
 import FilterItem from "./FilterItem/FilterItem";
 import SearchComponent from "./SearchComponent/SearchComponent";
+import { BASE_API_URL } from '../../../config';
 
 import "./CardsContentSection.css";
-import data from "./CardsContent.json";
+
+
+import axios from 'axios'
 
 export default function CardsContentSection() {
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        async function getListings() {
+            const response = await fetch(`${BASE_API_URL}/portfolio/`)
+            if (!response.ok) {
+                const msg = `An error occured: ${response.statusText}`
+                console.error(msg)
+                return
+            }
+            const listings = await response.json()
+            setData(listings)
+        }
+        getListings()
+        return
+    }, [data.length])
+
+
+
+
+
     const [filter, setFilter] = useState([]);
     const [filterDropDownMenuOpened, setFilterDropDownMenuOpened] = useState(false);
 
@@ -18,7 +43,7 @@ export default function CardsContentSection() {
     const [searchQuery, setSearchQuery] = useState("");
 
     //Fikset her så at det ikke er duplicates av kategorier i filteret
-    const categories = [...new Set(data.cards.map(card => card.type))];
+    const categories = [...new Set(data.map(card => card.type))];
 
     const allSortingMethods = ["Default Sorting", "Price Ascending", "Price Descending", "Available Credits Ascending", "Available Credits Descending"];
 
@@ -34,7 +59,7 @@ export default function CardsContentSection() {
 
     //basically bare putta inn search sammen med filter så at det begge blir returnert
     function filterAndSearchCards() {
-        return data.cards
+        return data
             .filter(card => filter.length < 1 || filter.includes(card.type))
             .filter(card => !searchQuery || card.title.toLowerCase().includes(searchQuery.toLowerCase()));
     }
@@ -60,7 +85,6 @@ export default function CardsContentSection() {
 
 
                 <SearchComponent className="search-container" onSearch={handleSearch} />
-
 
 
                 <div className="dropDownMenu filterDropDown" onClick={() => { setFilterDropDownMenuOpened(!filterDropDownMenuOpened) }}>
@@ -92,8 +116,6 @@ export default function CardsContentSection() {
                 </div>
 
 
-
-
                 <div className="activeFiltersDiv">
                     {filter.map((filterName, index) => <FilterItem name={filterName} key={index} removeFilter={toggleFromFilter} />)}
                 </div>
@@ -104,19 +126,20 @@ export default function CardsContentSection() {
             <div className="cardsContainer">
                 {/*Ikke ideelt mens siden vi ikke har backend... >-< bør egentlig ha error og bruke error state*/}
 
+
                 {filterAndSearchCards().sort(sortByChosenSortingMethod).length === 0 ? (
                     <p className="no-cards-found">No credit found with given parameters <br /><br />
-                    filters: [{filter}]<br/>
-                    search query: {searchQuery ? searchQuery : "No search made" } <br />
-                    sorting: {sortingMethod}
-                    
+                        filters: [{filter}]<br />
+                        search query: {searchQuery ? searchQuery : "No search made"} <br />
+                        sorting: {sortingMethod}
+
                     </p>
                 ) : (
                     filterAndSearchCards()
                         .sort(sortByChosenSortingMethod)
                         .map((card, index) => (
                             <ProductCard
-                                image={card.image}
+                                imageUrl={card.imageUrl}
                                 imageAlt={card.imageAlt}
                                 title={card.title}
                                 type={card.type}
@@ -125,10 +148,12 @@ export default function CardsContentSection() {
                                 location={card.location}
                                 description={card.description}
                                 key={index}
-                                id={index}
+                                id={card._id}
                             />
                         ))
                 )}
+
+
             </div>
         </div>
     )

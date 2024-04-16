@@ -1,60 +1,71 @@
 import React, { useState, useEffect } from 'react';
-import './EditCreditModal.css';
+import { BASE_API_URL } from '../../../config';
 
-const EditCreditModal = ({ isOpen, onClose, credit, onSave }) => {
-    const [editedCredit, setEditedCredit] = useState({
-        ...credit,
-        changeInCredits: 0, 
-        newPrice: credit.pricePerCredit || 0
+const EditCreditModal = ({ isOpen, onClose, listing }) => {
+    const [newListing, setNewListing] = useState({
+        title: listing.title,
+        price: listing.price,
+        credits: listing.credits,
+        type: listing.type,
+        imageUrl: listing.imageUrl,
+        imageAlt: listing.imageAlt,
+        location: listing.location,
+        description: listing.description,
+        ownerId: listing.ownerId,
+        ownerName: listing.ownerName
+
     });
 
-    useEffect(() => {
-        setEditedCredit({
-            ...credit,
-            changeInCredits: 0, 
-            newPrice: credit.pricePerCredit || 0
-        });
-    }, [credit]);
+    async function handleSaveChanges() {
+        try{
+            const response = await fetch(`${BASE_API_URL}/portfolio/${listing._id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newListing)
+            })
+        } catch(err) {
+            console.error(err)
+        }
+    };
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setEditedCredit({ ...editedCredit, [name]: value });
+        setNewListing(prevState => ({ ...prevState, [name]: value }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSave({
-            ...credit,
-            numberOfCredits: parseInt(editedCredit.numberOfCredits),
-            pricePerCredit: parseFloat(editedCredit.pricePerCredit)
-        });
+        handleSaveChanges()
+        onClose();  
     };
 
-
-    if (!isOpen) return null;
+    if (!isOpen) return null; 
 
     return (
         <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label htmlFor="numberOfCredits">Number of credits:</label>
                         <input
                             type="number"
-                            id="numberOfCredits"
-                            name="numberOfCredits"
-                            value={editedCredit.numberOfCredits}
+                            id="credits"
+                            name="credits"
+                            value={newListing.credits}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="input-group">
-                        <label htmlFor="pricePerCredit">New price per credit:</label>
+                        <label htmlFor="newPrice">New price per credit:</label>
                         <input
                             type="number"
-                            id="pricePerCredit"
-                            name="pricePerCredit"
-                            value={editedCredit.pricePerCredit}
+                            id="price"
+                            name="price"
+                            value={newListing.price}
                             onChange={handleChange}
                             required
                         />

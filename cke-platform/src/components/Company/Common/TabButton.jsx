@@ -4,7 +4,7 @@ import './TabButton.css';
 const TabButton = ({ isActive, onClick, children }) => {
   return (
 
-    <div className="tab-buttons">
+    <div className="tab-buttonDiv">
     <button
       className={`tab-button ${isActive ? 'active' : ''}`}
       onClick={onClick}

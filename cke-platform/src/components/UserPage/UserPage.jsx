@@ -4,6 +4,8 @@ import useRoleBasedRedirect from '../Hooks/useRoleBasedRedirect';
 import './UserPage.css';
 
 const UserPage = () => {
+
+  
   //role based redirect for bruker
   useRoleBasedRedirect(['user']);
 

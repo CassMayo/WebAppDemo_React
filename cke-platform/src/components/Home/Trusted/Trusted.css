@@ -12,6 +12,7 @@
 }
 
 .trusted-by {
+  flex: 1;
   background-color: var(--mainBlack);
   color: var(--textWhite);
   padding: 1rem;
@@ -44,6 +45,7 @@
 
 /*Left side*/
 .offers-section {
+  flex: 4;
   background-color: var(--mainWhite);
   height: 500px;
   border-radius: 20px;
