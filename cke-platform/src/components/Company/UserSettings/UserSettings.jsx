@@ -53,7 +53,7 @@ export default function UserSettings() {
             console.error(err)
         }
 
-        navigate('/')
+        navigate('/company')
     }
     const handleChange = (e) => {
         const { name, value } = e.target;

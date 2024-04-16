@@ -5,7 +5,7 @@ import RegisterNewCredits from '../RegisterCredit/RegisterCredit';
 import { BASE_API_URL } from '../../../config';
 
 
-const CurrentListing = ({ setActiveTab, isEditListing, setIsEditingListing }) => {
+const CurrentListing = ({ setActiveTab, isEditingListing, setIsEditingListing }) => {
     const [listings, setListings] = useState([]);
     const [currentEditId, setCurrentEditId] = useState('');
 
@@ -41,7 +41,7 @@ const CurrentListing = ({ setActiveTab, isEditListing, setIsEditingListing }) =>
             fetchData(userId)
         }
 
-    }, []);
+    }, [isEditingListing]);
 
 
     async function handleDelete(id) {
@@ -64,11 +64,11 @@ const CurrentListing = ({ setActiveTab, isEditListing, setIsEditingListing }) =>
     return (
         <div className="current-listings-div">
 
-            {isEditListing ?
+            {isEditingListing ?
 
                 <div className='current-listings'>
                     <h1>Editing listing</h1>
-                    <RegisterNewCredits listingStartState={listings.find(listing => listing._id == currentEditId)} />
+                    <RegisterNewCredits listingStartState={listings.find(listing => listing._id == currentEditId) } setActiveTab={setActiveTab} isEditingListing={isEditingListing} setIsEditingListing={setIsEditingListing} />
                 </div>
 
                 :

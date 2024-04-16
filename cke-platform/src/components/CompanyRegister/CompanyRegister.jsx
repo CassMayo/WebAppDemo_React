@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CompanyRegister.css';
 import { BASE_API_URL } from '../../config';
+import { LoginContext } from '../logic/LoginContext';
 
 
 const RegisterPage = () => {
@@ -14,6 +15,7 @@ const RegisterPage = () => {
     });
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const { logIn } = useContext(LoginContext)
 
     async function handleRegister(e) {
         e.preventDefault();
@@ -33,6 +35,8 @@ const RegisterPage = () => {
 
             const data = await response.json()
             localStorage.setItem('userId', data._id) // store just ID in local storage. Use this to fetch more info about company from DB
+
+            logIn(data._id)
 
         } catch {
             console.error("couldnt ")

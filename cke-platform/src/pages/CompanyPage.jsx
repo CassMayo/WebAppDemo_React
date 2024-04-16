@@ -10,7 +10,7 @@ import { BASE_API_URL } from '../config';
 const CompanyPage = () => {
 
 
-    const [isEditingListing, setIsEditingListing] = useState(true)
+    const [isEditingListing, setIsEditingListing] = useState(false)
     const [activeTab, setActiveTab] = useState('currentListings');
     const [userInfo, setUserInfo] = useState({
         userName: '',
@@ -19,6 +19,11 @@ const CompanyPage = () => {
         about: '',
         location: ''
     });
+
+    const setActiveTabToNewListing = () => {
+        setIsEditingListing(false)
+        setActiveTab("registerCredits")
+    }
 
     // get user info from DB using userId stored in browser.
     useEffect(() => {
@@ -48,7 +53,7 @@ const CompanyPage = () => {
         price: '',
         credits: '',
         type: '',
-        imageUrl: 'https://cataas.com/cat',
+        imageUrl: 'https://cdn2.thecatapi.com/images/9tl.jpg',
         imageAlt: '',
         location: '',
         description: '',
@@ -66,7 +71,7 @@ const CompanyPage = () => {
                 <TabButton isActive={activeTab === 'currentListings'} onClick={() => setActiveTab('currentListings')}>
                     Your Listings
                 </TabButton>
-                <TabButton isActive={activeTab === 'registerCredits'} onClick={() => setActiveTab('registerCredits')}>
+                <TabButton isActive={activeTab === 'registerCredits'} onClick={() => setActiveTabToNewListing()}>
                     Register New Listing
                 </TabButton>
                 <TabButton isActive={activeTab === 'financialOverview'} onClick={() => setActiveTab('financialOverview')}>
@@ -75,8 +80,8 @@ const CompanyPage = () => {
             </div>
             <div className="page-content">
 
-                {activeTab === 'currentListings' && <CurrentListing setActiveTab={setActiveTab} setIsEditingListing={setIsEditingListing} isEditListing={isEditingListing} />}
-                {activeTab === 'registerCredits' && <RegisterNewCredits listingStartState={defaultListing} setActiveTab={setActiveTab} isEditingListing={isEditingListing}/>}
+                {activeTab === 'currentListings' && <CurrentListing setActiveTab={setActiveTab} setIsEditingListing={setIsEditingListing} isEditingListing={isEditingListing} />}
+                {activeTab === 'registerCredits' && <RegisterNewCredits listingStartState={defaultListing} setActiveTab={setActiveTab} isEditingListing={isEditingListing} setIsEditingListing={setIsEditingListing}/>}
                 {activeTab === 'financialOverview' && <FinancialOverview userInfo={userInfo} />}
             </div>
         </div>

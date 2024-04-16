@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './RegisterCredit.css';
 import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 import { BASE_API_URL } from '../../../config';
-const RegisterNewCredits = ({listingStartState, setActiveTab, isEditingListing}) => {
+const RegisterNewCredits = ({ listingStartState, setActiveTab, isEditingListing, setIsEditingListing }) => {
 
+
+  console.log(listingStartState)
 
   const [newListing, setNewListing] = useState(listingStartState);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,10 +30,14 @@ const RegisterNewCredits = ({listingStartState, setActiveTab, isEditingListing})
 
 
     let method
-    isEditingListing ? method = "PATCH" : method = "POST"  
+    let apiUrl
+
+
+    isEditingListing ? apiUrl = `portfolio/${newListing._id}` : apiUrl = "portfolio/"
+    isEditingListing ? method = "PATCH" : method = "POST"
 
     try {
-      const response = await fetch(`${BASE_API_URL}/portfolio/`, {
+      const response = await fetch(`${BASE_API_URL}/${apiUrl}`, {
         method: method,
         headers: {
           "Content-Type": "application/json",
@@ -43,6 +49,7 @@ const RegisterNewCredits = ({listingStartState, setActiveTab, isEditingListing})
     } catch (err) {
       console.error(err)
     }
+    setIsEditingListing(false)
     setIsModalOpen(true);
   };
 
@@ -62,7 +69,9 @@ const RegisterNewCredits = ({listingStartState, setActiveTab, isEditingListing})
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="register-credits-form">
+
+      <div className='register-credits-form'> 
+      <form onSubmit={handleSubmit} className="form">
 
         <div className="input-group">
           <label htmlFor="title">Title of listing</label>
@@ -155,14 +164,28 @@ const RegisterNewCredits = ({listingStartState, setActiveTab, isEditingListing})
         </div>
 
 
-        <button type="submit" className="submit-button" onClick={handleSubmit}>Register Credit</button>
+        <button type="submit" className="submit-button">Save</button>
+
+
+
+
+
 
       </form>
+
+      <div className='imageDiv'>
+        <h4> Listing image </h4>
+          <img  className="image" src={newListing.imageUrl} alt={newListing.imageAlt} />
+        </div>
+      </div>
+
+
       <ConfirmationModal
         isOpen={isModalOpen}
         onAddMore={handleAddMore}
         onGoToListings={handleGoToListings}
       />
+
     </div>
   );
 };

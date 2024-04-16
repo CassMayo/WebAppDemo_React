@@ -8,10 +8,13 @@
   height: auto;
   padding: 30px;
   height: 75vh;
+
+  display: flex;
 }
 
 .input-group {
   margin-bottom: 20px;
+  width: 600px;
 }
 
 .input-group label {
@@ -53,19 +56,25 @@
 }
 
 .submit-button {
-  background-color: var(--mainGreen);
-  color: var(--mainWhite);
+  background-color: var(--mainYellow);
+  color: var(--mainBlack);
   padding: 12px 20px;
   border: none;
-  border-radius: 5px;
   margin-top: 10px; 
   cursor: pointer;
   font-size: 16px;
   display: block;
   width: 57%;
+  border-radius: 23px;
 }
 
 .submit-button:hover {
-  background-color: var(--mainGreen);
+  opacity: 0.4;
+  scale: 0.98;
+  
 
+}
+
+.image{
+  width: 400px;
 }
