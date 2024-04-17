@@ -5,6 +5,7 @@ import CustomLink from '../../Navbar/CustomLink';
 import { PurchaseContext } from '../../logic/PurchaseContext';
 // import data from '../CardsContentSection/CardsContent.json'; 
 import { BASE_API_URL } from '../../../config';
+import CreditQualityEvaluation from './CreditQualityEval/CreditQualityEvaluation';
 
 export default function Listing() {
     const [listing, setListing] = useState({
@@ -57,7 +58,7 @@ export default function Listing() {
         setAmount(Number(event.target.value));
     };
 
-    
+
 
     const handlePurchase = () => {
         const id = params.id?.toString() || undefined
@@ -80,14 +81,24 @@ export default function Listing() {
             const response = await fetch(`${BASE_API_URL}/portfolio/${id}`, {
                 method: "PATCH",
                 headers: {
-                  "Content-Type": "application/json",
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(updatedListing)
-              })
-        } catch (err){
+            })
+        } catch (err) {
             console.error(err)
         }
 
+    }
+
+    const creditQualityDataDummy = {
+        IssuerOwnsLand: true,
+        PoliticalRisk: "Low",
+        legalRisk: "Low",
+        geographicalRisk: "Low",
+        climateProjections: "Fair",
+        independentVerifiers: ["Gold Standard"],
+        ownerStructure: "Familiy Owned"
     }
 
 
@@ -105,7 +116,15 @@ export default function Listing() {
             </div>
 
             <div className='bodyDiv'>
-                <div className='Images' style={{ backgroundImage: `url( ${listing.imageUrl} )` }}></div>
+                <div className='imageAndDescription'>
+
+                    <div className='imageDiv'>
+                        <img className="image" src={listing.imageUrl} alt={listing.imageAlt} />
+                    </div>
+                    <div className='description'>
+                        <p>{listing.description}</p>
+                    </div>
+                </div>
                 <div className='listingInfo'>
                     <div className='buyBox'>
                         <div className='listingMainInfo'>
@@ -120,16 +139,17 @@ export default function Listing() {
                         </div>
                         <div className='interactions'>
                             <div className='chooseAmount'>
-                                <input type="number" onChange={handleAmountChange} defaultValue={amount} max={listing.credits} className='chooseAmountInputBox interaction' />
+                                <input type="number" onChange={handleAmountChange} defaultValue={amount} min={0} max={listing.credits} className='chooseAmountInputBox interaction' />
                             </div>
                             <div className='buy'>
                                 <button onClick={handlePurchase} className='buyButton interaction'>Buy</button>
                             </div>
                         </div>
                     </div>
-                    <div className='description'>
-                        <p>{listing.description}</p>
-                    </div>
+
+
+                    <CreditQualityEvaluation creditQualityData={creditQualityDataDummy}> </CreditQualityEvaluation>
+
                     <div className='verifications'>todo verifications. Show verification logos based on json</div>
                 </div>
             </div>

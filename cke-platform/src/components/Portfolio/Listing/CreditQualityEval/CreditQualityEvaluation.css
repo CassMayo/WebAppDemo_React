@@ -1,0 +1,40 @@
+
+
+
+
+li {
+    display: flex;
+    gap: 10px;
+}
+
+.leftSideBox{
+    height: 20px;
+    width: 20px;
+    
+}
+
+.isGreen{
+    background-color: var(--mainGreen);
+}
+.isYellow{
+    background-color: var(--mainYellow);
+}
+.isRed{
+    background-color: red;
+}
+
+.creditQualityEvaluationCard{
+    padding: 20px;
+    border-radius: 23px;
+    box-shadow: var(--box-shadow-card);
+}
+
+
+
+.scoreData{
+    margin-top: 1rem;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between  ;
+}
+

@@ -31,6 +31,7 @@
     display: flex;
     gap: 50px;
     padding-bottom: 100px;
+    height: 800px;
 }
 
 
@@ -48,13 +49,25 @@
 
 /* Left Side / Image*/
 
-.Images{
-    flex: 1;
-    background-size: cover;
-    height: 800px;
-    border-radius: 23px;
+.imageAndDescription{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
+.imageDiv{
+    overflow: hidden;
+    border-radius: 23px;
+    width: 100%;
+    flex: 5;
+}
+
+.image {
+    width: 100%;
+    object-fit:fill;
+    overflow: hidden;
+  }
 
 /* Right Side / Text info*/
 .listingInfo{
@@ -97,6 +110,12 @@
 .description{
     padding-left: 20px;
     padding-right: 20px;
+
+    box-shadow: var(--box-shadow-card);
+    padding: 20px;
+    border-radius: 23px;
+    
+    flex: 1;
 }
 
 
