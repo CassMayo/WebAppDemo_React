@@ -22,6 +22,7 @@
 
 .company-general-info{
   display: flex;
+  width: 30vw;
 }
 
 .logoDiv{
@@ -29,8 +30,8 @@
 }
 
 .company-logo-placeholder {
-  width: 100px; 
-  height: 100px; 
+  width: 350px; 
+  height: 200px; 
   background-color: #ccc; 
   display: flex;
   justify-content: center;

@@ -2,7 +2,8 @@
 
 .statisticCardContainer{
     display: flex;
-    justify-content: center;
+    flex-direction: start;
+    padding-left: 42px;
     width: 100%;
     margin-bottom: 100px;
 }

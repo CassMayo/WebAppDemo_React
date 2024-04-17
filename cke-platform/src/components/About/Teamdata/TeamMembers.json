@@ -1,40 +1,40 @@
 [
   {
     "id": 1,
-    "name": "Navn Navnesen",
+    "name": "JULIA E. KRÆMER",
     "title": "CO-FOUNDER & CEO",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "imageSrc": "/images/no-profilew.png", 
+    "description": " ",
+    "imageSrc": "/images/julia.jpg", 
     "linkedin": "https://linkedin.com", 
     "instagram": "https://instagram.com"
   },
 
   {
     "id": 2,
-    "name": "Navn Navnesen",
-    "title": "CO-FOUNDER & CEO",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "imageSrc": "/images/no-profilew.png", 
+    "name": "MARTIN KREVRNØ",
+    "title": "CO-FOUNDER & CFO",
+    "description": "",
+    "imageSrc": "/images/martin.png", 
     "linkedin": "https://linkedin.com", 
     "instagram": "https://instagram.com"
   },
 
   {
     "id": 3,
-    "name": "Navn Navnesen",
-    "title": "CO-FOUNDER & CEO",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "imageSrc": "/images/no-profilew.png", 
+    "name": "AGUNG SAPUTRA",
+    "title": "CO-FOUNDER & CTO",
+    "description": "",
+    "imageSrc": "/images/agung.png", 
     "linkedin": "https://linkedin.com", 
     "instagram": "https://instagram.com"
   },
 
   {
     "id": 4,
-    "name": "Navn Navnesen",
-    "title": "CO-FOUNDER & CEO",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "imageSrc": "/images/no-profilew.png", 
+    "name": "MANSUR DUDAJEV",
+    "title": "CO-FOUNDER & CIO",
+    "description": "",
+    "imageSrc": "/images/mansur.png", 
     "linkedin": "https://linkedin.com", 
     "instagram": "https://instagram.com"
   }

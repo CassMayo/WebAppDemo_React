@@ -1,17 +1,17 @@
 .financial-overview-container{
-    display: flex;
+  display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px; 
+  align-items: flex-start; 
+  padding-top: 25px;
 }
 
 .statistics-cards-container {
     display: flex;
     gap: 20px; 
-    justify-content: center;
+    justify-content: start;
     flex-wrap: wrap; 
     margin-bottom: 30px; 
-     width: calc(50% - 10px)
+    width: calc(50% - 10px)
   }
   .chart-container {
     background: var(--mainWhite);
@@ -20,4 +20,5 @@
     padding: 20px;
     margin: auto; 
     width: fit-content; 
+    margin-right: 20px;
   }

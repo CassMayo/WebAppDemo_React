@@ -1,14 +1,14 @@
 .current-listings {
     border-radius: 23px;
-    padding: 10px;
-
 }
 
 .current-listings h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--mainBlack);
+    font-family: var(--font-family-source-serif);
     text-align: left;
-    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .listing-item {
@@ -71,4 +71,11 @@ button:active {
   gap: 10px;
   margin-top: 50px;
   margin-bottom: 10px;
+}
+
+.no-listings-div{
+  font-family: var(--font-family-archivo-serif);
+  font-size: 1.2rem;
+  padding-bottom: 25px;
+
 }
