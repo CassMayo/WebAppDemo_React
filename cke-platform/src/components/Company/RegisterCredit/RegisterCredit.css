@@ -7,7 +7,7 @@
   border-radius: 8px;
   height: auto;
   padding: 30px;
-  height: 75vh;
+  height: fit-content;
 
   display: flex;
 }
@@ -71,10 +71,13 @@
 .submit-button:hover {
   opacity: 0.4;
   scale: 0.98;
-  
-
 }
-
+.imageDiv{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .image{
   width: 400px;
 }

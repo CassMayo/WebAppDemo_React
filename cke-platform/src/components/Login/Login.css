@@ -59,12 +59,15 @@
     background-color: var(--hover-color);
     color: var(--textBlack);
   }
-  
+
   .login-links a {
     color: var(--mainWhite);
     text-decoration: none;
     display: block;
     margin: 10px 0;
+    display: flex;
+    padding-left: 25px;
   }
+
 
   
