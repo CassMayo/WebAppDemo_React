@@ -3,7 +3,7 @@
   background-color: var(--mainWhite);
   padding-top: var(--padding-top);
   margin-top: var(--margin-top);
-  height: 600vh;
+  height: 100%;
 }
 
 .portfolio-content {

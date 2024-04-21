@@ -92,8 +92,8 @@ export default function Listing() {
     }
 
     const creditQualityDataDummy = {
-        IssuerOwnsLand: true,
-        PoliticalRisk: "Low",
+        issuerOwnsLand: true,
+        politicalRisk: "Low",
         legalRisk: "Low",
         geographicalRisk: "Low",
         climateProjections: "Fair",
@@ -121,15 +121,12 @@ export default function Listing() {
                     <div className='imageDiv'>
                         <img className="image" src={listing.imageUrl} alt={listing.imageAlt} />
                     </div>
-                    <div className='description'>
-                        <p>{listing.description}</p>
-                    </div>
                 </div>
                 <div className='listingInfo'>
                     <div className='buyBox'>
                         <div className='listingMainInfo'>
                             <div className='price mainInfo'>
-                                <p className='mainInfoTitle'>{listing.price}</p>
+                                <p className='mainInfoTitle'>${listing.price}</p>
                                 <p className='mainInfoDescription'>per credit</p>
                             </div>
                             <div className='credits mainInfo'>
@@ -147,10 +144,17 @@ export default function Listing() {
                         </div>
                     </div>
 
+                    <div className='description'>
+                        <p>{listing.description}</p>
+                    </div>
+
 
                     <CreditQualityEvaluation creditQualityData={creditQualityDataDummy}> </CreditQualityEvaluation>
 
-                    <div className='verifications'>todo verifications. Show verification logos based on json</div>
+                    { /*
+                        <div className='verifications'>todo verifications. Show verification logos based on json</div>
+                    */} 
+                    
                 </div>
             </div>
         </div>

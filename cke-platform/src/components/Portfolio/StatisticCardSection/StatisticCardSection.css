@@ -5,5 +5,7 @@
     flex-direction: start;
     padding-left: 42px;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+
+    justify-content: center;
 }

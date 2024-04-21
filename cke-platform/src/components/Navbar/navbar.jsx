@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 import UserDropdown from './UserDropdown/UserDropdown';
 import CustomLink from './CustomLink';
@@ -50,16 +50,26 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
+
+
       <Link to="/">
         <img src="/images/ClearKarbon.PNG" alt="Clear Karbon Exchange Logo" className="navbar-logo" />
       </Link>
       <div className="navbar-links">
-        <CustomLink to="/about">About Us</CustomLink>
-        <CustomLink to="/portfolio">Portfolio</CustomLink>
+
+        <div className={`${location.pathname === "/about" ? "active" : "inactive"} link-btn`}>
+          <CustomLink to="/about">About Us</CustomLink>
+        </div>
+
+
+        <div className={`${location.pathname === "/portfolio" ? "active" : "inactive"} link-btn`}>
+          <CustomLink to="/portfolio">Portfolio</CustomLink>
+        </div>
+
         {/*<CustomLink to="/invest">Invest</CustomLink>*/}
         {username ? (
           <div className="navbar-user-section" onClick={toggleDropdown}>
-            <FontAwesomeIcon className='user-icon' icon={faUserCircle} />
+            <FontAwesomeIcon icon={faUser} style={{ color: "#ffffff", }} />
             <span className="navbar-username-text">{username}</span>
             {isDropdownVisible && <UserDropdown isSeller={isSeller} />}
           </div>

@@ -5,41 +5,48 @@
     background-color: transparent;
     align-items: center;
     font-family: var(--font-family-source-serif);
-    font-weight: var(--font-weight-bold); 
-    position: sticky; 
+    font-weight: var(--font-weight-bold);
+    position: sticky;
     top: 0;
     left: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .navbar-logo {
-    height: 50px; 
+    height: 50px;
 }
 
 .navbar-links {
     display: flex;
     height: 3vw;
-    gap: 2.5vw;
+    gap: 3vw;
     align-items: center;
     list-style: none;
     background-color: var(--mainWhite);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     box-shadow: var(--box-shadow-card);
+
+    padding: 10px;
+
+    padding-left: 40px;
+    padding-right: 40px;
 }
-.navbar-links a, .navbar-btn {
-    text-decoration: none;  
+
+.navbar-links a,
+.navbar-btn {
+    text-decoration: none;
     margin: 0 10px;
-    color: var(--textBlack); 
+    color: var(--textBlack);
     padding: 5px 15px;
 }
 
 .navbar-btn {
-    padding: 10px; 
+    padding: 10px;
     height: 2em;
-    width: 5.5em; 
+    width: 5.5em;
     background-color: var(--mainGreen);
-    border-radius: 50px; 
+    border-radius: 50px;
     border: none;
     color: var(--textWhite);
     cursor: pointer;
@@ -58,12 +65,16 @@
     background-color: var(--mainGreen);
     color: var(--textWhite);
     border-radius: 50px;
-    margin-right: 10px; 
-    height: 37px;
-    width: 150px;
+    height: 100%;
+
+    max-width: 200px;
+
+    padding-left: 30px;
+    padding-right: 30px;
+
     display: flex;
     align-items: center;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .navbar-user-section:hover {
@@ -75,18 +86,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
-    height: 37px;
 }
 
 .navbar-username-text {
-    overflow: hidden;
+
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: var(--MainYellow); 
-    max-width: 100px; 
+    color: var(--MainYellow);
+    max-width: 100px;
     margin-left: 10px;
     margin-right: 10px;
+
 }
 
 .user-icon {
@@ -94,7 +104,15 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
+.link-btn.active{
+    background-color: rgb(224, 224, 224);
+    border-radius: 13px;
+    height: 100%;
 
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

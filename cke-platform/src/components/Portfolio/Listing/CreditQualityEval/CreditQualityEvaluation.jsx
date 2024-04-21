@@ -5,9 +5,9 @@ import './CreditQualityEvaluation.css'
 function calculateScore(creditQualityData) {
   let rawScore = 0;
 
-  if (creditQualityData.PoliticalRisk === "Low") {
+  if (creditQualityData.politicalRisk === "Low") {
     rawScore += 100;
-  } else if (creditQualityData.PoliticalRisk === "Medium") {
+  } else if (creditQualityData.politicalRisk === "Medium") {
     rawScore += 50;
   }
 
@@ -33,10 +33,8 @@ function calculateScore(creditQualityData) {
     rawScore += 50;
   }
 
-  if (creditQualityData.independentVerifiers.length > 1) {
+  if (creditQualityData.independentVerifiers.length > 0) {
     rawScore += 100;
-  } else if (creditQualityData.independentVerifiers.length === 0) {
-    rawScore += 50;
   }
 
   return rawScore
@@ -77,14 +75,14 @@ export default function CreditQualityEvaluation({ creditQualityData }) {
   return (
     <div className="creditQualityEvaluationCard">
 
+      <h3 className="scoreTitle"> Carbon Credit Integrity Score </h3>
+
       <ul>
-        <li> <div className={`leftSideBox ${creditQualityData.IssuerOwnsLand ? "isGreen" : "isRed"}`}></div> {creditQualityData.IssuerOwnsLand ? "Issuer owns land" : "Issuer doesnt own land"}</li>
-        <li> <div className={`leftSideBox ${creditQualityData.PoliticalRisk == "Low" ? "isGreen" : creditQualityData.PoliticalRisk == "Medium" ? "isYellow" : "isRed"}`}></div>Political Risk: {creditQualityData.PoliticalRisk}</li>
+        <li> <div className={`leftSideBox ${creditQualityData.issuerOwnsLand ? "isGreen" : "isRed"}`}></div> {creditQualityData.issuerOwnsLand ? "Issuer owns land" : "Issuer doesnt own land"}</li>
+        <li> <div className={`leftSideBox ${creditQualityData.politicalRisk == "Low" ? "isGreen" : creditQualityData.PoliticalRisk == "Medium" ? "isYellow" : "isRed"}`}></div>Political Risk: {creditQualityData.PoliticalRisk}</li>
         <li> <div className={`leftSideBox ${creditQualityData.legalRisk == "Low" ? "isGreen" : creditQualityData.legalRisk == "Medium" ? "isYellow" : "isRed"}`}></div>Legal Risk: {creditQualityData.legalRisk}</li>
         <li> <div className={`leftSideBox ${creditQualityData.climateProjections == "Fair" ? "isGreen" : creditQualityData.climateProjections == "Concerning" ? "isYellow" : "isRed"}`}></div>Climate Projections: {creditQualityData.climateProjections}</li>
-        <li> <div className={`leftSideBox ${creditQualityData.independentVerifiers.length > 1 ? "isGreen" : creditQualityData.independentVerifiers.length == 1 ? "isYellow" : "isRed"}`}></div>Independent Verifiers: {creditQualityData.independentVerifiers.map(it => it + ", ")}</li>
         <li> Owner Structure: {creditQualityData.ownerStructure}</li>
-
       </ul>
 
 
@@ -93,6 +91,16 @@ export default function CreditQualityEvaluation({ creditQualityData }) {
           <div style={score}></div>
         </div>
         <p className="scoreText">{scoreData}%</p>
+      </div>
+
+      <div className="verifiedBox">
+        <p className="verifiedBy">Credits independently verified by:</p>
+        <div className="logosDiv">
+          <img className="standardLogo" src="../public/assets/logos/GS_Logo_Primary.png" alt="" />
+          <div className="moreInfo">
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+        </div>
       </div>
 
 

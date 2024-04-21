@@ -7,9 +7,15 @@ li {
     gap: 10px;
 }
 
+.scoreTitle{
+    margin-bottom: 10px;
+}
+
 .leftSideBox{
     height: 20px;
     width: 20px;
+    margin: 1px;
+    border-radius: 23px;
     
 }
 
@@ -38,3 +44,24 @@ li {
     justify-content: space-between  ;
 }
 
+.verifiedBox{
+    margin-top: 30px;
+    color: gray;
+
+}
+
+.logosDiv{
+    display: flex;
+    padding: 10px;
+    align-items: end;
+
+}
+
+.standardLogo {
+    width: 175px;
+}
+
+.moreInfo{
+    cursor: pointer;
+    padding-bottom: 10px;
+}
