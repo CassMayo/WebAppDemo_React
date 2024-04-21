@@ -96,7 +96,7 @@ export default function CreditQualityEvaluation({ creditQualityData }) {
       <div className="verifiedBox">
         <p className="verifiedBy">Credits independently verified by:</p>
         <div className="logosDiv">
-          <img className="standardLogo" src="../public/assets/logos/GS_Logo_Primary.png" alt="" />
+          <img className="standardLogo" src="/assets/logos/GS_Logo_Primary.png" alt="" />
           <div className="moreInfo">
             <i class="fa-solid fa-circle-info"></i>
           </div>
