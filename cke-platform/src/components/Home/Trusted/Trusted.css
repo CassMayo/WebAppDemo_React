@@ -46,7 +46,7 @@
 /*Left side*/
 .offers-section {
   flex: 4;
-  background-color: var(--mainWhite);
+  background-color: var(--mainBlue);
   height: 500px;
   border-radius: 20px;
   padding: 2rem;

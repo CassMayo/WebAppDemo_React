@@ -27,11 +27,14 @@
 
 .statistic-card {
   margin-right: max(3.125em, 3vw);
+  background-color: var(--mainBlue);
+  box-shadow: var(--box-shadow-card);
+  border-radius: 20px;
   flex-grow: 0;
-  padding-right: max(1.25em, 1vw);
   text-align: start;
   color: var(--textBlack);
   max-width: 18.75em;
+  
 }
 
 /*Left card*/
@@ -45,12 +48,14 @@
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-source-serif);
   margin-bottom: .3em;
+  padding: 10px;
 }
 
 .statistic-label {
   font-family: var(--font-family-source-serif);
   font-weight: var(--font-weight-bold);
   font-size: 1.5vw;
+  padding: 10px;
 }
 
 .statistic-heading {
@@ -80,7 +85,6 @@
 
 /*Card right side */
 .featured-in {
-
   flex: 1;
   height: auto;
   padding: max(1.25em, 1vw);
