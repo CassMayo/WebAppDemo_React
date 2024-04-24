@@ -12,7 +12,7 @@ const WhatWeDo = () => {
             <div className="steps">
                 <div className="step">
                 <h3>1</h3>
-                    <FontAwesomeIcon icon={faLeaf} size="5x" />
+                    <FontAwesomeIcon icon={faLeaf} size="4x" className='icon' />
               
                     <p>
                         We have exclusive sales right with companies and projects that develop carbon credits. 
@@ -21,7 +21,7 @@ const WhatWeDo = () => {
                 </div>
                 <div className="step">
                     <h3>2</h3>
-                    <FontAwesomeIcon icon={faSearch} size="5x" />
+                    <FontAwesomeIcon icon={faSearch} size="4x" className='icon'/>
                     <p>
                         We certify suppliers with third-party verifications from Verra and The gold Standard who 
                         independently verifies the removal.
@@ -30,7 +30,7 @@ const WhatWeDo = () => {
                 </div>
                 <div className="step">
                 <h3>3</h3>
-                <FontAwesomeIcon icon={faDollarSign} size="5x" />
+                <FontAwesomeIcon icon={faDollarSign} size="4x" className='icon' />
                     
                     <p>Companies and private customers buy the verified credits costumers buys the verified credits through
                         our market platform.
@@ -38,7 +38,7 @@ const WhatWeDo = () => {
                 </div>
                 <div className="step">
                 <h3>4</h3>
-                    <FontAwesomeIcon icon={faAward} size="5x" />
+                    <FontAwesomeIcon icon={faAward} size="4x" className='icon'/>
                    
                     <p>
                         The purchased credits are then retired. The buyer get their positive verification and

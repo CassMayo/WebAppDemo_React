@@ -5,7 +5,7 @@
     padding-top: 4em;
     text-align: center;
     list-style: none;
-    height: 110vh;
+    height: 100vh;
     font-weight: var(--font-weight-bold);
 }
 
@@ -16,7 +16,9 @@
     font-weight: var(--font-weight-bold);
     font-size: 3em;
 }
-
+.icon {
+    padding: 20px;
+}
 .steps {
     display: flex;
     justify-content: space-between;
@@ -31,7 +33,7 @@
 .step h3 {
     text-align: left;
     font-family: var(--font-family-archivo-serif);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-normal);
     font-size: 2em;
     margin-bottom: 20px;
 }
@@ -59,10 +61,11 @@
     font-family: var(--font-family-source-serif);
     transition: background-color 0.3s ease;
 }
+
 .cta-button i {
     font-size: 1.5em;
     padding-left: 1em;
-  }
+}
 
 .cta-button button:hover {
     color: var(--textBlack);
