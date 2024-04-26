@@ -37,17 +37,32 @@ function calculateScore(creditQualityData) {
     rawScore += 100;
   }
 
+  if (creditQualityData.methodOfCapture == "Forrestry"){
+    rawScore += 100
+  } else if (creditQualityData.methodOfCapture == "Algae"){
+    rawScore += 50
+  } 
+
+  if (creditQualityData.permanence == "High"){
+    rawScore += 100
+  } else if (creditQualityData.permanence == "Medium"){
+    rawScore += 50
+  }
+
+
   return rawScore
 }
 
+
+
+
+
 export default function CreditQualityEvaluation({ creditQualityData }) {
-
-
 
   const [scoreData, setScoreData] = useState(0)
 
   useEffect(() => {
-    setScoreData((calculateScore(creditQualityData) / 6).toFixed(0))
+    setScoreData((calculateScore(creditQualityData) / 8).toFixed(0))
 
   }, [])
 
@@ -79,9 +94,13 @@ export default function CreditQualityEvaluation({ creditQualityData }) {
 
       <ul>
         <li> <div className={`leftSideBox ${creditQualityData.issuerOwnsLand ? "isGreen" : "isRed"}`}></div> {creditQualityData.issuerOwnsLand ? "Issuer owns land" : "Issuer doesnt own land"}</li>
-        <li> <div className={`leftSideBox ${creditQualityData.politicalRisk == "Low" ? "isGreen" : creditQualityData.PoliticalRisk == "Medium" ? "isYellow" : "isRed"}`}></div>Political Risk: {creditQualityData.PoliticalRisk}</li>
+        <li> <div className={`leftSideBox ${creditQualityData.politicalRisk == "Low" ? "isGreen" : creditQualityData.politicalRisk == "Medium" ? "isYellow" : "isRed"}`}></div>Political Risk: {creditQualityData.politicalRisk}</li>
         <li> <div className={`leftSideBox ${creditQualityData.legalRisk == "Low" ? "isGreen" : creditQualityData.legalRisk == "Medium" ? "isYellow" : "isRed"}`}></div>Legal Risk: {creditQualityData.legalRisk}</li>
         <li> <div className={`leftSideBox ${creditQualityData.climateProjections == "Fair" ? "isGreen" : creditQualityData.climateProjections == "Concerning" ? "isYellow" : "isRed"}`}></div>Climate Projections: {creditQualityData.climateProjections}</li>
+        <li> <div className={`leftSideBox ${"isYellow" /* idk hvorfor skog er gul vs. ocean er grønn f.eks så alle blir gul :) */}`}></div>Method of Capture: {creditQualityData.methodOfCapture}</li>
+        <li> <div className={`leftSideBox ${creditQualityData.stakeholderEngagement == "High" ? "isGreen" : creditQualityData.stakeholderEngagement == "Ok" ? "isYellow" : "isRed"}`}></div>Stakeholder Engagement: {creditQualityData.stakeholderEngagement}</li>
+        <li> <div className={`leftSideBox ${creditQualityData.permanence == "High" ? "isGreen" : creditQualityData.permanence == "Medium" ? "isYellow" : "isRed"}`}></div>Permanence: {creditQualityData.permanence}</li>
+
         <li> Owner Structure: {creditQualityData.ownerStructure}</li>
       </ul>
 
@@ -94,14 +113,17 @@ export default function CreditQualityEvaluation({ creditQualityData }) {
       </div>
 
       <div className="verifiedBox">
-        <p className="verifiedBy">Credits independently verified by:</p>
+        <p className="verifiedBy">This Carbon Capture Project has been 
+        benchmarked against </p>
         <div className="logosDiv">
-          <img className="standardLogo" src="/assets/logos/GS_Logo_Primary.png" alt="" />
+          <img className="standardLogo" src="/assets/logos/trefadder.webp" alt="" />
           <div className="moreInfo">
             <i class="fa-solid fa-circle-info"></i>
           </div>
         </div>
       </div>
+
+      
 
 
     </div>

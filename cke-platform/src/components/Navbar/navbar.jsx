@@ -69,12 +69,15 @@ const Navbar = () => {
         {/*<CustomLink to="/invest">Invest</CustomLink>*/}
         {username ? (
           <div className="navbar-user-section" onClick={toggleDropdown}>
-            <FontAwesomeIcon icon={faUser} style={{ color: "#ffffff", }} />
-            <span className="navbar-username-text">{username}</span>
+            <div className='navbar-user-button'>
+              <FontAwesomeIcon className='user-icon' icon={faUser} />
+              <span className="navbar-username-text">{username}</span>
+            </div>
+
             {isDropdownVisible && <UserDropdown isSeller={isSeller} />}
           </div>
         ) : (
-          <CustomLink to="/login" className="navbar-btn">Login</CustomLink>
+          <CustomLink to="/login" className="navbar-user-button">Login</CustomLink>
         )}
       </div>
     </nav>

@@ -1,15 +1,7 @@
 /* UserDropdown.css */
 .dropdown-menu {
     position: absolute;
-    top: 100%; 
-    right: 0; 
-    background-color: var(--mainGreen); 
-    min-width: 160px; 
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
-    border-radius: 4px; 
-    z-index: 1001;
-    margin-top: .5rem; 
-    text-align: left;
+    width: 100%;
 }
 
 .dropdown-menu ul {
@@ -21,9 +13,10 @@
 
 .dropdown-menu ul li,
 .dropdown-menu ul li a {
-    padding: 0.6vw;
+    padding: 0.6vw;, 
     cursor: pointer;
     display: block;
+    width: 100%;
     color: var(--textWhite);
     text-decoration: none; 
     font-family: var(--font-family-source-serif); 

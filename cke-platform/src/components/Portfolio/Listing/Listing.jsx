@@ -92,13 +92,17 @@ export default function Listing() {
     }
 
     const creditQualityDataDummy = {
-        issuerOwnsLand: true,
-        politicalRisk: "Low",
-        legalRisk: "Low",
+        issuerOwnsLand: true, // true OR false
+        politicalRisk: "Low", // Low OR Medium OR High
+        legalRisk: "Low", // 
         geographicalRisk: "Low",
         climateProjections: "Fair",
         independentVerifiers: ["Gold Standard"],
-        ownerStructure: "Familiy Owned"
+        ownerStructure: "Familiy Owned",
+        methodOfCapture: "Forrestry",
+        stakeholderEngagement: "Ok",
+        permanence : "Medium"
+
     }
 
 
@@ -149,7 +153,7 @@ export default function Listing() {
                     </div>
 
 
-                    <CreditQualityEvaluation creditQualityData={creditQualityDataDummy}> </CreditQualityEvaluation>
+                    <CreditQualityEvaluation creditQualityData={generateSemiRandomCreditScore()}> </CreditQualityEvaluation>
 
                     { /*
                         <div className='verifications'>todo verifications. Show verification logos based on json</div>
@@ -159,4 +163,38 @@ export default function Listing() {
             </div>
         </div>
     );
+}
+
+function generateSemiRandomCreditScore(){
+    
+    Array.prototype.random = function () {
+        return this[Math.floor((Math.random()*this.length))];
+      }
+
+
+    const issuerOwnsLand = [true, false]
+    const politicalRisk = ["Low", "Medium", "High"] // Low OR Medium OR High
+    const legalRisk = ["Low", "Medium", "High"]
+    const geographicalRisk = ["Low", "Medium", "High"]
+    const climateProjections = ["Fair", "Concerning", "Bleak"]
+    const independentVerifiers = ["Gold Standard", "Verified Carbon Standard"]
+    const ownerStructure = ["Familiy Owned", "Corporate"]
+    const methodOfCapture = ["Forrestry", "Microalgae"]
+    const stakeholderEngagement =  ["Low", "Medium", "High"]
+    const permanence = ["Low", "Medium", "High"]
+
+    return {
+        issuerOwnsLand: true,
+        politicalRisk: politicalRisk.random(),
+        legalRisk: "Medium", // 
+        geographicalRisk: "Low",
+        climateProjections: climateProjections.random(),
+        independentVerifiers: [independentVerifiers.random()], // this expects a list, but currently only holds one list
+        ownerStructure: ownerStructure.random(),
+        methodOfCapture: methodOfCapture.random(),
+        stakeholderEngagement: stakeholderEngagement.random(),
+        permanence : "High"
+
+    }
+
 }
