@@ -64,9 +64,9 @@
     color: var(--mainWhite);
     text-decoration: none;
     display: block;
-    margin: 10px 0;
-    display: flex;
-    padding-left: 25px;
+    padding-left: 50px;
+    justify-content: center;
+    align-items: center;
   }
 
 

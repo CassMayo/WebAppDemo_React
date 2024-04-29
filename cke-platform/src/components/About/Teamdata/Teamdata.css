@@ -1,16 +1,25 @@
 .leadershipTeam {
   background-color: transparent;
   text-align: start;
+  height: 500px;
 }
 
 .leadershipTeam h2 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: var(--textWhite);
   margin-bottom: 1rem;
+  padding-top: 30px;
 }
 
 .teamMembers {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.InternTeam{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;;
 }

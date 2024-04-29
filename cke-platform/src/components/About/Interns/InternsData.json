@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Markus Evanger",
+      "title": "Intern",
+      "description": "",
+      "imageSrc": "/images/julia.jpg", 
+      "linkedin": "https://linkedin.com", 
+      "instagram": "https://markusevanger.no"
+    },
+    
+    {
+      "id": 2,
+      "name": "Cassandra Mayorga",
+      "title": "Intern",
+      "description": "",
+      "imageSrc": "/images/Cassandra.jpg", 
+      "linkedin": "https://linkedin.com", 
+      "instagram": "https://instagram.com"
+    }
+]
