@@ -11,12 +11,12 @@
   .header h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    font-family: var(--font-family-archivo-serif);
+    font-family: var(--font-family-source-serif);
   } 
   
   .header p {
     font-size: 1rem;
     line-height: 1.5;   
-    font-family: var(--font-family-source-serif);
+    font-family: var(--font-family-archivo-serif);
   }
   

@@ -6,14 +6,14 @@
   }
   
   .mission h2 {
-    font-family: var(--font-family-archivo-serif);
+    font-family: var(--font-family-source-serif);
     font-weight: var(--font-weight-bold);
     font-size: 1.5rem;
     margin: 1rem 0;
   }
   
   .mission p {
-    font-family: var(--font-family-source-serif);
+    font-family: var(--font-family-archivo-serif);
     font-weight: var(--font-weight-normal);
     font-size: 1rem;
     line-height: 1.5;
