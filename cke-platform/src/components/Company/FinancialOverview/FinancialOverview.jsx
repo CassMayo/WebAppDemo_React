@@ -37,33 +37,31 @@ const FinancialOverview = ({ userInfo }) => {
 
     }, []);
 
-
     useEffect(() => {
-        const totalCreditsCalculated = listings.reduce((acc, listing) => acc + Number(listing.credits), 0);
-        const totalValueCalculated = listings.reduce((acc, listing) => acc + (Number(listing.credits) * Number(listing.price)), 0);
-
-        setTotalCredits(totalCreditsCalculated);
-        setTotalValue(totalValueCalculated);
-
-        const creditsPerMonth = listings.reduce((acc, listing) => {
-            const date = new Date(listing.date);
-            if (!isNaN(date.getTime())) {
-                const month = (date.getMonth() + 1).toString().padStart(2, '0');
-                const yearMonth = `${date.getFullYear()}-${month}`;
-                acc[yearMonth] = (acc[yearMonth] || 0) + Number(listing.credits);
-            }
+        const creditsPerMonth = listings.reduce((acc, listing, index) => {
+            const monthIdentifier = `Month ${index + 1}`;
+            acc[monthIdentifier] = (acc[monthIdentifier] || 0) + Number(listing.credits);
             return acc;
         }, {});
-
-        const chartData = Object.entries(creditsPerMonth).map(([yearMonth, credits]) => ({
-            name: yearMonth,
-            Credits: credits,
+    
+        const chartData = Object.entries(creditsPerMonth).map(([monthIdentifier, credits]) => ({
+            name: monthIdentifier,
+            Credits: credits
         })).sort((a, b) => a.name.localeCompare(b.name));
-
+    
         setDataForChart(chartData);
+    
+        const totalCreditsCalculated = listings.reduce((acc, listing) => acc + Number(listing.credits), 0);
+        const totalValueCalculated = listings.reduce((acc, listing) => acc + (Number(listing.credits) * Number(listing.price)), 0);
+    
+        setTotalCredits(totalCreditsCalculated);
+        setTotalValue(totalValueCalculated);
+    
     }, [listings]);
+    
 
-
+       
+   
     return (
         <div className="financial-overview-container">
             <div className="statistics-cards-container">
