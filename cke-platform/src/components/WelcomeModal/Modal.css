@@ -1,0 +1,91 @@
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-card);
+    width: 90%;
+    max-width: 750px; 
+    height: 650px;
+    transform: scale(0.8);
+    transition: transform 0.4s ease-out;
+    text-align: left;
+}
+.modal-content .warn{
+    color: rgb(240, 177, 59);
+    font-size: 20px;
+    font-weight: bold;
+}
+.modal-content .start{
+    color: var(--mainGreen);
+    font-family: var(--font-family-archivo-serif);
+    font-size: 20px;
+}
+.modal-content .last {
+    font-family: var(--font-family-archivo-serif);
+    padding-top: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
+.modal-content h2, .modal-content h3 {
+    color: var(--mainGreen);
+    font-family: var(--font-family-source-serif);
+}
+
+.modal-content h2 {
+    font-size: 40px;
+}
+
+.modal-content h3 {
+    font-size: 30px;
+    font-family: var(--font-family-source-serif);
+}
+
+.modal-content span {
+    color: var(--mainGreen);
+    font-family: var(--font-family-archivo-serif);
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.modal-content p {
+    margin: 20px 0;
+}
+
+.modal-content ul {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-content li {
+    background-color: var(--mainBlue);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    list-style: none;
+}
+
+.modal-content button {
+    background-color: var(--mainGreen);
+    color: var(--textWhite);
+    font-weight: var(--font-weight-bold);
+    width: 150px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: var(--mainYellow);
+    color: var(--mainBlack);
+    transition: var(--hover-transition);
+}

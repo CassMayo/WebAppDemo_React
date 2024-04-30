@@ -3,19 +3,19 @@
     "id": 1,
     "name": "JULIA E. KRÆMER",
     "title": "CO-FOUNDER & CEO",
-    "description": " ",
+    "description": "",
     "imageSrc": "/images/julia.jpg", 
-    "linkedin": "https://linkedin.com", 
+    "linkedin": "https://www.linkedin.com/in/julia-elisabeth-kr%C3%A6mer-64a567258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", 
     "instagram": "https://instagram.com"
   },
 
   {
     "id": 2,
-    "name": "MARTIN KREVRNØ",
+    "name": "MARTIN KVERNØ",
     "title": "CO-FOUNDER & CFO",
     "description": "",
     "imageSrc": "/images/martin.png", 
-    "linkedin": "https://linkedin.com", 
+    "linkedin": "https://www.linkedin.com/in/martin-kvernoe", 
     "instagram": "https://instagram.com"
   },
 
@@ -35,7 +35,7 @@
     "title": "CO-FOUNDER & CIO",
     "description": "",
     "imageSrc": "/images/mansur.png", 
-    "linkedin": "https://linkedin.com", 
+    "linkedin": "https://www.linkedin.com/in/mansur-dudajev-197a20302/", 
     "instagram": "https://instagram.com"
   }
 ]

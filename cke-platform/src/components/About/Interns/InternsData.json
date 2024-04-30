@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Markus Evanger",
+      "title": "Intern",
+      "description": "https://markusevanger.no",
+      "imageSrc": "/images/julia.jpg", 
+      "linkedin": "https://linkedin.com", 
+      "instagram": "https://markusevanger.no"
+    },
+    
+    {
+      "id": 2,
+      "name": "Cassandra Mayorga",
+      "title": "Intern",
+      "description": "Studying in Oslomet, Software engineering.",
+      "imageSrc": "/images/Cassandra.jpg", 
+      "linkedin": "https://linkedin.com", 
+      "instagram": "https://www.linkedin.com/in/cassandra-averil-mayorga-70bab7279"
+    }
+]

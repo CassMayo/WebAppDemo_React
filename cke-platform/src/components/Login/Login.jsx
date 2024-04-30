@@ -66,8 +66,7 @@ const LoginPage = () => {
 
           <button type="submit" onClick={handleLogin}>Login</button>
           <div className="login-links">
-            <a href="/forgot-password">Forgot Password?</a>
-            <CustomLink to="/register">Register as provider</CustomLink>
+            <CustomLink className="register"to="/register">Register now!</CustomLink>
           </div>
         </form>
       </div>

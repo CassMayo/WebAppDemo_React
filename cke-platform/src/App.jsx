@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState , useEffect} from 'react';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import Modal from './components/WelcomeModal/Modal.jsx';
 
 import NavBar from './components/Navbar/navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
@@ -24,6 +26,14 @@ import { PurchaseProvider } from './components/logic/PurchaseContext.jsx';
 import LoginProvider from './components/logic/LoginContext.jsx'
 
 function App() {
+  const [isModalVisible, setModalVisible] = useState(true);
+
+  useEffect(() => {
+  }, []);
+
+  const handleCloseModal = () => {
+    setModalVisible(false);
+  };
   return (
     <>
       <div className="App">
@@ -39,7 +49,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/portfolio" element={<Portfolio />} /> 
                 <Route path="/login" element={<Login />} />
                 <Route path="/company" element={<CompanyPage />} />
                 <Route path="/register" element={<Register />} />
@@ -53,6 +63,7 @@ function App() {
           </div>
         </LoginProvider>
         <Footer />
+        <Modal isVisible={isModalVisible} onClose={handleCloseModal} />
       </div>
     </>
   );

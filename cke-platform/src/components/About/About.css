@@ -3,7 +3,7 @@
     margin-top: -100px;
     background: url('/images/about-bg.jpg') center no-repeat;
     background-size: cover;
-    height: 220vh;
+    height: 250vh;
     padding: var(--padding);
     z-index: -1000;
     
