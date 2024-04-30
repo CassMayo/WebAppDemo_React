@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCube } from '@fortawesome/free-solid-svg-icons';
+import { faRepeat, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import './Trusted.css';
 
 const HomeStatisticSection = () => (
@@ -18,17 +18,15 @@ const HomeStatisticSection = () => (
       <div className="offer-cards">
         <div className="offer-card">
           <div className="card-content">
-            <FontAwesomeIcon icon={faCube} size="3x" className="card-icon" />
+            <FontAwesomeIcon icon={faGlobe} className='card-icon'/>
             <p>A platform to trade surplus credits with other companies</p>
           </div>
-          <button className="learn-more">Learn More</button>
         </div>
         <div className="offer-card">
           <div className="card-content">
-            <FontAwesomeIcon icon={faCube} size="3x" className="card-icon" />
-            <p>A subscription model for private consumers</p>
+          <FontAwesomeIcon icon={faRepeat} className='card-icon' />
+          <p>A subscription model for private consumers</p>
           </div>
-          <button className="learn-more">Learn More</button>
         </div>
       </div>
     </section>

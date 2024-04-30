@@ -46,7 +46,6 @@
 /*Left side*/
 .offers-section {
   flex: 4;
-  background-color: var(--mainBlue);
   height: 500px;
   border-radius: 20px;
   padding: 2rem;
@@ -63,19 +62,18 @@
   font-family: var(--font-family-source-serif);
   font-weight: var(--font-weight-bold);
   color: var(--textBlack);
-  font-size: 3em;
+  font-size: 38px;
 }
 
 .offer-cards {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
 }
 
 .offer-card {
   background-color: var(--mainWhite);
-  border: 1px solid #000;
-  border-radius: 20px;
+  border-radius: 23px;
+  box-shadow: var(--box-shadow-card);
   padding: 2rem;
   width: 400px;
   height: 300px;
@@ -88,38 +86,21 @@
 
 .card-icon {
   height: 80px;
-  margin-bottom: 1rem;
   color: var(--mainBlack);
-  padding-right: 1em;
 }
 
 .card-content {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  height: 100%;
 }
 
 .offer-card p {
-  margin-bottom: 2rem;
   text-align: center;
   font-family: var(--font-family-archivo-serif);
   font-weight: var(--font-weight-normal);
   font-size: 16px;
-}
-
-.learn-more {
-  background-color: var(--mainYellow);
-  color: var(--textBlack);
-  border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  align-self: center;
-  margin-top: auto;
-  font-family: var(--font-family-source-serif);
-  font-weight: var(--font-weight-bold);
-}
-
-.learn-more:hover {
-  background-color: var(--hover-color);
 }

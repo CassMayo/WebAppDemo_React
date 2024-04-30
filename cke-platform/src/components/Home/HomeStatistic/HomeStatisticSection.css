@@ -27,35 +27,31 @@
 
 .statistic-card {
   margin-right: max(3.125em, 3vw);
-  background-color: var(--mainBlue);
+  background-color: var(--mainWhite);
   box-shadow: var(--box-shadow-card);
   border-radius: 20px;
   flex-grow: 0;
   text-align: start;
   color: var(--textBlack);
-  max-width: 18.75em;
+  width: 300px;
   
+
+  padding: 30px;
 }
 
-/*Left card*/
-.statistic-card:last-child {
-  margin-right: 0;
-}
 
 .statistic-number {
-  font-size: min(3.75em, 3vw);
+  font-size: 38px;
   color: var(--textGreen);
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-source-serif);
-  margin-bottom: .3em;
-  padding: 10px;
+
 }
 
 .statistic-label {
-  font-family: var(--font-family-source-serif);
-  font-weight: var(--font-weight-bold);
-  font-size: 1.5vw;
-  padding: 10px;
+  font-family: var(--font-family-sans-serif);
+  font-weight: var(--font-weight-normal);
+  font-size: 16px;
 }
 
 .statistic-heading {

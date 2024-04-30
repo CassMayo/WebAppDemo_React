@@ -37,15 +37,17 @@
 }
 
 
+
 .portfolio-btn {
 
   background-color: var(--mainYellow);
   padding: 0.625em 1.25em;
   color: var(--textBlack); 
+  margin-top: 0;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 16px;
   font-weight: var(--font-weight-bold);
   transition: background-color 0.3s ease;
   text-align: left;

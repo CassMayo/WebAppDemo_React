@@ -9,6 +9,8 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+
+
 }
 
 .navbar-logo {
@@ -28,6 +30,8 @@
 
     padding-left: 40px;
     padding-right: 40px;
+
+    box-shadow: var(--box-shadow-card);
 }
 
 .navbar-links a,

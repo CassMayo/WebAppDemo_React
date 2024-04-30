@@ -2,6 +2,9 @@
 .dropdown-menu {
     position: absolute;
     width: 100%;
+    background-color: var(--mainGreen);
+    border-radius: 13px;
+    margin-top: 10px;
 }
 
 .dropdown-menu ul {
@@ -13,7 +16,6 @@
 
 .dropdown-menu ul li,
 .dropdown-menu ul li a {
-    padding: 0.6vw;, 
     cursor: pointer;
     display: block;
     width: 100%;
@@ -22,6 +24,10 @@
     font-family: var(--font-family-source-serif); 
     font-size: 1rem; 
     font-weight: var(--font-weight-bold);
+    border-radius: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0;
 }
 
 
@@ -32,13 +38,7 @@
 }
 
 .logout {
-   transition: all 0.4s ease;
-}
-
-.dropdown-menu ul li.active,
-.dropdown-menu ul li.active a {
-    background-color: var(--mainYellow); 
-    color: var(--textBlack); 
+   transition: all 0.2s ease;
 }
 
 .navbar-user-section {
