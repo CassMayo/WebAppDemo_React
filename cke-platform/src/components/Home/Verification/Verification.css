@@ -3,24 +3,27 @@
     background-color: var(--mainGreen);
     color: var(--textWhite);
     text-align: center;
-    height: 55vh;
+    height: 600px;
   }
 
   .verification-content {
-    margin: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
   }
   
   .verification-content h1 {
-    font-size: 3em; 
+    font-size: 38px; 
     margin-bottom: 10px;
     font-family: var(--font-family-source-serif);
     font-weight: var(--font-weight-bold);
   }
   
   .verification-content p {
-    font-size: 2em; 
+    font-size: 16px; 
     margin: 1.5em 3em;
-    text-align: start;
+    text-align: center;
     font-family: var(--font-family-archivo-serif);
     font-weight: var(--font-weight-normal);
   }
