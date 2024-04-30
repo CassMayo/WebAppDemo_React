@@ -17,13 +17,13 @@ const HomeStatisticSection = () => (
       <h2>We also offer:</h2>
       <div className="offer-cards">
         <div className="offer-card">
-          <div className="card-content">
+          <div className="other-offers-content">
             <FontAwesomeIcon icon={faGlobe} className='card-icon'/>
             <p>A platform to trade surplus credits with other companies</p>
           </div>
         </div>
         <div className="offer-card">
-          <div className="card-content">
+          <div className="other-offers-content">
           <FontAwesomeIcon icon={faRepeat} className='card-icon' />
           <p>A subscription model for private consumers</p>
           </div>

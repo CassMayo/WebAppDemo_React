@@ -77,7 +77,9 @@ const Navbar = () => {
             {isDropdownVisible && <UserDropdown isSeller={isSeller} />}
           </div>
         ) : (
-          <CustomLink to="/login" className="navbar-user-button">Login</CustomLink>
+          <div className='navbar-user-section'>
+            <CustomLink to="/login" className="navbar-user-button">Login</CustomLink>
+          </div>
         )}
       </div>
     </nav>

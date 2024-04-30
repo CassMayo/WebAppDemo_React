@@ -5,10 +5,11 @@
 }
 
 .leadershipTeam h2 {
-  font-size: 2rem;
+  font-size: 26px;
   color: var(--textWhite);
   margin-bottom: 1rem;
   padding-top: 30px;
+  font-family: var(--font-family-source-serif);
 }
 
 .teamMembers {
