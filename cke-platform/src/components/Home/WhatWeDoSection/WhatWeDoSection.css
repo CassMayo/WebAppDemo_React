@@ -1,4 +1,4 @@
-.what-we-do-container {
+.wwdc {
     background: var(--gradient-color-top);
     color: var(--textWhite);
     padding: var(--padding);
@@ -9,7 +9,7 @@
     font-weight: var(--font-weight-bold);
 }
 
-.what-we-do-container h2 {
+.wwdc h2 {
     text-align: left;
     margin-bottom: 60px;
     font-family: var(--font-family-source-serif);
@@ -19,18 +19,19 @@
 .icon {
     padding: 20px;
 }
-.steps {
+.wwdc__items {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 50px 0;
 }
 
-.step {
+.wwdc__step {
     width: 20%;
     text-align: center;
 }
 
-.step h3 {
+.wwdc__step h3 {
     text-align: left;
     font-family: var(--font-family-archivo-serif);
     font-weight: var(--font-weight-normal);
@@ -38,19 +39,19 @@
     margin-bottom: 20px;
 }
 
-.step p {
+.wwdc__step p {
     font-family: var(--font-family-archivo-serif);
     font-weight: var(--font-weight-normal);
     font-size: 20px;
     padding-top: 20px;
 }
 
-.cta-button {
+.wwdc__button {
     text-align: center;
     margin-top: 50px;
 }
 
-.cta-button button {
+.wwdc__button button {
     padding: 10px 30px;
     background-color: var(--mainYellow);
     color: var(--textBlack);
@@ -62,12 +63,12 @@
     transition: background-color 0.3s ease;
 }
 
-.cta-button i {
+.wwdc__button i {
     font-size: 1.5em;
     padding-left: 1em;
 }
 
-.cta-button button:hover {
+.wwdc__button button:hover {
     color: var(--textBlack);
     background-color: var(--hover-color);
 }
