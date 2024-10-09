@@ -23,7 +23,5 @@ const Teamcard = ({ name, title, description, imageSrc, linkedin, instagram }) =
         </section>
       );
     };
-    
-};
-
+  
 export default Teamcard;
